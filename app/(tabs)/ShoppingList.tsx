@@ -1,6 +1,5 @@
 import { Text, TextInput, View, Alert, TouchableOpacity } from "react-native";
 import React, { useRef, useState } from "react";
-import { Link } from "expo-router";
 import { getShoppingLists, saveShoppingLists } from "@/lib/AsyncStorage";
 import ProgressCircle from "@/components/ProgressCircle";
 import { Ionicons } from "@expo/vector-icons";
@@ -222,13 +221,13 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
                     <ProgressCircle color="#60957A" duration={500} />
                   )}
                   {(item as Fruit | Vegetable).nutrients && (
-                    <Link href={`/vegetable/${item.id}`}>
+                    <TouchableOpacity>
                       <Ionicons
                         name="information-circle-outline"
                         className="text-xl"
                         size={22}
                       />
-                    </Link>
+                    </TouchableOpacity>
                   )}
                 </View>
               </TouchableOpacity>

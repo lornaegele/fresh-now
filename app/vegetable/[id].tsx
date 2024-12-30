@@ -1,12 +1,18 @@
-import { View, Text } from "react-native";
+import { RouteProp } from "@react-navigation/native";
 import React from "react";
-import { useLocalSearchParams } from "expo-router/build/hooks";
+import { View, Text } from "react-native";
 
-const VegetableDetails = () => {
-  const { id } = useLocalSearchParams();
+type VegetableDetailsRouteProp = RouteProp<
+  RootStackParamList,
+  "VegetableDetails"
+>;
+
+const VegetableDetails = ({ route }: { route: VegetableDetailsRouteProp }) => {
+  const { id } = route.params;
+
   return (
     <View>
-      <Text>Vegetable {id}</Text>
+      <Text>Details for Vegetable ID: {id}</Text>
     </View>
   );
 };

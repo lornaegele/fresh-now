@@ -88,3 +88,9 @@ type ShoppingList = ShoppingListItem[];
 type RootDrawerParamList = {
   [key: string]: { shoppingList: ShoppingListItem }; // Use `shoppingList` for each screen
 };
+
+type RootStackParamList = {
+  Seasonal: undefined; // No params for Seasonal
+  ShoppingList: { list: ShoppingListItem }; // Specify the required list prop
+  VegetableDetails: { id: string }; // Params for VegetableDetails
+};

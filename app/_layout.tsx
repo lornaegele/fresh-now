@@ -2,23 +2,21 @@ import React, { useEffect, useState } from "react";
 import {
   createDrawerNavigator,
   DrawerNavigationProp,
-} from "@react-navigation/drawer"; // Drawer navigation
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"; // Bottom tab navigation
+} from "@react-navigation/drawer";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"; // Import Tab Navigator
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import WelcomeModal from "@/components/WelcomeModal";
-import Seasonal from "@/app/(tabs)/Seasonal";
 import useFontLoading from "@/lib/useFontLoading";
 import useAppInitialization from "@/lib/useAppInitialization";
 import CustomDrawerContent from "@/components/CustomDrawerContent";
 import ShoppingList from "./(tabs)/ShoppingList";
 import { Text } from "react-native";
 import "./global.css";
+import SeasonalStack from "./stacks/SeasonalStack";
 
-// Create the drawer navigator
-const Drawer = createDrawerNavigator();
-// Create the bottom tab navigator
-const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator(); // Drawer navigator
+const Tab = createBottomTabNavigator(); // Define the Tab navigator
 
 type RootLayoutNavigationProp = DrawerNavigationProp<RootDrawerParamList>;
 
@@ -28,7 +26,6 @@ const RootLayout = () => {
     useAppInitialization();
   const [activeTab, setActiveTab] = useState<string | null>(null);
 
-  // If fonts are not loaded, render nothing
   if (!fontsLoaded) return null;
 
   return (
@@ -77,13 +74,12 @@ const RootLayout = () => {
           ))
         ) : (
           <Drawer.Screen
-            name="Erstelle eine Liste um zu starten"
-            component={Seasonal}
-          ></Drawer.Screen>
+            name="Seasonal"
+            component={SeasonalStack} // Use SeasonalStack here
+          />
         )}
       </Drawer.Navigator>
 
-      {/* Welcome Modal */}
       <WelcomeModal
         visible={isModalVisible}
         onClose={() => setIsModalVisible(false)}
@@ -92,7 +88,6 @@ const RootLayout = () => {
   );
 };
 
-// ShoppingList screen with bottom tabs
 const ShoppingListWithTabs = ({
   list,
   setActiveTab,
@@ -103,10 +98,9 @@ const ShoppingListWithTabs = ({
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        headerShown: false, // Hide the tab header itself
+        headerShown: false,
       })}
     >
-      {/* Shopping List Tab */}
       <Tab.Screen
         name="Einkaufsliste"
         options={{
@@ -121,10 +115,9 @@ const ShoppingListWithTabs = ({
         {(props) => <ShoppingList list={list} />}
       </Tab.Screen>
 
-      {/* Seasonal Tab */}
       <Tab.Screen
         name="Saisonal"
-        component={Seasonal}
+        component={SeasonalStack} // Use SeasonalStack here too if needed
         options={{
           tabBarActiveTintColor: "#0F5933",
           tabBarInactiveTintColor: "grey",
@@ -138,7 +131,6 @@ const ShoppingListWithTabs = ({
   );
 };
 
-// Drawer Hamburger Icon (remains the same)
 const DrawerHamburgerIcon = () => {
   const navigation = useNavigation<RootLayoutNavigationProp>();
 

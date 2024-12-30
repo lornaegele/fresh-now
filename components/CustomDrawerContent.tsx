@@ -118,6 +118,7 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({
     };
 
     const updatedLists = [...shoppingLists, newList];
+    shoppingLists.length == 0 && setActiveItemId(newList.id);
     setShoppingLists?.(updatedLists);
     setNewListName("");
     setIsAdding(false);

@@ -5,26 +5,32 @@ import VegetableCard from "@/components/VegetableCard";
 import { filterVariantsDE } from "@/lib/data";
 import { vegetablesDE } from "@/lib/vegetables";
 import { fruitsDE } from "@/lib/fruits";
-import { useRouter } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import useAppInitialization from "@/lib/useAppInitialization";
+
+type SeasonalNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  "Seasonal"
+>;
 
 const Seasonal = () => {
+  const { shoppingLists } = useAppInitialization();
   const [selectedFilter, setSelectedFilter] =
     useState<FilterVariantsDE>("Gemüse");
 
-  const router = useRouter();
+  const navigation = useNavigation<SeasonalNavigationProp>();
 
   const handleCategory = (filter: FilterVariantsDE) => {
     setSelectedFilter(filter);
   };
 
   const navigateToDetails = (id: string) => {
-    // Navigate to the vegetable details screen with the dynamic id
-    console.log(id);
-
-    router.push(`/vegetable/${id}`);
+    navigation.navigate("VegetableDetails", { id });
   };
+
   return (
-    <View className="h-full pt-14">
+    <View className={`h-full ${shoppingLists.length > 0 && "pt-14"} `}>
       <FlatList
         data={
           selectedFilter == "Gemüse"
