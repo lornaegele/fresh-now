@@ -1,26 +1,19 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  ActivityIndicator,
-} from "react-native";
+import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import React, { useState } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
 import VegetableCard from "@/components/VegetableCard";
-import { filterVariants } from "@/lib/data";
-import { vegetables } from "@/lib/vegetables";
-import { fruits } from "@/lib/fruits";
+import { filterVariantsDE } from "@/lib/data";
+import { vegetablesDE } from "@/lib/vegetables";
+import { fruitsDE } from "@/lib/fruits";
 import { useRouter } from "expo-router";
 
 const Seasonal = () => {
   const [selectedFilter, setSelectedFilter] =
-    useState<FilterVariants>("Vegetables");
+    useState<FilterVariantsDE>("Gemüse");
 
   const router = useRouter();
 
-  const handleCategory = (filter: FilterVariants) => {
+  const handleCategory = (filter: FilterVariantsDE) => {
     setSelectedFilter(filter);
   };
 
@@ -33,7 +26,13 @@ const Seasonal = () => {
   return (
     <View className="h-full pt-14">
       <FlatList
-        data={selectedFilter == "Vegetables" ? vegetables : fruits}
+        data={
+          selectedFilter == "Gemüse"
+            ? vegetablesDE
+            : selectedFilter == "Obst"
+            ? fruitsDE
+            : []
+        }
         renderItem={({ item }) => (
           <VegetableCard
             item={item}
@@ -48,8 +47,8 @@ const Seasonal = () => {
         ListEmptyComponent={
           <View className="flex justify-center items-center p-2 flex-col">
             <Text className="text-9xl pt-6">😔</Text>
-            <Text className="text-xl font-rubik  ">
-              Sorry, we don't have any tips yet!
+            <Text className="text-xl font-rubik  px-6 text-center">
+              Leider haben wir gerade keine Tips für dich!
             </Text>
           </View>
         }
@@ -57,8 +56,9 @@ const Seasonal = () => {
           <View className="px-4 flex flex-col gap-2">
             <View className="flex justify-center items-center p-2 ">
               <Text className="text-xl font-rubik-medium">
-                Whats in <Text className="text-primary-300">Season</Text> right
-                now?
+                Was ist gerade in{" "}
+                <Text className="text-primary-300 font-rubik-bold">Saison</Text>
+                ?
               </Text>
             </View>
             <ScrollView
@@ -66,9 +66,9 @@ const Seasonal = () => {
               horizontal
               className="pt-3 pb-4"
             >
-              {filterVariants.map((filter, i) => (
+              {filterVariantsDE.map((filter, i) => (
                 <TouchableOpacity
-                  onPress={() => handleCategory(filter as FilterVariants)}
+                  onPress={() => handleCategory(filter as FilterVariantsDE)}
                   className={`flex shadow shadow-slate-200 flex-col items-start mr-2 px-4 py-2 rounded-full ${
                     selectedFilter == filter ? "bg-primary-200 " : "bg-white"
                   }`}

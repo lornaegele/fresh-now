@@ -66,15 +66,15 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({
 
   const handleDelete = (id: string) => {
     Alert.alert(
-      "Confirm Deletion",
-      "Are you sure you want to delete this list?",
+      "Löschen bestädigen",
+      "Bist du sicher, dass du diese Liste mit ihrem Inhalt löschen willst?",
       [
         {
-          text: "Cancel",
+          text: "Abbrechen",
           style: "cancel",
         },
         {
-          text: "Delete",
+          text: "Löschen",
           style: "destructive",
           onPress: () => {
             const updatedLists = shoppingLists.filter((list) => list.id !== id);
@@ -94,12 +94,16 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({
     );
 
     if (isDuplicate) {
-      Alert.alert("Duplicate List Name", "The list name already exists.", [
-        {
-          text: "OK",
-          onPress: () => inputRef.current?.focus(), // Refocus input on "OK"
-        },
-      ]);
+      Alert.alert(
+        "Doppelter Listenname",
+        "Der Name dieser Liste existiert bereits.",
+        [
+          {
+            text: "OK",
+            onPress: () => inputRef.current?.focus(), // Refocus input on "OK"
+          },
+        ]
+      );
       return;
     }
 
@@ -124,7 +128,7 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({
   return (
     <SafeAreaView className="flex-1 bg-white mt-12">
       <View className="px-4 py-3 flex-row items-center justify-between">
-        <Text className="text-lg font-bold">Shopping Lists 🛒</Text>
+        <Text className="text-lg font-bold">Einkaufslisten 🛒</Text>
         <TouchableOpacity
           onPress={toggleAddMode}
           className="bg-primary-200 p-1 rounded-xl"
@@ -142,7 +146,7 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({
           <TextInput
             ref={inputRef} // Step 2: Attach the ref
             className="border border-primary-300 rounded-2xl p-4 text-base"
-            placeholder="Enter new list name"
+            placeholder="Neuen Listennamen eingeben"
             value={newListName}
             onChangeText={setNewListName}
             onSubmitEditing={handleAddNewList}

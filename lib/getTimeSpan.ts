@@ -1,4 +1,4 @@
-export const getTimeSpan = (season: Month[]): string => {
+export const getTimeSpan = (season: Month[], language: Language): string => {
   if (!season || season.length === 0) return "";
 
   const monthIndices: Record<Month, number> = {
@@ -14,6 +14,21 @@ export const getTimeSpan = (season: Month[]): string => {
     October: 10,
     November: 11,
     December: 12,
+  };
+
+  const germanMonths: Record<Month, string> = {
+    January: "Januar",
+    February: "Februar",
+    March: "März",
+    April: "April",
+    May: "Mai",
+    June: "Juni",
+    July: "Juli",
+    August: "August",
+    September: "September",
+    October: "Oktober",
+    November: "November",
+    December: "Dezember",
   };
 
   // Sort the months by their indices
@@ -38,18 +53,14 @@ export const getTimeSpan = (season: Month[]): string => {
 
   ranges.push(`${rangeStart} - ${sortedMonths[sortedMonths.length - 1].month}`);
 
-  return ranges.join(" and ");
-};
+  let result = ranges.join(" and ");
 
-// Example usage
-const item = {
-  season: [
-    "March",
-    "April",
-    "May",
-    "June",
-    "September",
-    "October",
-    "November",
-  ] as Month[],
+  // Translate to German if the language is DE
+  if (language === "DE") {
+    result = result
+      .replace(/([A-Za-z]+)/g, (month) => germanMonths[month as Month] || month)
+      .replace("and", "und");
+  }
+
+  return result;
 };

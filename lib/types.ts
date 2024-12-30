@@ -1,6 +1,9 @@
 type Status = "done" | "open";
 
-type FilterVariants = "Vegetables" | "Fruits" | "Health tips";
+type Language = "DE" | "EN";
+
+type FilterVariantsEN = "Vegetables" | "Fruits" | "Health tips";
+type FilterVariantsDE = "Gemüse" | "Obst" | "Gesundheits Tips";
 
 // Types to define the structure
 interface ShoppingListItem {

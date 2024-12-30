@@ -77,7 +77,7 @@ const RootLayout = () => {
           ))
         ) : (
           <Drawer.Screen
-            name="Create a list to start"
+            name="Erstelle eine Liste um zu starten"
             component={Seasonal}
           ></Drawer.Screen>
         )}
@@ -108,7 +108,7 @@ const ShoppingListWithTabs = ({
     >
       {/* Shopping List Tab */}
       <Tab.Screen
-        name="Shopping List"
+        name="Einkaufsliste"
         options={{
           tabBarActiveTintColor: "",
           tabBarInactiveTintColor: "#60957A",
@@ -123,7 +123,7 @@ const ShoppingListWithTabs = ({
 
       {/* Seasonal Tab */}
       <Tab.Screen
-        name="Seasonal"
+        name="Saisonal"
         component={Seasonal}
         options={{
           tabBarActiveTintColor: "#0F5933",

@@ -1,4 +1,4 @@
-export const groceries: Grocery[] = [
+export const groceriesDE: Grocery[] = [
   { id: "1", name: "Brot", emoji: "🍞" },
   { id: "2", name: "Käse", emoji: "🧀" },
   { id: "3", name: "Milch", emoji: "🥛" },

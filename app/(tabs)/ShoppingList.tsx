@@ -5,9 +5,9 @@ import { getShoppingLists, saveShoppingLists } from "@/lib/AsyncStorage";
 import ProgressCircle from "@/components/ProgressCircle";
 import { Ionicons } from "@expo/vector-icons";
 import { ScrollView } from "react-native-gesture-handler";
-import { fruits } from "@/lib/fruits";
-import { vegetables } from "@/lib/vegetables";
-import { groceries } from "@/lib/groceries";
+import { fruitsDE } from "@/lib/fruits";
+import { vegetablesDE } from "@/lib/vegetables";
+import { groceriesDE } from "@/lib/groceries";
 
 const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
   const [newItemName, setNewItemName] = useState("");
@@ -21,7 +21,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
     if (!newItemName.trim()) return;
 
     // Combine all items from the three imported JSON files
-    const allItems = [...fruits, ...groceries, ...vegetables];
+    const allItems = [...fruitsDE, ...groceriesDE, ...vegetablesDE];
 
     // Check if the new item already exists in any of the files
     const itemExists =
@@ -31,7 +31,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
       );
 
     if (itemExists) {
-      Alert.alert("Duplicate Item", `${newItemName} is already in the list.`);
+      Alert.alert("Doppelt", `${newItemName} ist schon in deiner Liste.`);
       inputRef.current?.focus();
       return;
     }
@@ -93,15 +93,15 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
 
   const clearDoneItems = async () => {
     Alert.alert(
-      "Confirm Clear",
-      "Are you sure you want to remove all already bought items?",
+      "Leeren bestätigen",
+      "Bist du sicher, dann du alles aus deinen bereits gekauften löschen willst?",
       [
         {
-          text: "Cancel",
+          text: "Abbrechen",
           style: "cancel",
         },
         {
-          text: "Clear",
+          text: "Löschen",
           style: "destructive",
           onPress: async () => {
             const updatedList: ShoppingListItem = {
@@ -187,15 +187,15 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
       <TextInput
         ref={inputRef}
         className=" bg-white shadow shadow-zinc-200 rounded-2xl p-4"
-        placeholder="What do you need?"
+        placeholder="Was brauchst du?"
         value={newItemName}
         onChangeText={setNewItemName}
         onSubmitEditing={handleAddNewItem}
       />
       <Text className="pt-3 font-rubik-medium text-zinc-600 text-xl px-1">
-        You can switch to
-        <Text className="color-primary-300 font-rubik-bold"> Seasonal 🥬 </Text>
-        to see what's in Season right now!
+        Du kannst zu
+        <Text className="color-primary-300 font-rubik-bold"> Saisonal 🥬 </Text>
+        wechseln um zu sehen, was gerade in Saison ist!
       </Text>
       <View className="pt-4 display flex flex-col gap-2">
         {shoppingList.items &&
@@ -235,7 +235,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
             ))
         ) : (
           <Text className="px-1 texl-lg">
-            No items in your List, looks like you got everyting you need 🤩
+            Deine Liste ist leer, scheint als hättest du alles 🤩
           </Text>
         )}
       </View>
@@ -243,9 +243,9 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
         shoppingList.items.some((item) => item.status === "done") && (
           <View className="pt-4 display flex flex-col gap-2">
             <View className="flex flex-row justify-between p-2">
-              <Text className="color-zinc-400">Already bought:</Text>
+              <Text className="color-zinc-400">Schon gekauft:</Text>
               <TouchableOpacity onPress={clearDoneItems}>
-                <Text className="color-[#f08181] underline">clear</Text>
+                <Text className="color-[#f08181] underline">leeren</Text>
               </TouchableOpacity>
             </View>
             {shoppingList.items

@@ -24,7 +24,7 @@ const VegetableCard = ({ item, onPress }: Props) => {
           numberOfLines={1}
           ellipsizeMode="tail"
         >
-          {getTimeSpan(item.season)}
+          {getTimeSpan(item.season, "DE")}
         </Text>
       </View>
       <TouchableOpacity className="bg-white absolute right-2 top-2 px-2 py-1.5 rounded-xl shadow shadow-zinc-500">
