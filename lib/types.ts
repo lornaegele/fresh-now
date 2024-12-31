@@ -2,8 +2,18 @@ type Status = "done" | "open";
 
 type Language = "DE" | "EN";
 
-type FilterVariantsEN = "Vegetables" | "Fruits" | "Health tips";
-type FilterVariantsDE = "Gemüse" | "Obst" | "Gesundheits Tips";
+type FilterVariantsEN =
+  | "Vegetables"
+  | "Fruits"
+  | "Shopping tips"
+  | "Health tips";
+type FilterVariantsDE =
+  | "Gemüse"
+  | "Obst"
+  | "Tips beim Einkaufen"
+  | "Gesundheits Tips";
+type DropdownFilterVariantsDE = "Aktuell in Saison" | "Alle";
+type DropdownFilterVariantsEN = "Currently in season" | "All";
 
 // Types to define the structure
 interface ShoppingListItem {
@@ -20,38 +30,30 @@ interface Grocery {
   emoji: string;
 }
 
-interface Vegetable {
+interface Produce {
   id: string;
   name: string;
-  emoji: string; // Optional icon specific to the vegetable
+  emoji: string;
   backgroundColor: string;
-  image?: string; // URL of an image representing the vegetable
-  season: Month[]; // Array of seasons when it's available (e.g., ["spring", "summer"])
-  vitamins?: string[]; // Array of vitamins it contains (e.g., ["Vitamin A", "Vitamin C"])
-  nutrients?: { [key: string]: number }; // Nutrients with their amounts (e.g., { fiber: 2.5, protein: 1.3 })
-  healthScore?: number;
-  benefits?: string[]; // List of health benefits (e.g., ["Boosts immunity", "Aids digestion"])
-  risks?: string[]; // List of potential risks (e.g., ["May cause allergies"])
-  regionAvailability?: string[]; // Regions where the vegetable is commonly grown
-  storageTips?: string; // Tips for storing the vegetable (e.g., "Store in a cool, dry place")
-  recipes?: string[]; // List of popular recipes (e.g., ["Stir-fry", "Soup"])
+  image?: string;
+  info?: string;
+  season: Month[];
+  vitamins: string[];
+  nutrients: { [key: string]: number };
+  healthScore: number;
+  benefits: string[];
+  risks: string[];
+  regionAvailability: string[];
+  storageTips: string;
+  recipes: string[];
 }
 
-interface Fruit {
-  id: string;
-  name: string;
-  emoji: string; // Optional icon specific to the fruit
-  backgroundColor: string;
-  image?: string; // URL of an image representing the fruit
-  season: Month[]; // Array of seasons when it's available (e.g., ["summer", "fall"])
-  vitamins?: string[]; // Array of vitamins it contains (e.g., ["Vitamin C", "Vitamin K"])
-  nutrients?: { [key: string]: number }; // Nutrients with their amounts (e.g., { sugar: 14, fiber: 3.1 })
-  healthScore?: number;
-  benefits?: string[]; // List of health benefits (e.g., ["Good for heart health"])
-  risks?: string[]; // List of potential risks (e.g., ["May cause bloating"])
-  regionAvailability?: string[]; // Regions where the fruit is commonly grown
-  storageTips?: string; // Tips for storing the fruit (e.g., "Refrigerate after ripening")
-  recipes?: string[]; // List of popular recipes (e.g., ["Smoothies", "Pies"])
+interface Vegetable extends Produce {
+  // Specific properties for vegetables (if any)
+}
+
+interface Fruit extends Produce {
+  // Specific properties for fruits (if any)
 }
 
 interface VegetableItem extends Vegetable {

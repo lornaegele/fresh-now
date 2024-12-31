@@ -9,6 +9,7 @@ interface Props {
 }
 
 const VegetableCard = ({ item, onPress }: Props) => {
+  const addToList = async () => {};
   return (
     <TouchableOpacity
       className="p-4 w-[47%] h-[180px] flex justify-between flex-col shadow shadow-zinc-200 rounded-2xl bg-primary-300 mb-4"
@@ -27,7 +28,10 @@ const VegetableCard = ({ item, onPress }: Props) => {
           {getTimeSpan(item.season, "DE")}
         </Text>
       </View>
-      <TouchableOpacity className="bg-white absolute right-2 top-2 px-2 py-1.5 rounded-xl shadow shadow-zinc-500">
+      <TouchableOpacity
+        onPress={addToList}
+        className="bg-white absolute right-2 top-2 px-2 py-1.5 rounded-xl shadow shadow-zinc-500"
+      >
         <Text className="text-lg">🛒</Text>
       </TouchableOpacity>
     </TouchableOpacity>

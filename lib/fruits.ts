@@ -398,7 +398,7 @@ export const fruitsEN: Fruit[] = [
     emoji: "🍊",
     backgroundColor: "#ffcc80", // light pastel orange
     image: "https://example.com/images/orange.jpg",
-    season: ["November", "December", "January", "February", "March", "April"],
+    season: ["November", "December", "January", "February", "March"],
     vitamins: ["Vitamin C", "Vitamin A"],
     nutrients: {
       fiber: 3.1,

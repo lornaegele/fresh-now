@@ -220,7 +220,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
                   {doneItem === item && (
                     <ProgressCircle color="#60957A" duration={500} />
                   )}
-                  {(item as Fruit | Vegetable).nutrients && (
+                  {/* {(item as Fruit | Vegetable).nutrients && (
                     <TouchableOpacity>
                       <Ionicons
                         name="information-circle-outline"
@@ -228,7 +228,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
                         size={22}
                       />
                     </TouchableOpacity>
-                  )}
+                  )} */}
                 </View>
               </TouchableOpacity>
             ))

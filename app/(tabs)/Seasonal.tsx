@@ -1,8 +1,8 @@
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ScrollView } from "react-native-gesture-handler";
 import VegetableCard from "@/components/VegetableCard";
-import { filterVariantsDE } from "@/lib/data";
+import { dropdownFilterVariantsDE, filterVariantsDE } from "@/lib/data";
 import { vegetablesDE } from "@/lib/vegetables";
 import { fruitsDE } from "@/lib/fruits";
 import { useNavigation } from "@react-navigation/native";
@@ -18,6 +18,9 @@ const Seasonal = () => {
   const { shoppingLists } = useAppInitialization();
   const [selectedFilter, setSelectedFilter] =
     useState<FilterVariantsDE>("Gemüse");
+  const [displayedData, setDisplayedData] = useState<
+    Fruit[] | Vegetable[] | []
+  >(vegetablesDE);
 
   const navigation = useNavigation<SeasonalNavigationProp>();
 
@@ -29,16 +32,49 @@ const Seasonal = () => {
     navigation.navigate("VegetableDetails", { id });
   };
 
+  const getCurrentMonth = (): Month => {
+    const months: Month[] = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    return months[new Date().getMonth()];
+  };
+
+  // Updated handleData function
+  const handleData = () => {
+    const currentMonth = getCurrentMonth();
+
+    const filteredData =
+      selectedFilter === "Gemüse"
+        ? vegetablesDE.filter((vegetable) =>
+            vegetable.season.includes(currentMonth)
+          )
+        : selectedFilter === "Obst"
+        ? fruitsDE.filter((fruit) => fruit.season.includes(currentMonth))
+        : [];
+
+    setDisplayedData(filteredData);
+  };
+
+  // Call handleData inside useEffect to handle filter changes
+  useEffect(() => {
+    handleData();
+  }, [selectedFilter]);
+
   return (
     <View className={`h-full ${shoppingLists.length > 0 && "pt-14"} `}>
       <FlatList
-        data={
-          selectedFilter == "Gemüse"
-            ? vegetablesDE
-            : selectedFilter == "Obst"
-            ? fruitsDE
-            : []
-        }
+        data={displayedData}
         renderItem={({ item }) => (
           <VegetableCard
             item={item}
@@ -67,6 +103,7 @@ const Seasonal = () => {
                 ?
               </Text>
             </View>
+
             <ScrollView
               showsHorizontalScrollIndicator={false}
               horizontal
@@ -90,6 +127,13 @@ const Seasonal = () => {
                 </TouchableOpacity>
               ))}
             </ScrollView>
+            <View className="flex justify-center items-end">
+              {dropdownFilterVariantsDE.map((filter, i) => (
+                <TouchableOpacity key={i}>
+                  <Text>{filter}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
           </View>
         }
       ></FlatList>

@@ -31,6 +31,8 @@ export const getTimeSpan = (season: Month[], language: Language): string => {
     December: "Dezember",
   };
 
+  const separator = language === "DE" ? "bis" : "to";
+
   // Sort the months by their indices
   const sortedMonths = season
     .map((month) => ({ month, index: monthIndices[month] }))
@@ -44,14 +46,31 @@ export const getTimeSpan = (season: Month[], language: Language): string => {
     const current = sortedMonths[i];
 
     if (current.index !== previousIndex + 1) {
-      ranges.push(`${rangeStart} - ${sortedMonths[i - 1].month}`);
+      ranges.push(`${rangeStart} ${separator} ${sortedMonths[i - 1].month}`);
       rangeStart = current.month;
     }
 
     previousIndex = current.index;
   }
 
-  ranges.push(`${rangeStart} - ${sortedMonths[sortedMonths.length - 1].month}`);
+  ranges.push(
+    `${rangeStart} ${separator} ${sortedMonths[sortedMonths.length - 1].month}`
+  );
+
+  // Check if ranges wrap around the year
+  if (
+    ranges.length > 1 &&
+    monthIndices[sortedMonths[0].month] === 1 &&
+    monthIndices[sortedMonths[sortedMonths.length - 1].month] === 12
+  ) {
+    const firstRange = ranges.shift()!;
+    const lastRange = ranges.pop()!;
+    ranges.unshift(
+      `${lastRange.split(` ${separator} `)[0]} ${separator} ${
+        firstRange.split(` ${separator} `)[1]
+      }`
+    );
+  }
 
   let result = ranges.join(" and ");
 
