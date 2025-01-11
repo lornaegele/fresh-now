@@ -96,3 +96,8 @@ type RootStackParamList = {
   ShoppingList: { list: ShoppingListItem }; // Specify the required list prop
   VegetableDetails: { id: string }; // Params for VegetableDetails
 };
+
+interface ShoppingListContextValue {
+  shoppingLists: ShoppingList;
+  setShoppingLists: React.Dispatch<React.SetStateAction<ShoppingList>>;
+}

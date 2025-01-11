@@ -14,6 +14,7 @@ import ShoppingList from "./(tabs)/ShoppingList";
 import { Text } from "react-native";
 import "./global.css";
 import SeasonalStack from "./stack/SeasonalStack";
+import { ShoppingListProvider } from "@/context/ShoppingListContext";
 
 const Drawer = createDrawerNavigator(); // Drawer navigator
 const Tab = createBottomTabNavigator(); // Define the Tab navigator
@@ -29,7 +30,7 @@ const RootLayout = () => {
   if (!fontsLoaded) return null;
 
   return (
-    <>
+    <ShoppingListProvider>
       <Drawer.Navigator
         screenOptions={{
           headerShown: activeTab !== "Seasonal",
@@ -84,7 +85,7 @@ const RootLayout = () => {
         visible={isModalVisible}
         onClose={() => setIsModalVisible(false)}
       />
-    </>
+    </ShoppingListProvider>
   );
 };
 

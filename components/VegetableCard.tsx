@@ -4,6 +4,7 @@ import { getTimeSpan } from "@/lib/getTimeSpan";
 import useAppInitialization from "@/lib/useAppInitialization";
 import { getShoppingLists, saveShoppingLists } from "@/lib/AsyncStorage";
 import ProgressCircle from "./ProgressCircle"; // Import ProgressCircle component
+import { useShoppingList } from "@/context/ShoppingListContext";
 
 interface Props {
   item: Vegetable | Fruit;
@@ -13,34 +14,22 @@ interface Props {
 const VegetableCard = ({ item, onPress }: Props) => {
   const { activeListId, setShoppingLists, shoppingListEmitter } =
     useAppInitialization();
+  const { shoppingLists } = useShoppingList();
+
   const [loading, setLoading] = useState(false); // State to control progress circle and checkmark display
   const [isItemInList, setIsItemInList] = useState(false); // State to track if the item is already in the list
 
   useEffect(() => {
-    const handleUpdate = (updatedLists: ShoppingListItem[]) => {
-      const activeList = updatedLists.find((list) => list.id === activeListId);
-      console.log("update");
-      if (activeList) {
-        const itemExists =
-          activeList.items &&
-          activeList.items.some(
-            (oldItem) =>
-              oldItem.name.toLowerCase() === item.name.trim().toLowerCase() &&
-              oldItem.status === "open"
-          );
-        if (itemExists) {
-          setIsItemInList(true); // Update the state to indicate item exists
-          return;
-        }
-      }
-    };
-
-    shoppingListEmitter.on("update", handleUpdate);
-
-    return () => {
-      shoppingListEmitter.off("update", handleUpdate);
-    };
-  }, [shoppingListEmitter]);
+    const activeList = shoppingLists.find((list) => list.id === activeListId);
+    if (activeList) {
+      const itemExists = activeList.items?.some(
+        (oldItem) =>
+          oldItem.name.toLowerCase() === item.name.trim().toLowerCase() &&
+          oldItem.status === "open"
+      );
+      itemExists !== undefined && setIsItemInList(itemExists); // Reactively update state
+    }
+  }, [shoppingLists, item.name, activeListId]);
 
   const addToList = async () => {
     try {

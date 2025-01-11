@@ -10,6 +10,7 @@ import { groceriesDE } from "@/lib/groceries";
 import useAppInitialization from "@/lib/useAppInitialization";
 import { useNavigation } from "expo-router";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { useShoppingList } from "@/context/ShoppingListContext";
 
 const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
   const navigation =
@@ -20,26 +21,21 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
     GroceryItem | VegetableItem | FruitItem | null
   >(null);
   const [shoppingList, setShoppingList] = useState<ShoppingListItem>(list);
+  const { shoppingLists } = useShoppingList();
+
   const inputRef = useRef<TextInput | null>(null); // Create a reference for the TextInput
 
-  const { shoppingListEmitter, setShoppingLists } = useAppInitialization();
+  const { shoppingListEmitter, setShoppingLists, activeListId } =
+    useAppInitialization();
 
   useEffect(() => {
-    const handleUpdate = (updatedLists: ShoppingListItem[]) => {
-      const activeList = updatedLists.find(
-        (list) => list.id === shoppingList.id
-      );
-      if (activeList) {
-        setShoppingList(activeList); // Update the shopping list when the lists change
-      }
-    };
-
-    shoppingListEmitter.on("update", handleUpdate);
-
-    return () => {
-      shoppingListEmitter.off("update", handleUpdate);
-    };
-  }, [shoppingListEmitter]);
+    const activeList = shoppingLists.find(
+      (list) => list.id === shoppingList.id
+    );
+    if (activeList) {
+      setShoppingList(activeList); // Update the shopping list when the lists change
+    }
+  }, [shoppingLists, activeListId]);
 
   const handleAddNewItem = async () => {
     // Fetch the current shopping lists from AsyncStorage
