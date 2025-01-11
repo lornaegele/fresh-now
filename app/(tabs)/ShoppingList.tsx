@@ -2,11 +2,10 @@ import { Text, TextInput, View, Alert, TouchableOpacity } from "react-native";
 import React, { useEffect, useRef, useState } from "react";
 import { getShoppingLists, saveShoppingLists } from "@/lib/AsyncStorage";
 import ProgressCircle from "@/components/ProgressCircle";
-import { Ionicons } from "@expo/vector-icons";
 import { ScrollView } from "react-native-gesture-handler";
-import { fruitsDE } from "@/lib/fruits";
-import { vegetablesDE } from "@/lib/vegetables";
-import { groceriesDE } from "@/lib/groceries";
+import { fruitsDE } from "@/data/fruits";
+import { vegetablesDE } from "@/data/vegetables";
+import { groceriesDE } from "@/data/groceries";
 import useAppInitialization from "@/lib/useAppInitialization";
 import { useNavigation } from "expo-router";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -25,8 +24,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
 
   const inputRef = useRef<TextInput | null>(null); // Create a reference for the TextInput
 
-  const { shoppingListEmitter, setShoppingLists, activeListId } =
-    useAppInitialization();
+  const { setShoppingLists, activeListId } = useAppInitialization();
 
   useEffect(() => {
     const activeList = shoppingLists.find(
@@ -228,11 +226,6 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
         onChangeText={setNewItemName}
         onSubmitEditing={handleAddNewItem}
       />
-      <Text className="pt-3 font-rubik-medium text-zinc-600 text-xl px-1">
-        Du kannst zu
-        <Text className="color-primary-300 font-rubik-bold"> Saisonal 🥬 </Text>
-        wechseln um zu sehen, was gerade in Saison ist!
-      </Text>
       <View className="pt-4 display flex flex-col gap-2">
         {shoppingList.items &&
         shoppingList.items.filter((item) => item.status === "open").length >
@@ -272,9 +265,20 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
               </TouchableOpacity>
             ))
         ) : (
-          <Text className="px-1 texl-lg">
-            Deine Liste ist leer, scheint als hättest du alles 🤩
-          </Text>
+          <View className="">
+            <Text className="font-rubik-medium text-zinc-600 text-xl px-1 pb-4">
+              Du kannst zu
+              <Text className="color-primary-300 font-rubik-bold">
+                {" "}
+                Saisonal 🥬{" "}
+              </Text>
+              wechseln um zu sehen, was gerade in Saison ist!
+            </Text>
+            <Text className="px-1 texl-lg">
+              Deine Liste ist leer, scheint als hättest du alles was du
+              brauchst. 🤩
+            </Text>
+          </View>
         )}
       </View>
       {shoppingList.items &&

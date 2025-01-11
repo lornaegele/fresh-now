@@ -12,22 +12,12 @@ const shoppingListEmitter = new EventEmitter();
 
 const useAppInitialization = () => {
   const [isFirstLaunch, setIsFirstLaunch] = useState(false);
-  const [shoppingLists, setShoppingListsState] = useState<ShoppingListItem[]>(
-    []
-  );
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [activeListId, setActiveListId] = useState<string | null>(null);
 
   // Function to update shopping lists and trigger emitter
   const setShoppingLists = (lists: ShoppingListItem[]) => {
-    setShoppingListsState(lists); // Update state
     shoppingListEmitter.emit("update", lists); // Emit update event
-  };
-
-  // Function to add a new list
-  const addNewList = (newList: ShoppingListItem) => {
-    const updatedLists = [...shoppingLists, newList];
-    setShoppingLists(updatedLists); // Use setShoppingLists to update and emit
   };
 
   // Function to fetch the active item
@@ -68,10 +58,8 @@ const useAppInitialization = () => {
   return {
     isFirstLaunch,
     isModalVisible,
-    shoppingLists,
     setShoppingLists,
     setIsModalVisible,
-    addNewList,
     activeListId,
     setActiveItem,
     fetchActiveItem,

@@ -11,6 +11,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { saveShoppingLists } from "@/lib/AsyncStorage";
 import useAppInitialization from "@/lib/useAppInitialization"; // Import the hook
+import { useShoppingList } from "@/context/ShoppingListContext";
 
 interface DrawerContentProps {
   shoppingLists: ShoppingListItem[];
@@ -19,8 +20,9 @@ interface DrawerContentProps {
   state: any; // You can specify the type of state if you need it, for example, DrawerNavigationState
 }
 const CustomDrawerContent: React.FC<DrawerContentProps> = ({ navigation }) => {
-  const { shoppingLists, activeListId, setActiveItem, setShoppingLists } =
+  const { activeListId, setActiveItem, setShoppingLists } =
     useAppInitialization();
+  const { shoppingLists } = useShoppingList();
   const [isAdding, setIsAdding] = React.useState(false);
   const [newListName, setNewListName] = React.useState("");
   const inputRef = useRef<TextInput>(null); // Step 1: Create a ref
@@ -83,7 +85,7 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({ navigation }) => {
         [
           {
             text: "OK",
-            onPress: () => inputRef.current?.focus(), // Refocus input on "OK"
+            onPress: () => inputRef.current?.focus(),
           },
         ]
       );
@@ -91,22 +93,27 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({ navigation }) => {
     }
 
     const id = Date.now().toString();
-
     const newList: ShoppingListItem = {
       id: id,
       name: newListName,
-      icon: "list",
+      emoji: "🏠",
       color: "#CEF1DF",
       items: [],
     };
 
     const updatedLists = [...shoppingLists, newList];
-    shoppingLists.length == 0 && setActiveItem(id); // Set the first active item if it's the first list
+    shoppingLists.length === 0 && setActiveItem(id);
     setShoppingLists(updatedLists);
     setNewListName("");
     setIsAdding(false);
     rotateIcon();
     await saveShoppingLists(updatedLists);
+
+    // Delay navigation until list is updated in the state
+    setTimeout(() => {
+      navigation.navigate(newList.name, { shoppingList: newList });
+      setActiveItem(newList.id);
+    }, 100);
   };
 
   return (
@@ -155,7 +162,7 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({ navigation }) => {
                 activeListId === item.id ? "text-[#e6f2e4]" : "text-[#064223]"
               }`}
             >
-              {item.name}
+              {item.emoji} {item.name}
             </Text>
             <View className="flex-row items-center space-x-2">
               <Text

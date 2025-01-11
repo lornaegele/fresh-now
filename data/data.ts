@@ -10,11 +10,3 @@ export const filterVariantsEN: FilterVariantsEN[] = [
   "Health tips",
   "Shopping tips",
 ];
-export const dropdownFilterVariantsDE: DropdownFilterVariantsDE[] = [
-  "Aktuell in Saison",
-  "Alle",
-];
-export const dropdownFilterVariantsEN: DropdownFilterVariantsEN[] = [
-  "Currently in season",
-  "All",
-];

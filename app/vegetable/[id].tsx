@@ -1,6 +1,6 @@
-import { fruitsDE } from "@/lib/fruits";
+import { fruitsDE } from "@/data/fruits";
 import { getTimeSpan } from "@/lib/getTimeSpan";
-import { vegetablesDE } from "@/lib/vegetables";
+import { vegetablesDE } from "@/data/vegetables";
 import { RouteProp } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { View, Text } from "react-native";

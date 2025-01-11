@@ -19,7 +19,7 @@ type DropdownFilterVariantsEN = "Currently in season" | "All";
 interface ShoppingListItem {
   id: string;
   name: string;
-  icon: string;
+  emoji: string;
   color: string;
   items?: (GroceryItem | VegetableItem | FruitItem)[]; // Allow a mix of Groceries, Vegetables, or Fruits
 }

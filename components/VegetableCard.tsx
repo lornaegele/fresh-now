@@ -12,8 +12,7 @@ interface Props {
 }
 
 const VegetableCard = ({ item, onPress }: Props) => {
-  const { activeListId, setShoppingLists, shoppingListEmitter } =
-    useAppInitialization();
+  const { activeListId, setShoppingLists } = useAppInitialization();
   const { shoppingLists } = useShoppingList();
 
   const [loading, setLoading] = useState(false); // State to control progress circle and checkmark display
@@ -96,7 +95,9 @@ const VegetableCard = ({ item, onPress }: Props) => {
       onPress={onPress}
     >
       <View className="flex-1 justify-center items-center">
-        <Text className="text-7xl text-center">{item.emoji}</Text>
+        <Text className="text-7xl text-center leading-normal">
+          {item.emoji}
+        </Text>
       </View>
       <View className="flex flex-col">
         <Text className="text-white font-rubik-bold text-xl ">{item.name}</Text>

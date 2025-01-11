@@ -2,12 +2,12 @@ import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import React, { useEffect, useState } from "react";
 import { ScrollView } from "react-native-gesture-handler";
 import VegetableCard from "@/components/VegetableCard";
-import { dropdownFilterVariantsDE, filterVariantsDE } from "@/lib/data";
-import { vegetablesDE } from "@/lib/vegetables";
-import { fruitsDE } from "@/lib/fruits";
+import { filterVariantsDE } from "@/data/data";
+import { vegetablesDE } from "@/data/vegetables";
+import { fruitsDE } from "@/data/fruits";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import useAppInitialization from "@/lib/useAppInitialization";
+import { useShoppingList } from "@/context/ShoppingListContext";
 
 type SeasonalNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -15,7 +15,7 @@ type SeasonalNavigationProp = NativeStackNavigationProp<
 >;
 
 const Seasonal = () => {
-  const { shoppingLists } = useAppInitialization();
+  const { shoppingLists } = useShoppingList();
   const [selectedFilter, setSelectedFilter] =
     useState<FilterVariantsDE>("Gemüse");
   const [displayedData, setDisplayedData] = useState<
