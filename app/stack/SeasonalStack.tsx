@@ -6,13 +6,6 @@ import VegetableDetails from "../vegetable/[id]";
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const SeasonalStack = () => {
-  const shoppingList: ShoppingListItem = {
-    name: "Example Item",
-    color: "green",
-    icon: "example-icon",
-    id: "1",
-  };
-
   return (
     <Stack.Navigator>
       <Stack.Screen

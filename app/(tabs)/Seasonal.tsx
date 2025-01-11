@@ -21,6 +21,7 @@ const Seasonal = () => {
   const [displayedData, setDisplayedData] = useState<
     Fruit[] | Vegetable[] | []
   >(vegetablesDE);
+  const [viewAll, setViewAll] = useState(false); // State for "See All" / "See Seasonal"
 
   const navigation = useNavigation<SeasonalNavigationProp>();
 
@@ -50,26 +51,29 @@ const Seasonal = () => {
     return months[new Date().getMonth()];
   };
 
-  // Updated handleData function
+  // Updated handleData function to support "See All"
   const handleData = () => {
-    const currentMonth = getCurrentMonth();
-
-    const filteredData =
-      selectedFilter === "Gemüse"
-        ? vegetablesDE.filter((vegetable) =>
-            vegetable.season.includes(currentMonth)
-          )
-        : selectedFilter === "Obst"
-        ? fruitsDE.filter((fruit) => fruit.season.includes(currentMonth))
-        : [];
-
-    setDisplayedData(filteredData);
+    if (viewAll) {
+      const allData = selectedFilter === "Gemüse" ? vegetablesDE : fruitsDE;
+      setDisplayedData(allData);
+    } else {
+      const currentMonth = getCurrentMonth();
+      const filteredData =
+        selectedFilter === "Gemüse"
+          ? vegetablesDE.filter((vegetable) =>
+              vegetable.season.includes(currentMonth)
+            )
+          : selectedFilter === "Obst"
+          ? fruitsDE.filter((fruit) => fruit.season.includes(currentMonth))
+          : [];
+      setDisplayedData(filteredData);
+    }
   };
 
-  // Call handleData inside useEffect to handle filter changes
+  // Call handleData inside useEffect to handle filter or view mode changes
   useEffect(() => {
     handleData();
-  }, [selectedFilter]);
+  }, [selectedFilter, viewAll]);
 
   return (
     <View className={`h-full ${shoppingLists.length > 0 && "pt-14"} `}>
@@ -103,7 +107,6 @@ const Seasonal = () => {
                 ?
               </Text>
             </View>
-
             <ScrollView
               showsHorizontalScrollIndicator={false}
               horizontal
@@ -127,12 +130,16 @@ const Seasonal = () => {
                 </TouchableOpacity>
               ))}
             </ScrollView>
-            <View className="flex justify-center items-end">
-              {dropdownFilterVariantsDE.map((filter, i) => (
-                <TouchableOpacity key={i}>
-                  <Text>{filter}</Text>
-                </TouchableOpacity>
-              ))}
+            {/* Toggle Buttons */}
+            <View className="flex-row justify-end items-center mb-4">
+              <TouchableOpacity
+                onPress={() => setViewAll(!viewAll)}
+                className="px-2"
+              >
+                <Text className="font-rubik-medium underline color-primary-200">
+                  {viewAll ? "Nur Saisonal" : "Alle ansehen"}
+                </Text>
+              </TouchableOpacity>
             </View>
           </View>
         }

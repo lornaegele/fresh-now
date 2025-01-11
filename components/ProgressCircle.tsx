@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { View, Text } from "react-native";
 import { CircularProgress } from "react-native-circular-progress";
 
 const ProgressCircle = ({
   color,
   duration,
+  size,
 }: {
   color: string;
   duration: number;
+  size?: number;
 }) => {
   const [progress, setProgress] = useState(0);
 
@@ -31,7 +32,7 @@ const ProgressCircle = ({
 
   return (
     <CircularProgress
-      size={18}
+      size={size ? size : 18}
       width={4}
       fill={progress}
       tintColor={color}

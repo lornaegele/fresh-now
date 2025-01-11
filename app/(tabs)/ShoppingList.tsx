@@ -1,5 +1,5 @@
 import { Text, TextInput, View, Alert, TouchableOpacity } from "react-native";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { getShoppingLists, saveShoppingLists } from "@/lib/AsyncStorage";
 import ProgressCircle from "@/components/ProgressCircle";
 import { Ionicons } from "@expo/vector-icons";
@@ -7,8 +7,14 @@ import { ScrollView } from "react-native-gesture-handler";
 import { fruitsDE } from "@/lib/fruits";
 import { vegetablesDE } from "@/lib/vegetables";
 import { groceriesDE } from "@/lib/groceries";
+import useAppInitialization from "@/lib/useAppInitialization";
+import { useNavigation } from "expo-router";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
   const [newItemName, setNewItemName] = useState("");
   const [doneItem, setDoneItem] = useState<
     GroceryItem | VegetableItem | FruitItem | null
@@ -16,17 +22,40 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
   const [shoppingList, setShoppingList] = useState<ShoppingListItem>(list);
   const inputRef = useRef<TextInput | null>(null); // Create a reference for the TextInput
 
+  const { shoppingListEmitter, setShoppingLists } = useAppInitialization();
+
+  useEffect(() => {
+    const handleUpdate = (updatedLists: ShoppingListItem[]) => {
+      const activeList = updatedLists.find(
+        (list) => list.id === shoppingList.id
+      );
+      if (activeList) {
+        setShoppingList(activeList); // Update the shopping list when the lists change
+      }
+    };
+
+    shoppingListEmitter.on("update", handleUpdate);
+
+    return () => {
+      shoppingListEmitter.off("update", handleUpdate);
+    };
+  }, [shoppingListEmitter]);
+
   const handleAddNewItem = async () => {
+    // Fetch the current shopping lists from AsyncStorage
+    let shoppingLists = await getShoppingLists();
     if (!newItemName.trim()) return;
 
     // Combine all items from the three imported JSON files
     const allItems = [...fruitsDE, ...groceriesDE, ...vegetablesDE];
 
-    // Check if the new item already exists in any of the files
+    // Check if the new item already exists in any of the files and has a status of "open"
     const itemExists =
       shoppingList.items &&
       shoppingList.items.some(
-        (item) => item.name.toLowerCase() === newItemName.trim().toLowerCase()
+        (item) =>
+          item.name.toLowerCase() === newItemName.trim().toLowerCase() &&
+          item.status === "open"
       );
 
     if (itemExists) {
@@ -70,20 +99,25 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
     }
 
     // Update the shopping list
-    const updatedList: ShoppingListItem = {
+    let updatedList: ShoppingListItem = {
       ...shoppingList,
       items: [...updatedItems, newGrocery],
     };
 
     setShoppingList(updatedList);
+    // Save the updated shopping lists back to AsyncStorage
+    await saveShoppingLists(shoppingLists);
+
+    // Update the state of shopping lists, if necessary
+    setShoppingLists(shoppingLists); // Assuming setShoppingLists updates the state
     setNewItemName("");
 
     try {
-      const existingLists = await getShoppingLists();
-      const updatedLists = existingLists.map((list) =>
+      let updatedLists = shoppingLists.map((list) =>
         list.id === shoppingList.id ? updatedList : list
       );
       await saveShoppingLists(updatedLists);
+      setShoppingLists(updatedLists); // Assuming setShoppingLists updates the state
     } catch (error) {
       console.error("Error updating shopping list:", error);
     }
@@ -103,7 +137,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
           text: "Löschen",
           style: "destructive",
           onPress: async () => {
-            const updatedList: ShoppingListItem = {
+            let updatedList: ShoppingListItem = {
               ...shoppingList,
               items:
                 shoppingList.items?.filter((item) => item.status !== "done") ||
@@ -114,10 +148,11 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
 
             try {
               const existingLists = await getShoppingLists();
-              const updatedLists = existingLists.map((list) =>
+              let updatedLists = existingLists.map((list) =>
                 list.id === shoppingList.id ? updatedList : list
               );
               await saveShoppingLists(updatedLists);
+              setShoppingLists(updatedLists); // Assuming setShoppingLists updates the state
             } catch (error) {
               console.error("Error clearing done items:", error);
             }
@@ -128,6 +163,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
   };
 
   const toggleItemStatus = async (itemId: string) => {
+    let existingLists = await getShoppingLists();
     const itemIndex = shoppingList.items!.findIndex(
       (item) => item.id === itemId
     );
@@ -139,7 +175,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
       setDoneItem(item);
 
       setTimeout(async () => {
-        const updatedList: ShoppingListItem = {
+        let updatedList: ShoppingListItem = {
           ...shoppingList,
           items: shoppingList.items!.map((item) =>
             item.id === itemId ? { ...item, status: "done" } : item
@@ -149,18 +185,18 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
         setShoppingList(updatedList);
 
         try {
-          const existingLists = await getShoppingLists();
-          const updatedLists = existingLists.map((l) =>
+          let updatedLists = existingLists.map((l) =>
             l.id === shoppingList.id ? updatedList : l
           );
           await saveShoppingLists(updatedLists);
+          setShoppingLists(updatedLists); // Assuming setShoppingLists updates the state
         } catch (error) {
           console.error("Error finalizing shopping list update:", error);
         }
       }, 500);
     } else {
       setDoneItem(null);
-      const updatedList: ShoppingListItem = {
+      let updatedList: ShoppingListItem = {
         ...shoppingList,
         items: shoppingList.items!.map((item) =>
           item.id === itemId ? { ...item, status: "open" } : item
@@ -170,15 +206,20 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
       setShoppingList(updatedList);
 
       try {
-        const existingLists = await getShoppingLists();
-        const updatedLists = existingLists.map((l) =>
+        let updatedLists = existingLists.map((l) =>
           l.id === shoppingList.id ? updatedList : l
         );
         await saveShoppingLists(updatedLists);
+        setShoppingLists(updatedLists); // Assuming setShoppingLists updates the state
       } catch (error) {
         console.error("Error reverting item status:", error);
       }
     }
+  };
+
+  const navigateToVegetableDetails = (vegetableId: string) => {
+    // Navigate to VegetableDetails screen, passing the vegetable ID as a parameter
+    navigation.navigate("VegetableDetails", { id: vegetableId });
   };
 
   return (
@@ -221,7 +262,9 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
                     <ProgressCircle color="#60957A" duration={500} />
                   )}
                   {/* {(item as Fruit | Vegetable).nutrients && (
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                      onPress={() => navigateToVegetableDetails("veg001")}
+                    >
                       <Ionicons
                         name="information-circle-outline"
                         className="text-xl"

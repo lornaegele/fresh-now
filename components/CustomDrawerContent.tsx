@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import {
   SafeAreaView,
   View,
@@ -9,39 +9,22 @@ import {
   Alert,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import {
-  getActiveItem,
-  saveActiveItem,
-  saveShoppingLists,
-} from "@/lib/AsyncStorage";
+import { saveShoppingLists } from "@/lib/AsyncStorage";
+import useAppInitialization from "@/lib/useAppInitialization"; // Import the hook
 
 interface DrawerContentProps {
   shoppingLists: ShoppingListItem[];
-  setShoppingLists: React.Dispatch<React.SetStateAction<ShoppingListItem[]>>;
-  navigation: any;
+  setShoppingLists: (lists: ShoppingListItem[]) => void; // Provided as a prop
+  navigation: any; // Use 'any' or a more specific type depending on your navigation setup
+  state: any; // You can specify the type of state if you need it, for example, DrawerNavigationState
 }
-
-const CustomDrawerContent: React.FC<DrawerContentProps> = ({
-  shoppingLists,
-  setShoppingLists,
-  navigation,
-}) => {
-  const [activeItemId, setActiveItemId] = useState<string | null>(null);
-  const [isAdding, setIsAdding] = useState(false);
-  const [newListName, setNewListName] = useState("");
+const CustomDrawerContent: React.FC<DrawerContentProps> = ({ navigation }) => {
+  const { shoppingLists, activeListId, setActiveItem, setShoppingLists } =
+    useAppInitialization();
+  const [isAdding, setIsAdding] = React.useState(false);
+  const [newListName, setNewListName] = React.useState("");
   const inputRef = useRef<TextInput>(null); // Step 1: Create a ref
   const rotationValue = useRef(new Animated.Value(0)).current;
-
-  const fetchActiveItem = async () => {
-    const storedActiveItem = await getActiveItem();
-    if (storedActiveItem) {
-      setActiveItemId(storedActiveItem);
-    }
-  };
-
-  useEffect(() => {
-    fetchActiveItem();
-  }, []);
 
   const toggleAddMode = () => {
     setIsAdding(!isAdding);
@@ -118,8 +101,8 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({
     };
 
     const updatedLists = [...shoppingLists, newList];
-    shoppingLists.length == 0 && setActiveItemId(newList.id);
-    setShoppingLists?.(updatedLists);
+    shoppingLists.length == 0 && setActiveItem(id); // Set the first active item if it's the first list
+    setShoppingLists(updatedLists);
     setNewListName("");
     setIsAdding(false);
     rotateIcon();
@@ -160,17 +143,16 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({
           <TouchableOpacity
             key={index}
             className={`flex-row items-center justify-between px-4 py-4 rounded-2xl mx-2 ${
-              activeItemId === item.id ? "bg-primary-200" : "bg-zinc-100"
+              activeListId === item.id ? "bg-primary-200" : "bg-zinc-100"
             }`}
             onPress={() => {
               navigation.navigate(item.name, { shoppingList: item });
-              saveActiveItem(item.id);
-              fetchActiveItem();
+              setActiveItem(item.id); // Update active item
             }}
           >
             <Text
               className={`font-bold text-lg ${
-                activeItemId === item.id ? "text-[#e6f2e4]" : "text-[#064223]"
+                activeListId === item.id ? "text-[#e6f2e4]" : "text-[#064223]"
               }`}
             >
               {item.name}

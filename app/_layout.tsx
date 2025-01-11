@@ -13,7 +13,7 @@ import CustomDrawerContent from "@/components/CustomDrawerContent";
 import ShoppingList from "./(tabs)/ShoppingList";
 import { Text } from "react-native";
 import "./global.css";
-import SeasonalStack from "./stacks/SeasonalStack";
+import SeasonalStack from "./stack/SeasonalStack";
 
 const Drawer = createDrawerNavigator(); // Drawer navigator
 const Tab = createBottomTabNavigator(); // Define the Tab navigator
