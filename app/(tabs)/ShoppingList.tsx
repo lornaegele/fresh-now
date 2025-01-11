@@ -10,6 +10,7 @@ import useAppInitialization from "@/lib/useAppInitialization";
 import { useNavigation } from "expo-router";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useShoppingList } from "@/context/ShoppingListContext";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
   const navigation =
@@ -221,7 +222,12 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
       <TextInput
         ref={inputRef}
         className=" bg-white shadow shadow-zinc-200 rounded-2xl p-4"
-        placeholder="Was brauchst du?"
+        placeholder={`Was brauchst du${
+          shoppingList.items &&
+          shoppingList.items.filter((item) => item.status === "open").length > 0
+            ? " noch?"
+            : "?"
+        }`}
         value={newItemName}
         onChangeText={setNewItemName}
         onSubmitEditing={handleAddNewItem}
@@ -265,16 +271,8 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
               </TouchableOpacity>
             ))
         ) : (
-          <View className="">
-            <Text className="font-rubik-medium text-zinc-600 text-xl px-1 pb-4">
-              Du kannst zu
-              <Text className="color-primary-300 font-rubik-bold">
-                {" "}
-                Saisonal 🥬{" "}
-              </Text>
-              wechseln um zu sehen, was gerade in Saison ist!
-            </Text>
-            <Text className="px-1 texl-lg">
+          <View>
+            <Text className="px-1 text-lg">
               Deine Liste ist leer, scheint als hättest du alles was du
               brauchst. 🤩
             </Text>

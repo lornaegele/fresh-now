@@ -32,9 +32,6 @@ const VegetableCard = ({ item, onPress }: Props) => {
 
   const addToList = async () => {
     try {
-      // Fetch the current shopping lists from AsyncStorage
-      let shoppingLists = await getShoppingLists();
-
       // Find the active shopping list by activeListId
       const activeList = shoppingLists.find((list) => list.id === activeListId);
 
@@ -109,18 +106,20 @@ const VegetableCard = ({ item, onPress }: Props) => {
           {getTimeSpan(item.season, "DE")}
         </Text>
       </View>
-      <TouchableOpacity
-        onPress={addToList}
-        className="bg-white absolute  justify-center items-center right-2 top-2 w-10 h-10 rounded-xl shadow shadow-zinc-500"
-      >
-        {loading ? (
-          <ProgressCircle color="green" duration={500} size={20} /> // Show progress circle while adding item
-        ) : isItemInList ? (
-          <Text className="text-lg">✔️</Text> // Show shopping cart icon if item isn't added
-        ) : (
-          <Text className="text-lg">🛒</Text> // Show shopping cart icon if item isn't added
-        )}
-      </TouchableOpacity>
+      {shoppingLists.find((list) => list.id === activeListId) && (
+        <TouchableOpacity
+          onPress={addToList}
+          className="bg-white absolute  justify-center items-center right-2 top-2 w-10 h-10 rounded-xl shadow shadow-zinc-500"
+        >
+          {loading ? (
+            <ProgressCircle color="green" duration={500} size={20} /> // Show progress circle while adding item
+          ) : isItemInList ? (
+            <Text className="text-lg">✔️</Text> // Show shopping cart icon if item isn't added
+          ) : (
+            <Text className="text-lg">🛒</Text> // Show shopping cart icon if item isn't added
+          )}
+        </TouchableOpacity>
+      )}
     </TouchableOpacity>
   );
 };

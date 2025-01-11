@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   createDrawerNavigator,
   DrawerNavigationProp,
@@ -6,17 +6,16 @@ import {
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
-import WelcomeModal from "@/components/WelcomeModal";
 import useFontLoading from "@/lib/useFontLoading";
 import CustomDrawerContent from "@/components/CustomDrawerContent";
 import ShoppingList from "./(tabs)/ShoppingList";
 import { Text } from "react-native";
 import "./global.css";
 import SeasonalStack from "./stack/SeasonalStack";
-import {
-  ShoppingListProvider,
-  useShoppingList,
-} from "@/context/ShoppingListContext";
+import { useShoppingList } from "@/context/ShoppingListContext";
+import WelcomeModal from "@/components/WelcomeModal";
+import { isFirstTime, setFirstTimeFlag } from "@/lib/AsyncStorage";
+import NoLists from "./(tabs)/NoLists";
 
 const Drawer = createDrawerNavigator(); // Drawer navigator
 const Tab = createBottomTabNavigator(); // Define the Tab navigator
@@ -27,33 +26,75 @@ const Home = () => {
   const fontsLoaded = useFontLoading();
   const { shoppingLists, setShoppingLists } = useShoppingList(); // Use the shopping list context here
   const [activeTab, setActiveTab] = useState<string | null>(null);
+  const [modalVisible, setModalVisible] = useState(false); // State for controlling modal visibility
+
+  useEffect(() => {
+    const checkFirstTime = async () => {
+      const firstTime = await isFirstTime();
+      if (firstTime) {
+        setModalVisible(true); // Show modal if it's the first time
+      }
+    };
+    checkFirstTime();
+  }, []);
+
+  const handleCloseModal = async () => {
+    setModalVisible(false); // Close the modal
+    await setFirstTimeFlag(); // Mark as not the first time
+  };
 
   if (!fontsLoaded) return null;
 
   return (
-    <Drawer.Navigator
-      screenOptions={{
-        headerShown: activeTab !== "Seasonal",
-        headerBackground: () => null,
-        headerTintColor: "#0F5933",
-        headerLeft: () => <DrawerHamburgerIcon />,
-        drawerType: "back",
-      }}
-      drawerContent={(props) => (
-        <CustomDrawerContent
-          {...props}
-          shoppingLists={shoppingLists}
-          setShoppingLists={setShoppingLists}
-        />
-      )}
-    >
-      {shoppingLists.length > 0 ? (
-        shoppingLists.map((list) => (
+    <>
+      <Drawer.Navigator
+        screenOptions={{
+          headerShown: activeTab !== "Seasonal",
+          headerBackground: () => null,
+          headerTintColor: "#0F5933",
+          headerLeft: () => <DrawerHamburgerIcon />,
+          drawerType: "back",
+        }}
+        drawerContent={(props) => (
+          <CustomDrawerContent
+            {...props}
+            shoppingLists={shoppingLists}
+            setShoppingLists={setShoppingLists}
+          />
+        )}
+      >
+        {shoppingLists.length > 0 ? (
+          shoppingLists.map((list) => (
+            <Drawer.Screen
+              key={list.id}
+              name={list.name}
+              options={{
+                title: `${list.emoji} ${list.name}`,
+                drawerLabelStyle: {
+                  fontSize: 16,
+                  fontWeight: "bold",
+                },
+                drawerActiveTintColor: "#CEF1DF",
+                drawerInactiveTintColor: "#0F5933",
+                drawerActiveBackgroundColor: "#60957A",
+              }}
+              initialParams={{ shoppingList: list }}
+            >
+              {(props) => (
+                <ShoppingListWithTabs
+                  {...props}
+                  list={list}
+                  setActiveTab={setActiveTab}
+                />
+              )}
+            </Drawer.Screen>
+          ))
+        ) : (
           <Drawer.Screen
-            key={list.id}
-            name={list.name}
+            key={1415926535}
+            name="Welcome"
             options={{
-              title: list.name,
+              title: "👋 Willkommen",
               drawerLabelStyle: {
                 fontSize: 16,
                 fontWeight: "bold",
@@ -62,21 +103,20 @@ const Home = () => {
               drawerInactiveTintColor: "#0F5933",
               drawerActiveBackgroundColor: "#60957A",
             }}
-            initialParams={{ shoppingList: list }}
           >
             {(props) => (
               <ShoppingListWithTabs
                 {...props}
-                list={list}
+                list={null}
                 setActiveTab={setActiveTab}
               />
             )}
           </Drawer.Screen>
-        ))
-      ) : (
-        <Drawer.Screen name="Seasonal" component={SeasonalStack} />
-      )}
-    </Drawer.Navigator>
+        )}
+      </Drawer.Navigator>
+
+      {/* <WelcomeModal visible={modalVisible} onClose={handleCloseModal} /> */}
+    </>
   );
 };
 
@@ -84,7 +124,7 @@ const ShoppingListWithTabs = ({
   list,
   setActiveTab,
 }: {
-  list: any;
+  list: ShoppingListItem | null;
   setActiveTab: React.Dispatch<React.SetStateAction<string | null>>;
 }) => {
   return (
@@ -104,7 +144,10 @@ const ShoppingListWithTabs = ({
           focus: () => setActiveTab("ShoppingList"),
         }}
       >
-        {(props) => <ShoppingList list={list} />}
+        {(props) =>
+          // Conditionally render ShoppingList or NoLists based on whether the list is empty
+          list === null ? <NoLists /> : <ShoppingList list={list} />
+        }
       </Tab.Screen>
 
       <Tab.Screen

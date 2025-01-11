@@ -1,6 +1,13 @@
 // src/screens/WelcomeModal.tsx
 import React from "react";
-import { Modal, View, Text, Button, StyleSheet } from "react-native";
+import {
+  Modal,
+  View,
+  Text,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 
 interface WelcomeModalProps {
   visible: boolean;
@@ -10,41 +17,28 @@ interface WelcomeModalProps {
 const WelcomeModal: React.FC<WelcomeModalProps> = ({ visible, onClose }) => {
   return (
     <Modal visible={visible} transparent={true} animationType="fade">
-      <View style={styles.modalOverlay}>
-        <View style={styles.modalContainer}>
-          <Text style={styles.modalTitle}>Welcome to the App!</Text>
-          <Text style={styles.modalText}>
-            We're glad to have you here. Enjoy your shopping!
-          </Text>
-          <Button title="Close" onPress={onClose} />
+      <View className="flex-1 justify-center items-center bg-black-100/40 bg-opacity-50">
+        <View className="w-[80%] bg-white rounded-xl items-center">
+          <View className=" p-5">
+            <Text className="text-xl font-rubik-bold text-center">
+              Wilkommen bei FrischZeit 🥬
+            </Text>
+            <Text className="my-3 text-center">
+              Wir freuen uns, dass du die App benutzen möchtest!
+            </Text>
+          </View>
+          <TouchableOpacity
+            onPress={onClose}
+            className="bg-primary-100 w-full flex justify-center items-center p-2 rounded-b-xl"
+          >
+            <Text className="text-primary-200 text-lg font-rubik-semibold">
+              Los legen!
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </Modal>
   );
 };
-
-const styles = StyleSheet.create({
-  modalOverlay: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-  },
-  modalContainer: {
-    width: 300,
-    padding: 20,
-    backgroundColor: "white",
-    borderRadius: 10,
-    alignItems: "center",
-  },
-  modalTitle: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  modalText: {
-    marginVertical: 10,
-    textAlign: "center",
-  },
-});
 
 export default WelcomeModal;

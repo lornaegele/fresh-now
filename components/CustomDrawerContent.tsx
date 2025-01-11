@@ -63,6 +63,10 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({ navigation }) => {
           style: "destructive",
           onPress: () => {
             const updatedLists = shoppingLists.filter((list) => list.id !== id);
+            if (activeListId == id) {
+              const lastItem = updatedLists[updatedLists.length - 1];
+              setActiveItem(lastItem ? lastItem.id : activeListId);
+            }
             setShoppingLists(updatedLists);
             saveShoppingLists(updatedLists);
           },
@@ -146,37 +150,43 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({ navigation }) => {
       )}
 
       <View className="flex-col gap-2">
-        {shoppingLists.map((item, index) => (
-          <TouchableOpacity
-            key={index}
-            className={`flex-row items-center justify-between px-4 py-4 rounded-2xl mx-2 ${
-              activeListId === item.id ? "bg-primary-200" : "bg-zinc-100"
-            }`}
-            onPress={() => {
-              navigation.navigate(item.name, { shoppingList: item });
-              setActiveItem(item.id); // Update active item
-            }}
-          >
-            <Text
-              className={`font-bold text-lg ${
-                activeListId === item.id ? "text-[#e6f2e4]" : "text-[#064223]"
+        {shoppingLists.length === 0 ? (
+          <Text className=" px-4 text-gray-500 pt-2">
+            Noch keine Einkaufsliste vorhanden
+          </Text>
+        ) : (
+          shoppingLists.map((item, index) => (
+            <TouchableOpacity
+              key={index}
+              className={`flex-row items-center justify-between px-4 py-4 rounded-2xl mx-2 ${
+                activeListId === item.id ? "bg-primary-200" : "bg-zinc-100"
               }`}
+              onPress={() => {
+                navigation.navigate(item.name, { shoppingList: item });
+                setActiveItem(item.id); // Update active item
+              }}
             >
-              {item.emoji} {item.name}
-            </Text>
-            <View className="flex-row items-center space-x-2">
               <Text
-                onPress={(e) => {
-                  e.stopPropagation();
-                  handleDelete(item.id);
-                }}
-                className="text-xl"
+                className={`font-bold text-lg ${
+                  activeListId === item.id ? "text-[#e6f2e4]" : "text-[#064223]"
+                }`}
               >
-                ⛔
+                {item.emoji} {item.name}
               </Text>
-            </View>
-          </TouchableOpacity>
-        ))}
+              <View className="flex-row items-center space-x-2">
+                <Text
+                  onPress={(e) => {
+                    e.stopPropagation();
+                    handleDelete(item.id);
+                  }}
+                  className="text-xl"
+                >
+                  ⛔
+                </Text>
+              </View>
+            </TouchableOpacity>
+          ))
+        )}
       </View>
     </SafeAreaView>
   );
