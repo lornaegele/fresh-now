@@ -10,8 +10,8 @@ type FilterVariantsEN =
 type FilterVariantsDE =
   | "Gemüse"
   | "Obst"
-  | "Tips beim Einkaufen"
-  | "Gesundheits Tips";
+  | "Tipps beim Einkaufen"
+  | "Gesundheits-Tipps";
 type DropdownFilterVariantsDE = "Aktuell in Saison" | "Alle";
 type DropdownFilterVariantsEN = "Currently in season" | "All";
 
@@ -99,6 +99,13 @@ type RootStackParamList = {
   Seasonal: undefined; // No params for Seasonal
   ShoppingList: { list: ShoppingListItem }; // Specify the required list prop
   VegetableDetails: { id: string }; // Params for VegetableDetails
+};
+
+type HealthTip = {
+  id: string;
+  name: string;
+  content: string;
+  emoji: string;
 };
 
 interface ShoppingListContextValue {

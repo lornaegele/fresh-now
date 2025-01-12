@@ -298,7 +298,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
           <View className="flex flex-row justify-between p-2 pt-4 pb-4">
             <Text className="color-zinc-400">Das brauch ich alles:</Text>
             <TouchableOpacity onPress={moveAllItemsToDone}>
-              <Text className="color-[#f08181] underline">alles gekauft</Text>
+              <Text className="color-[#f08181] underline">Alles gekauft</Text>
             </TouchableOpacity>
           </View>
           <View className="display flex flex-col gap-2">
@@ -341,7 +341,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
             <View className="flex flex-row justify-between p-2">
               <Text className="color-zinc-400">Schon gekauft:</Text>
               <TouchableOpacity onPress={clearDoneItems}>
-                <Text className="color-[#f08181] underline">leeren</Text>
+                <Text className="color-[#f08181] underline">Leeren</Text>
               </TouchableOpacity>
             </View>
             {shoppingList.items
