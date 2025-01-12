@@ -237,10 +237,12 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
             {suggestions.map((item) => (
               <TouchableOpacity
                 key={item.id}
-                onPress={() => {
-                  setNewItemName(item.name); // Set the input to the selected item
-                  handleAddNewItem(item.name);
-                  setSuggestions([]); // Clear suggestions
+                onPress={async () => {
+                  // Directly handle adding the new item and set suggestions after that
+                  await handleAddNewItem(item.name); // Handle the new item addition
+
+                  setNewItemName(""); // Reset the input field after adding the item
+                  setSuggestions([]); // Clear suggestions after the item is added
                 }}
                 className="p-4 px-5 border-b border-zinc-200"
               >
