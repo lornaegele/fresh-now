@@ -138,6 +138,13 @@ const VegetableDetails = ({ route }: { route: VegetableDetailsRouteProp }) => {
                 </Text>
               ))}
             </View>
+            <View>
+              <Text className="text-gray-500 px-2 text-sm">
+                *NRV: Nährstoffbezugswerte (nutritient reference values) sind
+                rechtlich festgelegte Referenzmengen für die Tageszufuhr von
+                Vitaminen und Mineralstoffen.
+              </Text>
+            </View>
           </View>
         </View>
       ) : (
