@@ -7,7 +7,6 @@ import { vegetablesDE } from "@/data/vegetables";
 import { fruitsDE } from "@/data/fruits";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { useShoppingList } from "@/context/ShoppingListContext";
 
 type SeasonalNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -15,7 +14,6 @@ type SeasonalNavigationProp = NativeStackNavigationProp<
 >;
 
 const Seasonal = () => {
-  const { shoppingLists } = useShoppingList();
   const [selectedFilter, setSelectedFilter] =
     useState<FilterVariantsDE>("Gemüse");
   const [displayedData, setDisplayedData] = useState<

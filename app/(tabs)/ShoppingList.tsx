@@ -112,15 +112,15 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
   const clearDoneItems = async () => {
     Alert.alert(
       "Leeren bestätigen",
-      "Bist du sicher, dann du alles aus deinen bereits gekauften löschen willst?",
+      'Bist du sicher, dass du alles aus "Schon gekauft" löschen willst?',
       [
         {
           text: "Abbrechen",
           style: "cancel",
         },
         {
-          text: "Löschen",
-          style: "destructive",
+          text: "Ja, ich bin sicher",
+          style: "default",
           onPress: async () => {
             let updatedList: ShoppingListItem = {
               ...shoppingList,
@@ -215,6 +215,43 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
     setSuggestions(filteredSuggestions);
   };
 
+  const moveAllItemsToDone = async () => {
+    Alert.alert(
+      "Alles gekauft?",
+      'Bist du sicher, dass du alles gekauft hast und die Artikel zu "Schon gekauft" verschieben möchtest?',
+      [
+        {
+          text: "Abbrechen",
+          style: "cancel",
+        },
+        {
+          text: "Ja, alles gekauft",
+          style: "default",
+          onPress: async () => {
+            let updatedList: ShoppingListItem = {
+              ...shoppingList,
+              items: shoppingList.items!.map((item) =>
+                item.status === "open" ? { ...item, status: "done" } : item
+              ),
+            };
+
+            setShoppingList(updatedList);
+
+            try {
+              let updatedLists = shoppingLists.map((list) =>
+                list.id === shoppingList.id ? updatedList : list
+              );
+              await saveShoppingLists(updatedLists);
+              setShoppingLists(updatedLists); // Assuming setShoppingLists updates the state
+            } catch (error) {
+              console.error("Error updating shopping list:", error);
+            }
+          },
+        },
+      ]
+    );
+  };
+
   return (
     <ScrollView className="px-4" showsVerticalScrollIndicator={false}>
       <TextInput
@@ -228,68 +265,76 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
         value={newItemName}
         onChangeText={handleChangeText}
         onSubmitEditing={() => handleAddNewItem(newItemName)}
-        blurOnSubmit={false}
+        submitBehavior="submit" // This replaces the blurOnSubmit prop
       />
       {/* Suggestions dropdown */}
       {suggestions.length > 0 && newItemName.trim() !== "" && (
-        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-          <View className="absolute w-full bg-white shadow-lg shadow-zinc-400 overflow-scroll mt-2 rounded-2xl top-12 z-[100]">
-            {suggestions.map((item) => (
-              <TouchableOpacity
-                key={item.id}
-                onPress={async () => {
-                  // Directly handle adding the new item and set suggestions after that
-                  await handleAddNewItem(item.name); // Handle the new item addition
+        <View className="absolute w-full bg-white shadow-lg shadow-zinc-400 overflow-scroll mt-2 rounded-2xl top-12 z-[100]">
+          {suggestions.map((item) => (
+            <TouchableOpacity
+              key={item.id}
+              onPress={async () => {
+                // Add the new item directly
+                await handleAddNewItem(item.name);
 
-                  setNewItemName(""); // Reset the input field after adding the item
-                  setSuggestions([]); // Clear suggestions after the item is added
-                }}
-                className="p-4 px-5 border-b border-zinc-200"
-              >
-                <Text className="text-lg">
-                  {item.emoji} {item.name}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        </TouchableWithoutFeedback>
+                // Optionally clear the input field and suggestions
+                Keyboard.dismiss;
+
+                setNewItemName(""); // Reset the input field
+                setSuggestions([]); // Clear the suggestions
+              }}
+              className="p-4 px-5 border-b border-zinc-200"
+            >
+              <Text className="text-lg">
+                {item.emoji} {item.name}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
       )}
-      <View className="pt-4 display flex flex-col gap-2">
-        {shoppingList.items &&
-        shoppingList.items.filter((item) => item.status === "open").length >
-          0 ? (
-          shoppingList.items
-            .filter((item) => item.status === "open")
-            .reverse()
-            .map((item) => (
-              <TouchableOpacity
-                key={item.id}
-                onPress={() => toggleItemStatus(item.id)}
-                className="bg-white p-2 px-5 rounded-xl flex flex-row justify-between items-center w-full"
-              >
-                <Text
-                  className={`text-lg ${
-                    doneItem === item ? "line-through text-gray-400" : ""
-                  }`}
-                >
-                  {item.emoji} {item.name}
-                </Text>
-                <View className="flex flex-row gap-2 items-center">
-                  {doneItem === item && (
-                    <ProgressCircle color="#60957A" duration={400} />
-                  )}
-                </View>
-              </TouchableOpacity>
-            ))
-        ) : (
-          <View>
-            <Text className="px-1 text-lg">
-              Deine Liste ist leer, scheint als hättest du alles was du
-              brauchst. 🤩
-            </Text>
+      {shoppingList.items &&
+      shoppingList.items.filter((item) => item.status === "open").length > 0 ? (
+        <View>
+          <View className="flex flex-row justify-between p-2 pt-4 pb-4">
+            <Text className="color-zinc-400">Das brauch ich alles:</Text>
+            <TouchableOpacity onPress={moveAllItemsToDone}>
+              <Text className="color-[#f08181] underline">alles gekauft</Text>
+            </TouchableOpacity>
           </View>
-        )}
-      </View>
+          <View className="display flex flex-col gap-2">
+            {shoppingList.items
+              .filter((item) => item.status === "open")
+              .reverse()
+              .map((item) => (
+                <TouchableOpacity
+                  key={item.id}
+                  onPress={() => toggleItemStatus(item.id)}
+                  className="bg-white p-2 px-5 rounded-xl flex flex-row justify-between items-center w-full"
+                >
+                  <Text
+                    className={`text-lg ${
+                      doneItem === item ? "line-through text-gray-400" : ""
+                    }`}
+                  >
+                    {item.emoji} {item.name}
+                  </Text>
+                  <View className="flex flex-row gap-2 items-center">
+                    {doneItem === item && (
+                      <ProgressCircle color="#60957A" duration={400} />
+                    )}
+                  </View>
+                </TouchableOpacity>
+              ))}
+          </View>
+        </View>
+      ) : (
+        <View>
+          <Text className="px-1 text-lg p-2 pt-4">
+            Deine Liste ist leer, scheint als hättest du alles was du brauchst.
+            🤩
+          </Text>
+        </View>
+      )}
       {shoppingList.items &&
         shoppingList.items.some((item) => item.status === "done") && (
           <View className="pt-4 display flex flex-col gap-2">
