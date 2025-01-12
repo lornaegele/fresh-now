@@ -79,7 +79,11 @@ const VegetableCard = ({ item, onPress }: Props) => {
           setIsItemInList(true); // Update the state to show the checkmark
         }, 500);
       } else {
-        console.error("Active list not found!");
+        Alert.alert(
+          "Ups!",
+          `Erstelle erst eine Einkaufsliste 🛒 um deinen Artikel hinzuzufügen.`
+        );
+        return;
       }
     } catch (error) {
       console.error("Error adding item to list:", error);
@@ -106,20 +110,19 @@ const VegetableCard = ({ item, onPress }: Props) => {
           {getTimeSpan(item.season, "DE")}
         </Text>
       </View>
-      {shoppingLists.find((list) => list.id === activeListId) && (
-        <TouchableOpacity
-          onPress={addToList}
-          className="bg-white absolute  justify-center items-center right-2 top-2 w-10 h-10 rounded-xl shadow shadow-zinc-500"
-        >
-          {loading ? (
-            <ProgressCircle color="green" duration={500} size={20} /> // Show progress circle while adding item
-          ) : isItemInList ? (
-            <Text className="text-lg">✔️</Text> // Show shopping cart icon if item isn't added
-          ) : (
-            <Text className="text-lg">🛒</Text> // Show shopping cart icon if item isn't added
-          )}
-        </TouchableOpacity>
-      )}
+
+      <TouchableOpacity
+        onPress={addToList}
+        className="bg-white absolute  justify-center items-center right-2 top-2 w-10 h-10 rounded-xl shadow shadow-zinc-500"
+      >
+        {loading ? (
+          <ProgressCircle color="green" duration={500} size={20} /> // Show progress circle while adding item
+        ) : isItemInList ? (
+          <Text className="text-lg">✔️</Text> // Show shopping cart icon if item isn't added
+        ) : (
+          <Text className="text-lg">🛒</Text> // Show shopping cart icon if item isn't added
+        )}
+      </TouchableOpacity>
     </TouchableOpacity>
   );
 };

@@ -51,18 +51,50 @@ const VegetableDetails = ({ route }: { route: VegetableDetailsRouteProp }) => {
 
             {/* Vitamine */}
             <View className="bg-white rounded-xl p-2 px-4">
-              <Text className="text-lg font-semibold text-gray-700 ">
-                Vitamine
-              </Text>
-              <Text className="text-gray-600">{item.vitamins.join(", ")}</Text>
+              <View className="flex flex-row justify-between items-start pb-1">
+                <Text className="text-lg font-semibold text-gray-700">
+                  Vitamine pro 100g
+                </Text>
+                <View className="flex flex-row gap-2 pt-1">
+                  <Text className="font-medium  text-gray-700">Menge</Text>
+                  <Text className="w-12 text-right font-medium  text-gray-600">
+                    NRV*
+                  </Text>
+                </View>
+              </View>
+              {item.vitamins.map((vitamin, i) => (
+                <View key={i} className="flex flex-row justify-between">
+                  <Text>{vitamin.name}</Text>
+                  <View className="flex flex-row gap-2">
+                    <Text>{vitamin.amount}</Text>
+                    <Text className="w-12 text-right">
+                      {vitamin.percentage}
+                    </Text>
+                  </View>
+                </View>
+              ))}
             </View>
 
-            {/* Gesundheitswert */}
+            {/* Nährstoffe */}
             <View className="bg-white rounded-xl p-2 px-4">
-              <Text className="text-lg font-semibold text-gray-700">
-                Gesundheitswert
-              </Text>
-              <Text className="text-gray-600">{item.healthScore} / 100</Text>
+              <View className="flex flex-row justify-between items-start pb-1">
+                <Text className="text-lg font-semibold text-gray-700">
+                  Nährstoffe pro 100g
+                </Text>
+                <Text className="text-right font-medium  text-gray-600 pt-1">
+                  Menge
+                </Text>
+              </View>
+              <View className="space-y-1">
+                {Object.entries(item.nutrients).map(([key, value]) => (
+                  <View key={key} className="flex flex-row justify-between">
+                    <Text>
+                      {`${key.charAt(0).toUpperCase() + key.slice(1)}`}
+                    </Text>
+                    <Text> {value}g</Text>
+                  </View>
+                ))}
+              </View>
             </View>
 
             {/* Vorteile */}
@@ -70,21 +102,9 @@ const VegetableDetails = ({ route }: { route: VegetableDetailsRouteProp }) => {
               <Text className="text-lg font-semibold text-gray-700">
                 Vorteile
               </Text>
-              {item.benefits.map((benefit, index) => (
-                <Text key={index} className="text-gray-600">
+              {item.benefits.map((benefit, i) => (
+                <Text key={i} className="text-gray-600">
                   - {benefit}
-                </Text>
-              ))}
-            </View>
-
-            {/* Risiken */}
-            <View className="bg-white rounded-xl p-2 px-4">
-              <Text className="text-lg font-semibold text-gray-700">
-                Risiken
-              </Text>
-              {item.risks.map((risk, index) => (
-                <Text key={index} className="text-gray-600">
-                  - {risk}
                 </Text>
               ))}
             </View>
@@ -105,20 +125,6 @@ const VegetableDetails = ({ route }: { route: VegetableDetailsRouteProp }) => {
                 Lagerungstipps
               </Text>
               <Text className="text-gray-600">{item.storageTips}</Text>
-            </View>
-
-            {/* Nährstoffe */}
-            <View className="bg-white rounded-xl p-2 px-4">
-              <Text className="text-lg font-semibold text-gray-700">
-                Nährstoffe pro 100g
-              </Text>
-              <View className="mt-2 space-y-1">
-                {Object.entries(item.nutrients).map(([key, value]) => (
-                  <Text key={key} className="text-gray-600">
-                    {`${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}g`}
-                  </Text>
-                ))}
-              </View>
             </View>
 
             {/* Rezepte */}

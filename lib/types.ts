@@ -15,6 +15,12 @@ type FilterVariantsDE =
 type DropdownFilterVariantsDE = "Aktuell in Saison" | "Alle";
 type DropdownFilterVariantsEN = "Currently in season" | "All";
 
+type Vitamin = {
+  name: string; // Der Name des Vitamins (z. B. "Vitamin C")
+  amount: string; // Die Menge des Vitamins (z. B. "5 mg")
+  percentage: string; // Der Prozentsatz der empfohlenen Tagesdosis (z. B. "6%")
+};
+
 // Types to define the structure
 interface ShoppingListItem {
   id: string;
@@ -38,11 +44,9 @@ interface Produce {
   image?: string;
   info?: string;
   season: Month[];
-  vitamins: string[];
+  vitamins: Vitamin[];
   nutrients: { [key: string]: number };
-  healthScore: number;
   benefits: string[];
-  risks: string[];
   regionAvailability: string[];
   storageTips: string;
   recipes: string[];

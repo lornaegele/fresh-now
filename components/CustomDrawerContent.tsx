@@ -51,7 +51,7 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({ navigation }) => {
 
   const handleDelete = (id: string) => {
     Alert.alert(
-      "Löschen bestädigen",
+      "Löschen bestätigen",
       "Bist du sicher, dass du diese Liste mit ihrem Inhalt löschen willst?",
       [
         {
@@ -139,7 +139,7 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({ navigation }) => {
       {isAdding && (
         <View className="px-2 py-2">
           <TextInput
-            ref={inputRef} // Step 2: Attach the ref
+            ref={inputRef}
             className="border border-primary-300 rounded-2xl p-4 text-base"
             placeholder="Neuen Listennamen eingeben"
             value={newListName}

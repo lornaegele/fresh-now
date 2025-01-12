@@ -78,7 +78,7 @@ const Seasonal = () => {
   return (
     <View className="h-full pt-14">
       <FlatList
-        data={displayedData}
+        data={displayedData.sort((a, b) => a.name.localeCompare(b.name))}
         renderItem={({ item }) => (
           <VegetableCard
             item={item}

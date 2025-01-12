@@ -1,5 +1,13 @@
-import { Text, TextInput, View, Alert, TouchableOpacity } from "react-native";
-import React, { useEffect, useRef, useState } from "react";
+import {
+  Text,
+  TextInput,
+  View,
+  Alert,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
+import React, { useEffect, useState } from "react";
 import { getShoppingLists, saveShoppingLists } from "@/lib/AsyncStorage";
 import ProgressCircle from "@/components/ProgressCircle";
 import { ScrollView } from "react-native-gesture-handler";
@@ -7,23 +15,18 @@ import { fruitsDE } from "@/data/fruits";
 import { vegetablesDE } from "@/data/vegetables";
 import { groceriesDE } from "@/data/groceries";
 import useAppInitialization from "@/lib/useAppInitialization";
-import { useNavigation } from "expo-router";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useShoppingList } from "@/context/ShoppingListContext";
-import Ionicons from "react-native-vector-icons/Ionicons";
 
 const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-
   const [newItemName, setNewItemName] = useState("");
   const [doneItem, setDoneItem] = useState<
     GroceryItem | VegetableItem | FruitItem | null
-  >(null);
+  >();
+  const [suggestions, setSuggestions] = useState<
+    (Grocery | Vegetable | Fruit)[]
+  >([]);
   const [shoppingList, setShoppingList] = useState<ShoppingListItem>(list);
   const { shoppingLists } = useShoppingList();
-
-  const inputRef = useRef<TextInput | null>(null); // Create a reference for the TextInput
 
   const { setShoppingLists, activeListId } = useAppInitialization();
 
@@ -36,10 +39,10 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
     }
   }, [shoppingLists, activeListId]);
 
-  const handleAddNewItem = async () => {
+  const handleAddNewItem = async (newName: string) => {
     // Fetch the current shopping lists from AsyncStorage
     let shoppingLists = await getShoppingLists();
-    if (!newItemName.trim()) return;
+    if (!newName.trim()) return;
 
     // Combine all items from the three imported JSON files
     const allItems = [...fruitsDE, ...groceriesDE, ...vegetablesDE];
@@ -49,19 +52,18 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
       shoppingList.items &&
       shoppingList.items.some(
         (item) =>
-          item.name.toLowerCase() === newItemName.trim().toLowerCase() &&
+          item.name.toLowerCase() === newName.trim().toLowerCase() &&
           item.status === "open"
       );
 
     if (itemExists) {
-      Alert.alert("Doppelt", `${newItemName} ist schon in deiner Liste.`);
-      inputRef.current?.focus();
+      Alert.alert("Doppelt", `${newName} ist schon in deiner Liste.`);
       return;
     }
 
     // Find the matching item in allItems to get the emoji
     const existingItem = allItems.find(
-      (item) => item.name.toLowerCase() === newItemName.trim().toLowerCase()
+      (item) => item.name.toLowerCase() === newName.trim().toLowerCase()
     );
 
     // Create the new item
@@ -75,7 +77,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
         }
       : {
           id: `${Date.now()}`,
-          name: newItemName,
+          name: newName,
           emoji: "🛒",
           status: "open",
           visStatus: "open",
@@ -116,7 +118,6 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
     } catch (error) {
       console.error("Error updating shopping list:", error);
     }
-    inputRef.current?.focus();
   };
 
   const clearDoneItems = async () => {
@@ -211,16 +212,23 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
       }
     }
   };
+  const handleChangeText = (text: string) => {
+    setNewItemName(text);
 
-  const navigateToVegetableDetails = (vegetableId: string) => {
-    // Navigate to VegetableDetails screen, passing the vegetable ID as a parameter
-    navigation.navigate("VegetableDetails", { id: vegetableId });
+    // Combine all items from the three data sets
+    const allItems = [...fruitsDE, ...groceriesDE, ...vegetablesDE];
+
+    // Filter items based on the input
+    const filteredSuggestions = allItems.filter((item) =>
+      item.name.toLowerCase().includes(text.toLowerCase())
+    );
+
+    setSuggestions(filteredSuggestions);
   };
 
   return (
     <ScrollView className="px-4" showsVerticalScrollIndicator={false}>
       <TextInput
-        ref={inputRef}
         className=" bg-white shadow shadow-zinc-200 rounded-2xl p-4"
         placeholder={`Was brauchst du${
           shoppingList.items &&
@@ -229,9 +237,32 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
             : "?"
         }`}
         value={newItemName}
-        onChangeText={setNewItemName}
-        onSubmitEditing={handleAddNewItem}
+        onChangeText={handleChangeText}
+        onSubmitEditing={() => handleAddNewItem(newItemName)}
+        blurOnSubmit={false}
       />
+      {/* Suggestions dropdown */}
+      {suggestions.length > 0 && newItemName.trim() !== "" && (
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+          <View className="absolute w-full bg-white shadow-lg shadow-zinc-300 overflow-scroll mt-2 rounded-2xl top-12 z-[100]">
+            {suggestions.map((item) => (
+              <TouchableOpacity
+                key={item.id}
+                onPress={() => {
+                  setNewItemName(item.name); // Set the input to the selected item
+                  handleAddNewItem(item.name);
+                  setSuggestions([]); // Clear suggestions
+                }}
+                className="p-4 px-5 border-b border-zinc-200"
+              >
+                <Text className="text-lg">
+                  {item.emoji} {item.name}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </TouchableWithoutFeedback>
+      )}
       <View className="pt-4 display flex flex-col gap-2">
         {shoppingList.items &&
         shoppingList.items.filter((item) => item.status === "open").length >
@@ -256,17 +287,6 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
                   {doneItem === item && (
                     <ProgressCircle color="#60957A" duration={500} />
                   )}
-                  {/* {(item as Fruit | Vegetable).nutrients && (
-                    <TouchableOpacity
-                      onPress={() => navigateToVegetableDetails("veg001")}
-                    >
-                      <Ionicons
-                        name="information-circle-outline"
-                        className="text-xl"
-                        size={22}
-                      />
-                    </TouchableOpacity>
-                  )} */}
                 </View>
               </TouchableOpacity>
             ))
