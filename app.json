@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "fresh now",
-    "slug": "fresh-now",
+    "name": "FrischZeit",
+    "slug": "frisch-zeit",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "freshNow",
+    "icon": "./assets/images/splash-icon.png",
+    "scheme": "frischZeit",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {

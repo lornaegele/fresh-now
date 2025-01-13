@@ -9,12 +9,11 @@ import { useNavigation } from "@react-navigation/native";
 import useFontLoading from "@/lib/useFontLoading";
 import CustomDrawerContent from "@/components/CustomDrawerContent";
 import ShoppingList from "./(tabs)/ShoppingList";
-import { Text } from "react-native";
+import { Modal, Platform, Text, TouchableOpacity, View } from "react-native";
+import Settings from "@/components/Settings";
 import "./global.css";
 import SeasonalStack from "./stack/SeasonalStack";
 import { useShoppingList } from "@/context/ShoppingListContext";
-import WelcomeModal from "@/components/WelcomeModal";
-import { isFirstTime, setFirstTimeFlag } from "@/lib/AsyncStorage";
 import NoLists from "./(tabs)/NoLists";
 
 const Drawer = createDrawerNavigator(); // Drawer navigator
@@ -26,22 +25,10 @@ const Home = () => {
   const fontsLoaded = useFontLoading();
   const { shoppingLists, setShoppingLists } = useShoppingList(); // Use the shopping list context here
   const [activeTab, setActiveTab] = useState<string | null>(null);
-  const [modalVisible, setModalVisible] = useState(false); // State for controlling modal visibility
+  const [settingsVisible, setSettingsVisible] = useState(false);
 
-  useEffect(() => {
-    const checkFirstTime = async () => {
-      const firstTime = await isFirstTime();
-      if (firstTime) {
-        setModalVisible(true); // Show modal if it's the first time
-      }
-    };
-    checkFirstTime();
-  }, []);
-
-  const handleCloseModal = async () => {
-    setModalVisible(false); // Close the modal
-    await setFirstTimeFlag(); // Mark as not the first time
-  };
+  const openSettings = () => setSettingsVisible(true);
+  const closeSettings = () => setSettingsVisible(false);
 
   if (!fontsLoaded) return null;
 
@@ -53,6 +40,11 @@ const Home = () => {
           headerBackground: () => null,
           headerTintColor: "#0F5933",
           headerLeft: () => <DrawerHamburgerIcon />,
+          // headerRight: () => (
+          //   <TouchableOpacity onPress={openSettings} className="mr-3">
+          //     <Ionicons name="settings-outline" size={24} color="#0F5933" />
+          //   </TouchableOpacity>
+          // ),
           drawerType: "back",
         }}
         drawerContent={(props) => (
@@ -69,7 +61,7 @@ const Home = () => {
               key={list.id}
               name={list.name}
               options={{
-                title: `${list.emoji} ${list.name}`,
+                title: list.name,
                 drawerLabelStyle: {
                   fontSize: 16,
                   fontWeight: "bold",
@@ -114,7 +106,24 @@ const Home = () => {
           </Drawer.Screen>
         )}
       </Drawer.Navigator>
-
+      <Modal
+        animationType={Platform.OS === "ios" ? "slide" : "fade"}
+        transparent={true}
+        visible={settingsVisible}
+        onRequestClose={closeSettings}
+      >
+        <View className="flex-1 justify-start items-start relative bg-white bg-opacity-50 mt-16 shadow-lg rounded-3xl p-4">
+          <TouchableOpacity
+            onPress={closeSettings}
+            className="absolute left-4 top-4"
+          >
+            <Text className="text-primary-200 text-center text-lg">
+              Schließen
+            </Text>
+          </TouchableOpacity>
+          <Settings />
+        </View>
+      </Modal>
       {/* <WelcomeModal visible={modalVisible} onClose={handleCloseModal} /> */}
     </>
   );
