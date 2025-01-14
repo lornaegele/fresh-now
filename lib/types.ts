@@ -41,7 +41,7 @@ interface Produce {
   name: string;
   emoji: string;
   backgroundColor: string;
-  image?: string;
+  image?: any;
   info?: string;
   season: Month[];
   vitamins: Vitamin[];

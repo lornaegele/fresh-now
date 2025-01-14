@@ -52,7 +52,7 @@ export const shoppingTips: HealthTip[] = [
     id: "015",
     name: "Lagerung beachten",
     content:
-      "Lagern Sie saisonales Gemüse richtig, um seine Frische zu bewahren. Zum Beispiel gehört Kürbis an einen kühlen, trockenen Ort.",
+      "Lagern Sie saisonales Gemüse richtig, um seine Frische zu bewahren. Zum Beispiel gehört Kürbis an einen kühlen, trockenen Ort. Tipps zur Lagerung findest du bei jedem Gemüse auf der Übersichtsseite.",
     emoji: "📦",
   },
   {

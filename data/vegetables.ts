@@ -1,3 +1,5 @@
+import images from "./images";
+
 export const vegetablesDE: Vegetable[] = [
   {
     id: "veg001",
@@ -5,7 +7,7 @@ export const vegetablesDE: Vegetable[] = [
     emoji: "🥕",
     backgroundColor: "#ffecb3",
     info: "Die Karotte ist ein vielseitiges Wurzelgemüse, das sowohl roh als auch gekocht verzehrt werden kann. Sie ist reich an Nährstoffen und bekannt für ihren hohen Beta-Carotin-Gehalt, der zur Verbesserung der Sehkraft beiträgt. Karotten werden weltweit angebaut, vor allem in Europa, Asien und Nordamerika. Sie lassen sich leicht lagern und sind das ganze Jahr über verfügbar.",
-    image: "https://example.com/images/carrot.jpg",
+    image: images.karotte,
     season: [
       "January",
       "February",

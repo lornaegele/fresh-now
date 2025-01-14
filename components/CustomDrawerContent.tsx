@@ -168,10 +168,11 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({ navigation }) => {
             >
               <Text
                 className={`font-bold text-lg ${
-                  activeListId === item.id ? "text-[#e6f2e4]" : "text-[#064223]"
+                  activeListId === item.id ? "text-[#dff3e8]" : "text-[#064223]"
                 }`}
               >
-                {item.emoji} {item.name}
+                {/* {item.emoji}  */}
+                {item.name}
               </Text>
               <View className="flex-row items-center space-x-2">
                 <Text

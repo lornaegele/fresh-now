@@ -3,8 +3,9 @@ import { getTimeSpan } from "@/lib/getTimeSpan";
 import { vegetablesDE } from "@/data/vegetables";
 import { RouteProp } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image, ImageSourcePropType } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import images from "@/data/images";
 
 type VegetableDetailsRouteProp = RouteProp<
   RootStackParamList,
@@ -34,7 +35,15 @@ const VegetableDetails = ({ route }: { route: VegetableDetailsRouteProp }) => {
             className="w-full h-[250px] flex items-center justify-center rounded-2xl"
             style={{ backgroundColor: item.backgroundColor }}
           >
-            <Text className="text-[200px]">{item.emoji}</Text>
+            {item.image ? (
+              <Image
+                source={item.image}
+                resizeMode="contain" // Ensures the image fits within the container
+                style={{ flex: 1, width: "90%", height: "100%" }} // Fill the parent while maintaining aspect ratio
+              />
+            ) : (
+              <Text className="text-[200px]">{item.emoji}</Text>
+            )}
           </View>
           {/* Details Section */}
           <View className="pt-4 flex flex-col gap-4">

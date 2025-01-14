@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Alert } from "react-native";
+import { View, Text, TouchableOpacity, Alert, Image } from "react-native";
 import React, { useState } from "react";
 import { getTimeSpan } from "@/lib/getTimeSpan";
 import useAppInitialization from "@/lib/useAppInitialization";
@@ -71,9 +71,17 @@ const VegetableCard = ({ item, onPress }: Props) => {
       onPress={onPress}
     >
       <View className="flex-1 justify-center items-center">
-        <Text className="text-7xl text-center leading-normal">
-          {item.emoji}
-        </Text>
+        {item.image ? (
+          <Image
+            source={item.image}
+            resizeMode="contain" // Ensures the image fits within the container
+            style={{ flex: 1, width: "100%", height: "100%" }} // Fill the parent while maintaining aspect ratio
+          />
+        ) : (
+          <Text className="text-7xl text-center leading-normal">
+            {item.emoji}
+          </Text>
+        )}
       </View>
       <View className="flex flex-col">
         <Text className="text-white font-rubik-bold text-xl ">{item.name}</Text>
