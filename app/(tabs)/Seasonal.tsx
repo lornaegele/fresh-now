@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useCallback } from "react";
 import {
   View,
   Text,
@@ -6,20 +6,22 @@ import {
   FlatList,
   ScrollView,
 } from "react-native";
-import VegetableCard from "@/components/VegetableCard";
-import Tips from "@/components/Tips";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { filterVariantsDE } from "@/data/data";
+import { filterVariantsDE, months } from "@/data/data";
 import { vegetablesDE } from "@/data/vegetables";
 import { fruitsDE } from "@/data/fruits";
 import { healthTips } from "@/data/healthTips";
 import { shoppingTips } from "@/data/shoppingTips";
+import Tips from "@/components/Tips";
+import VegetableCard from "@/components/VegetableCard";
 
 type SeasonalNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   "Seasonal"
 >;
+
+const MemoizedVegetableCard = React.memo(VegetableCard);
 
 const Seasonal = () => {
   const [selectedFilter, setSelectedFilter] =
@@ -28,64 +30,92 @@ const Seasonal = () => {
 
   const navigation = useNavigation<SeasonalNavigationProp>();
 
-  const getCurrentMonth = (): Month => {
-    const months: Month[] = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    return months[new Date().getMonth()];
-  };
+  const currentMonth = useMemo(() => months[new Date().getMonth()], [months]);
 
-  // Memoized data preparation to avoid redundant calculations
-  const displayedData = useMemo(() => {
-    const currentMonth = getCurrentMonth();
-
-    if (viewAll) {
-      return selectedFilter === "Gemüse"
-        ? vegetablesDE
-        : selectedFilter === "Obst"
-        ? fruitsDE
-        : selectedFilter === "Gesundheits-Tipps"
-        ? healthTips
-        : shoppingTips;
+  const getFilteredData = useCallback(() => {
+    switch (selectedFilter) {
+      case "Gemüse":
+        return viewAll
+          ? vegetablesDE
+          : vegetablesDE.filter((item) => item.season.includes(currentMonth));
+      case "Obst":
+        return viewAll
+          ? fruitsDE
+          : fruitsDE.filter((item) => item.season.includes(currentMonth));
+      case "Gesundheits-Tipps":
+        return healthTips;
+      default:
+        return shoppingTips;
     }
-
-    return selectedFilter === "Gemüse"
-      ? vegetablesDE.filter((vegetable) =>
-          vegetable.season.includes(currentMonth)
-        )
-      : selectedFilter === "Obst"
-      ? fruitsDE.filter((fruit) => fruit.season.includes(currentMonth))
-      : selectedFilter === "Gesundheits-Tipps"
-      ? healthTips
-      : shoppingTips;
-  }, [selectedFilter, viewAll]);
+  }, [selectedFilter, viewAll, currentMonth]);
 
   const sortedData = useMemo(() => {
-    return [...displayedData].sort((a, b) =>
-      selectedFilter === "Gemüse" || selectedFilter === "Obst"
-        ? a.name.localeCompare(b.name)
-        : a.id.localeCompare(b.id)
+    const data = getFilteredData();
+    return [...data].sort((a, b) =>
+      (selectedFilter === "Gemüse" || selectedFilter === "Obst"
+        ? a.name
+        : a.id
+      ).localeCompare(
+        selectedFilter === "Gemüse" || selectedFilter === "Obst" ? b.name : b.id
+      )
     );
-  }, [displayedData, selectedFilter]);
+  }, [getFilteredData, selectedFilter]);
 
-  const handleCategory = (filter: FilterVariantsDE) => {
+  const handleCategory = useCallback((filter: FilterVariantsDE) => {
     setSelectedFilter(filter);
-  };
+  }, []);
 
-  const navigateToDetails = (id: string) => {
-    navigation.navigate("VegetableDetails", { id });
-  };
+  const navigateToDetails = useCallback(
+    (id: string) => {
+      navigation.navigate("VegetableDetails", { id });
+    },
+    [navigation]
+  );
+
+  const renderHeader = useMemo(() => {
+    return (
+      <View className="px-4 flex flex-col gap-2">
+        <View className="flex justify-center items-center p-2">
+          <Text className="text-xl font-rubik-medium">
+            Was ist gerade in{" "}
+            <Text className="text-primary-300 font-rubik-bold">Saison</Text>?
+          </Text>
+        </View>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          className="pt-3 pb-4"
+        >
+          {filterVariantsDE.map((filter, i) => (
+            <TouchableOpacity
+              onPress={() => handleCategory(filter as FilterVariantsDE)}
+              className={`flex shadow shadow-slate-200 flex-col items-start mr-2 px-4 py-2 rounded-full ${
+                selectedFilter === filter ? "bg-primary-200" : "bg-white"
+              }`}
+              key={i}
+            >
+              <Text
+                className={`font-rubik-medium text-lg ${
+                  selectedFilter === filter ? "text-white" : ""
+                }`}
+              >
+                {filter}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+        {(selectedFilter === "Gemüse" || selectedFilter === "Obst") && (
+          <View className="flex-row justify-end items-center mb-4">
+            <TouchableOpacity onPress={() => setViewAll((prev) => !prev)}>
+              <Text className="font-rubik-medium underline text-primary-200">
+                {viewAll ? "Nur Saisonal" : "Alle ansehen"}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        )}
+      </View>
+    );
+  }, [selectedFilter, viewAll, handleCategory]);
 
   return (
     <View className="h-full pt-14">
@@ -93,7 +123,7 @@ const Seasonal = () => {
         data={sortedData}
         renderItem={({ item }) =>
           selectedFilter === "Gemüse" || selectedFilter === "Obst" ? (
-            <VegetableCard
+            <MemoizedVegetableCard
               item={item as Fruit | Vegetable}
               onPress={() => navigateToDetails(item.id)}
             />
@@ -114,52 +144,7 @@ const Seasonal = () => {
             </Text>
           </View>
         }
-        ListHeaderComponent={
-          <View className="px-4 flex flex-col gap-2">
-            <View className="flex justify-center items-center p-2">
-              <Text className="text-xl font-rubik-medium">
-                Was ist gerade in{" "}
-                <Text className="text-primary-300 font-rubik-bold">Saison</Text>
-                ?
-              </Text>
-            </View>
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              className="pt-3 pb-4"
-            >
-              {filterVariantsDE.map((filter, i) => (
-                <TouchableOpacity
-                  onPress={() => handleCategory(filter as FilterVariantsDE)}
-                  className={`flex shadow shadow-slate-200 flex-col items-start mr-2 px-4 py-2 rounded-full ${
-                    selectedFilter === filter ? "bg-primary-200" : "bg-white"
-                  }`}
-                  key={i}
-                >
-                  <Text
-                    className={`font-rubik-medium text-lg ${
-                      selectedFilter === filter ? "text-white" : ""
-                    }`}
-                  >
-                    {filter}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </ScrollView>
-            {(selectedFilter === "Gemüse" || selectedFilter === "Obst") && (
-              <View className="flex-row justify-end items-center mb-4">
-                <TouchableOpacity
-                  onPress={() => setViewAll(!viewAll)}
-                  className="px-2"
-                >
-                  <Text className="font-rubik-medium underline text-primary-200">
-                    {viewAll ? "Nur Saisonal" : "Alle ansehen"}
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            )}
-          </View>
-        }
+        ListHeaderComponent={renderHeader}
       />
     </View>
   );

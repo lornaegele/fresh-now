@@ -11,7 +11,7 @@ export const shoppingTips: HealthTip[] = [
     name: "Sommerzeit ist Beerenzeit",
     content:
       "Kaufen Sie im Sommer lokale Beeren wie Erdbeeren, Himbeeren oder Blaubeeren. Sie sind frisch, süß und reich an Vitaminen.",
-    emoji: "🍓",
+    emoji: "🫐",
   },
   {
     id: "005",

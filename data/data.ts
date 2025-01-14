@@ -10,3 +10,18 @@ export const filterVariantsEN: FilterVariantsEN[] = [
   "Health tips",
   "Shopping tips",
 ];
+
+export const months: Month[] = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];

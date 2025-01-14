@@ -32,7 +32,7 @@ export const healthTips: HealthTip[] = [
     name: "Das Geheimnis der Bitterstoffe",
     content:
       "Bitterstoffe in Lebensmitteln wie Chicorée oder Grapefruit regen die Verdauung an, entgiften die Leber und helfen Heißhungerattacken vorzubeugen.",
-    emoji: "🍋",
+    emoji: "🍊",
   },
   {
     id: "011",

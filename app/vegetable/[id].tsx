@@ -32,14 +32,14 @@ const VegetableDetails = ({ route }: { route: VegetableDetailsRouteProp }) => {
       {item !== undefined ? (
         <View className="pb-4">
           <View
-            className="w-full h-[250px] flex items-center justify-center rounded-2xl"
+            className="w-full h-[250px] flex items-center justify-center rounded-2xl p-3"
             style={{ backgroundColor: item.backgroundColor }}
           >
             {item.image ? (
               <Image
                 source={item.image}
                 resizeMode="contain" // Ensures the image fits within the container
-                style={{ flex: 1, width: "90%", height: "100%" }} // Fill the parent while maintaining aspect ratio
+                style={{ flex: 1, width: "100%", height: "100%" }} // Fill the parent while maintaining aspect ratio
               />
             ) : (
               <Text className="text-[200px]">{item.emoji}</Text>

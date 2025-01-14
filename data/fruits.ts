@@ -1,10 +1,12 @@
+import images from "./images";
+
 export const fruitsDE: Fruit[] = [
   {
     id: "fruit001",
     name: "Apfel",
     emoji: "🍎",
     backgroundColor: "#ffcccb", // helles Pastellrot
-    image: "https://example.com/images/apple.jpg",
+    image: images.apfel,
     season: ["September", "October", "November"],
     vitamins: [
       { name: "Vitamin C", amount: "4.6 mg", percentage: "5%" },
@@ -34,7 +36,7 @@ export const fruitsDE: Fruit[] = [
     name: "Erdbeere",
     emoji: "🍓",
     backgroundColor: "#ffb3b3", // helles Pastellrot
-    image: "https://example.com/images/strawberry.jpg",
+    image: images.erdbeere,
     season: ["May", "June", "July"],
     vitamins: [
       { name: "Vitamin C", amount: "58.8 mg", percentage: "65%" },
@@ -64,7 +66,7 @@ export const fruitsDE: Fruit[] = [
     name: "Banane",
     emoji: "🍌",
     backgroundColor: "#ffffcc", // helles Pastellgelb
-    image: "https://example.com/images/banana.jpg",
+    image: images.banana,
     season: [
       "January",
       "February",
@@ -107,7 +109,7 @@ export const fruitsDE: Fruit[] = [
     name: "Kirsche",
     emoji: "🍒",
     backgroundColor: "#ffb3b3", // helles Pastellrot
-    image: "https://example.com/images/cherry.jpg",
+    image: images.kirsche,
     season: ["June", "July"],
     vitamins: [
       { name: "Vitamin C", amount: "7.0 mg", percentage: "8%" },
@@ -137,7 +139,7 @@ export const fruitsDE: Fruit[] = [
     name: "Birne",
     emoji: "🍐",
     backgroundColor: "#b3e6b3", // helles Pastellgrün
-    image: "https://example.com/images/pear.jpg",
+    image: images.birne,
     season: ["September", "October", "November"],
     vitamins: [
       { name: "Vitamin C", amount: "4.3 mg", percentage: "5%" },
@@ -167,7 +169,7 @@ export const fruitsDE: Fruit[] = [
     name: "Ananas",
     emoji: "🍍",
     backgroundColor: "#ffff99", // helles Pastellgelb
-    image: "https://example.com/images/pineapple.jpg",
+    image: images.ananas,
     season: ["March", "April", "May", "June", "July", "August"],
     vitamins: [
       { name: "Vitamin C", amount: "47.8 mg", percentage: "53%" },
@@ -197,7 +199,7 @@ export const fruitsDE: Fruit[] = [
     name: "Granatapfel",
     emoji: "🍎",
     backgroundColor: "#ff9999", // helles Rot
-    image: "https://example.com/images/pomegranate.jpg",
+    image: images.granatapfel,
     season: ["October", "November", "December"],
     vitamins: [
       { name: "Vitamin C", amount: "10.2 mg", percentage: "11%" },
@@ -227,7 +229,7 @@ export const fruitsDE: Fruit[] = [
     name: "Passionsfrucht",
     emoji: "🥥",
     backgroundColor: "#ccccff", // helles Pastellviolett
-    image: "https://example.com/images/passionfruit.jpg",
+    image: images.passionsfrucht,
     season: ["May", "June", "July", "August"],
     vitamins: [
       { name: "Vitamin C", amount: "30 mg", percentage: "33%" },
@@ -258,7 +260,7 @@ export const fruitsDE: Fruit[] = [
     name: "Papaya",
     emoji: "🍈",
     backgroundColor: "#ffcc99", // helles Pastellorange
-    image: "https://example.com/images/papaya.jpg",
+    image: images.papaya,
     season: [
       "January",
       "February",
@@ -301,7 +303,7 @@ export const fruitsDE: Fruit[] = [
     name: "Kiwi",
     emoji: "🥝",
     backgroundColor: "#99cc99", // helles Grün
-    image: "https://example.com/images/kiwi.jpg",
+    image: images.kiwi,
     season: ["October", "November", "December", "January"],
     vitamins: [
       { name: "Vitamin C", amount: "92.7 mg", percentage: "103%" },
@@ -331,7 +333,7 @@ export const fruitsDE: Fruit[] = [
     name: "Feige",
     emoji: "🍑",
     backgroundColor: "#ff99cc", // zartes Rosa
-    image: "https://example.com/images/fig.jpg",
+    image: images.feige,
     season: ["July", "August", "September"],
     vitamins: [
       { name: "Vitamin K", amount: "4.7 µg", percentage: "6%" },
@@ -360,8 +362,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit013",
     name: "Mango",
     emoji: "🥭",
-    backgroundColor: "#ffcc33", // warmes Gelb
-    image: "https://example.com/images/mango.jpg",
+    backgroundColor: "#ffe699", // warmes Gelb
+    image: images.mango,
     season: ["April", "May", "June", "July", "August"],
     vitamins: [
       { name: "Vitamin C", amount: "36.4 mg", percentage: "45%" },
@@ -390,7 +392,7 @@ export const fruitsDE: Fruit[] = [
     name: "Pfirsich",
     emoji: "🍑",
     backgroundColor: "#ffcc99", // zartes Orange
-    image: "https://example.com/images/peach.jpg",
+    image: images.pfirsich,
     season: ["June", "July", "August"],
     vitamins: [
       { name: "Vitamin C", amount: "6.6 mg", percentage: "9%" },
@@ -418,8 +420,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit015",
     name: "Pflaume",
     emoji: "🍑",
-    backgroundColor: "#cc66ff", // lila-rosa
-    image: "https://example.com/images/plum.jpg",
+    backgroundColor: "#cbb0d9", // lila-rosa
+    image: images.pflaume,
     season: ["July", "August", "September"],
     vitamins: [
       { name: "Vitamin C", amount: "9.5 mg", percentage: "12%" },
@@ -448,7 +450,7 @@ export const fruitsDE: Fruit[] = [
     name: "Aprikose",
     emoji: "🍑",
     backgroundColor: "#ff9966", // helles Orange
-    image: "https://example.com/images/apricot.jpg",
+    image: images.aprikose,
     season: ["June", "July", "August"],
     vitamins: [
       { name: "Vitamin A", amount: "96 µg", percentage: "12%" },
@@ -477,7 +479,7 @@ export const fruitsDE: Fruit[] = [
     name: "Nektarine",
     emoji: "🍑",
     backgroundColor: "#ffcc66", // helles Gelb
-    image: "https://example.com/images/nectarine.jpg",
+    image: images.nektarine,
     season: ["June", "July", "August"],
     vitamins: [
       { name: "Vitamin C", amount: "7.0 mg", percentage: "9%" },
@@ -505,8 +507,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit019",
     name: "Traube",
     emoji: "🍇",
-    backgroundColor: "#6600cc", // tiefes Lila
-    image: "https://example.com/images/grapes.jpg",
+    backgroundColor: "#cfaff0", // tiefes Lila
+    image: images.traube,
     season: ["August", "September", "October"],
     vitamins: [
       { name: "Vitamin K", amount: "14.6 µg", percentage: "19%" },
@@ -535,7 +537,7 @@ export const fruitsDE: Fruit[] = [
     name: "Kokosnuss",
     emoji: "🥥",
     backgroundColor: "#ffcc99", // helles Beige
-    image: "https://example.com/images/coconut.jpg",
+    image: images.kokusnuss,
     season: [
       "January",
       "February",
@@ -576,8 +578,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit023",
     name: "Mandarine",
     emoji: "🍊",
-    backgroundColor: "#ff6600", // leuchtendes Orange
-    image: "https://example.com/images/mandarin.jpg",
+    backgroundColor: "#ffac75", // leuchtendes Orange
+    image: images.manerine,
     season: ["November", "December", "January", "February"],
     vitamins: [
       { name: "Vitamin C", amount: "26.7 mg", percentage: "33%" },
@@ -605,8 +607,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit024",
     name: "Orange",
     emoji: "🍊",
-    backgroundColor: "#ffa500", // Orange
-    image: "https://example.com/images/orange.jpg",
+    backgroundColor: "#ffc559", // Orange
+    image: images.orange,
     season: ["October", "November", "December", "January"],
     vitamins: [
       { name: "Vitamin C", amount: "53.2 mg", percentage: "60%" },
@@ -640,8 +642,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit025",
     name: "Zitrone",
     emoji: "🍋",
-    backgroundColor: "#f7f700", // Gelb
-    image: "https://example.com/images/lemon.jpg",
+    backgroundColor: "#ffffd4", // Gelb
+    image: images.zitrone,
     season: ["May", "June", "July", "August"],
     vitamins: [
       { name: "Vitamin C", amount: "53.0 mg", percentage: "60%" },
@@ -675,8 +677,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit026",
     name: "Limette",
     emoji: "🍋",
-    backgroundColor: "#32cd32", // Limettengrün
-    image: "https://example.com/images/lime.jpg",
+    backgroundColor: "#c5e6c5", // Limettengrün
+    image: images.limette,
     season: ["May", "June", "July", "August"],
     vitamins: [
       { name: "Vitamin C", amount: "29.0 mg", percentage: "35%" },
@@ -710,8 +712,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit027",
     name: "Brombeeren",
     emoji: "🫐",
-    backgroundColor: "#000000", // dunkles Schwarz
-    image: "https://example.com/images/blackberries.jpg",
+    backgroundColor: "#645a6b", // dunkles Schwarz
+    image: images.brombeeren,
     season: ["June", "July", "August", "September"],
     vitamins: [
       { name: "Vitamin C", amount: "21 mg", percentage: "28%" },
@@ -747,8 +749,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit028",
     name: "Johannisbeeren",
     emoji: "🍇",
-    backgroundColor: "#d10000", // tiefes Rot
-    image: "https://example.com/images/redcurrants.jpg",
+    backgroundColor: "#e88484", // tiefes Rot
+    image: images.johannisbeeren,
     season: ["June", "July", "August"],
     vitamins: [
       { name: "Vitamin C", amount: "41 mg", percentage: "51%" },
@@ -784,8 +786,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit029",
     name: "Grapefruit",
     emoji: "🍊",
-    backgroundColor: "#ffcc00", // leuchtendes Gelb
-    image: "https://example.com/images/grapefruit.jpg",
+    backgroundColor: "#ffda99", // leuchtendes Gelb
+    image: images.grapefruit,
     season: ["November", "December", "January", "February"],
     vitamins: [
       { name: "Vitamin C", amount: "38 mg", percentage: "51%" },
@@ -821,8 +823,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit030",
     name: "Litschi",
     emoji: "🍒",
-    backgroundColor: "#ff4d4d", // leuchtendes Rot
-    image: "https://example.com/images/lychee.jpg",
+    backgroundColor: "#fad7d7", // leuchtendes Rot
+    image: images.litschi,
     season: ["June", "July", "August", "September"],
     vitamins: [
       { name: "Vitamin C", amount: "72.5 mg", percentage: "121%" },
@@ -858,7 +860,7 @@ export const fruitsDE: Fruit[] = [
     name: "Dattel",
     emoji: "🌴",
     backgroundColor: "#d17f32", // warmes Braun
-    image: "https://example.com/images/date.jpg",
+    image: images.dattel,
     season: ["September", "October", "November", "December"],
     vitamins: [
       { name: "Vitamin B5", amount: "0.8 mg", percentage: "16%" },
@@ -894,8 +896,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit032",
     name: "Physalis",
     emoji: "🍃",
-    backgroundColor: "#ffcc00", // leuchtendes Gelb
-    image: "https://example.com/images/physalis.jpg",
+    backgroundColor: "#fff4c7", // leuchtendes Gelb
+    image: images.physalis,
     season: ["September", "October", "November"],
     vitamins: [
       { name: "Vitamin C", amount: "11.0 mg", percentage: "14%" },
@@ -932,7 +934,7 @@ export const fruitsDE: Fruit[] = [
     name: "Cantaloupe",
     emoji: "🍈",
     backgroundColor: "#ffcc99", // helles Orange
-    image: "https://example.com/images/cantaloupe.jpg",
+    image: images.cantaloupe,
     season: ["May", "June", "July", "August"],
     vitamins: [
       { name: "Vitamin A", amount: "338 µg", percentage: "38%" },
@@ -968,8 +970,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit034",
     name: "Wassermelone",
     emoji: "🍉",
-    backgroundColor: "#ff6f61", // rot-orange
-    image: "https://example.com/images/watermelon.jpg",
+    backgroundColor: "#ffd1cc", // rot-orange
+    image: images.wassermelone,
     season: ["June", "July", "August", "September"],
     vitamins: [
       { name: "Vitamin C", amount: "8.1 mg", percentage: "10%" },
@@ -1005,7 +1007,7 @@ export const fruitsDE: Fruit[] = [
     name: "Honigmelone",
     emoji: "🍈",
     backgroundColor: "#ffcc66", // helles Gelb
-    image: "https://example.com/images/honeymelon.jpg",
+    image: images.honigmelone,
     season: ["June", "July", "August", "September"],
     vitamins: [
       { name: "Vitamin A", amount: "120 µg", percentage: "15%" },
@@ -1041,8 +1043,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit036",
     name: "Avocado",
     emoji: "🥑",
-    backgroundColor: "#4caf50", // grünes Avocado
-    image: "https://example.com/images/avocado.jpg",
+    backgroundColor: "#addeaf", // grünes Avocado
+    image: images.avocado,
     season: ["February", "March", "April", "May", "June", "July", "August"],
     vitamins: [
       { name: "Vitamin E", amount: "2.1 mg", percentage: "14%" },
@@ -1073,50 +1075,12 @@ export const fruitsDE: Fruit[] = [
     ],
     info: "Avocados sind für ihre gesunden Fette bekannt, insbesondere für ungesättigte Fette, und bieten zahlreiche gesundheitliche Vorteile, darunter die Förderung der Herzgesundheit.",
   },
-
-  {
-    id: "fruit037",
-    name: "Karambola",
-    emoji: "⭐",
-    backgroundColor: "#ffcc00", // gelbes Orange
-    image: "https://example.com/images/starfruit.jpg",
-    season: ["January", "February", "March", "April", "May"],
-    vitamins: [
-      { name: "Vitamin C", amount: "34.0 mg", percentage: "45%" },
-      { name: "Vitamin A", amount: "50 IU", percentage: "1%" },
-      { name: "Vitamin B6", amount: "0.1 mg", percentage: "6%" },
-    ],
-    nutrients: {
-      Ballaststoffe: 2.0,
-      Zucker: 5.0,
-      Kohlenhydrate: 6.5,
-      Fett: 0.2,
-      Eiweiß: 1.0,
-    },
-    benefits: [
-      "Reich an Vitamin C",
-      "Fördert das Immunsystem",
-      "Unterstützt die Verdauung",
-      "Hilft bei der Hautgesundheit",
-    ],
-    regionAvailability: ["Südostasien", "Indien", "Philippinen", "Thailand"],
-    storageTips:
-      "Karambola im Kühlschrank aufbewahren und innerhalb von 1-2 Wochen konsumieren.",
-    recipes: [
-      "Karambola-Smoothie",
-      "Karambola-Salat",
-      "Karambola-Joghurt",
-      "Karambola-Cocktail",
-    ],
-    info: "Karambola, auch bekannt als Sternfrucht, hat eine einzigartige Form und einen süß-sauren Geschmack. Sie ist reich an Vitamin C und anderen wichtigen Nährstoffen.",
-  },
-
   {
     id: "fruit038",
     name: "Sternfrucht",
     emoji: "⭐",
     backgroundColor: "#ffcc66", // gelbes Orange
-    image: "https://example.com/images/starfruit.jpg",
+    image: images.sternfrucht,
     season: ["December", "January", "February", "March"],
     vitamins: [
       { name: "Vitamin C", amount: "50 mg", percentage: "56%" },
@@ -1148,48 +1112,11 @@ export const fruitsDE: Fruit[] = [
     info: "Die Sternfrucht ist bekannt für ihre auffällige Form und den erfrischenden, süß-sauren Geschmack. Sie ist eine ausgezeichnete Quelle für Vitamin C und Antioxidantien.",
   },
   {
-    id: "fruit039",
-    name: "Clementine",
-    emoji: "🍊",
-    backgroundColor: "#ff6f31", // leuchtendes Orange
-    image: "https://example.com/images/clementine.jpg",
-    season: ["November", "December", "January", "February"],
-    vitamins: [
-      { name: "Vitamin C", amount: "48.0 mg", percentage: "60%" },
-      { name: "Vitamin A", amount: "120 IU", percentage: "2%" },
-      { name: "Vitamin B6", amount: "0.1 mg", percentage: "6%" },
-    ],
-    nutrients: {
-      Ballaststoffe: 1.7,
-      Zucker: 9.0,
-      Kohlenhydrate: 12.0,
-      Fett: 0.2,
-      Eiweiß: 0.6,
-    },
-    benefits: [
-      "Reich an Vitamin C",
-      "Fördert das Immunsystem",
-      "Hilft bei der Hautgesundheit",
-      "Unterstützt die Verdauung",
-    ],
-    regionAvailability: ["Spanien", "Marokko", "Türkei", "USA"],
-    storageTips:
-      "Clementinen im Kühlschrank aufbewahren und innerhalb von 1-2 Wochen konsumieren.",
-    recipes: [
-      "Clementinenmarmelade",
-      "Clementinen-Smoothie",
-      "Clementinen-Salat",
-      "Clementinen-Cocktail",
-    ],
-    info: "Clementinen sind kleine, süße Zitrusfrüchte, die besonders im Winter erhältlich sind und eine ausgezeichnete Quelle für Vitamin C bieten.",
-  },
-
-  {
     id: "fruit040",
     name: "Maracuja",
     emoji: "🍍",
-    backgroundColor: "#ffcc00", // gelbes Orange
-    image: "https://example.com/images/passionfruit.jpg",
+    backgroundColor: "#ffde5c", // gelbes Orange
+    image: images.maracuja,
     season: ["January", "February", "March", "April"],
     vitamins: [
       { name: "Vitamin C", amount: "30.0 mg", percentage: "40%" },
@@ -1226,7 +1153,7 @@ export const fruitsDE: Fruit[] = [
     name: "Blaubeeren",
     emoji: "🫐",
     backgroundColor: "#4b6eb6", // tiefes Blau
-    image: "https://example.com/images/blueberries.jpg",
+    image: images.blaubeeren,
     season: ["June", "July", "August", "September"],
     vitamins: [
       { name: "Vitamin C", amount: "9.7 mg", percentage: "13%" },
@@ -1262,8 +1189,8 @@ export const fruitsDE: Fruit[] = [
     id: "fruit042",
     name: "Himbeeren",
     emoji: "🍇",
-    backgroundColor: "#ff4d6d", // leuchtendes Rot
-    image: "https://example.com/images/raspberries.jpg",
+    backgroundColor: "#f7adba", // leuchtendes Rot
+    image: images.himbeeren,
     season: ["June", "July", "August", "September"],
     vitamins: [
       { name: "Vitamin C", amount: "26.2 mg", percentage: "35%" },

@@ -75,7 +75,7 @@ const VegetableCard = ({ item, onPress }: Props) => {
           <Image
             source={item.image}
             resizeMode="contain" // Ensures the image fits within the container
-            style={{ flex: 1, width: "100%", height: "100%" }} // Fill the parent while maintaining aspect ratio
+            style={{ flex: 1, width: "95%", height: "95%" }} // Fill the parent while maintaining aspect ratio
           />
         ) : (
           <Text className="text-7xl text-center leading-normal">
