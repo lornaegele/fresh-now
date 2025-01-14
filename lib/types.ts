@@ -18,7 +18,7 @@ type DropdownFilterVariantsEN = "Currently in season" | "All";
 type Vitamin = {
   name: string; // Der Name des Vitamins (z. B. "Vitamin C")
   amount: string; // Die Menge des Vitamins (z. B. "5 mg")
-  percentage: string; // Der Prozentsatz der empfohlenen Tagesdosis (z. B. "6%")
+  percentage: string; // Der Prozentsatz der empfohlenen Tagesdosis nach NRV (z. B. "6%")
 };
 
 // Types to define the structure
@@ -45,7 +45,7 @@ interface Produce {
   info?: string;
   season: Month[];
   vitamins: Vitamin[];
-  nutrients: { [key: string]: number };
+  nutrients: { [key: string]: number | string };
   benefits: string[];
   regionAvailability: string[];
   storageTips: string;

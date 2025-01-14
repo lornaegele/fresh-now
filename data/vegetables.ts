@@ -28,14 +28,24 @@ export const vegetablesDE: Vegetable[] = [
         amount: "835 µg",
         percentage: "93%",
       },
-      { name: "Vitamin K", amount: "13.2 µg", percentage: "11%" },
-      { name: "Vitamin C", amount: "5.9 mg", percentage: "7%" },
+      { name: "Vitamin B1", amount: "69 μg", percentage: "6.3%" },
+      { name: "Vitamin B2", amount: "53 μg", percentage: "3.8%" },
+      { name: "Vitamin B6", amount: "0.27 mg", percentage: "19.3%" },
+      { name: "Vitamin C", amount: "0.5 mg", percentage: "0.6%" },
+      { name: "Vitamin E", amount: "46.5 μg", percentage: "0.4%" },
+      { name: "Calcium", amount: "35 mg", percentage: "4.4%" },
+      { name: "Eisen", amount: "0.39 mg", percentage: "2.8%" },
+      { name: "Magnesium", amount: "13 mg", percentage: "3.5%" },
+      { name: "Phosphor", amount: "36 mg", percentage: "5.1%" },
+      { name: "Kalium", amount: "328 mg", percentage: "16.4%" },
+      { name: "Zink", amount: "0.27 mg", percentage: "2.7%" },
     ],
     nutrients: {
-      Ballaststoffe: 2.8,
-      Eiweiß: 0.9,
-      Kohlenhydrate: 9.6,
-      Zucker: 4.7,
+      Brennwert: "109 kJ (26 kcal)",
+      Ballaststoffe: 3.63,
+      Eiweiß: 0.98,
+      Kohlenhydrate: 4.8,
+      Zucker: 2.08,
       Fett: 0.2,
     },
     benefits: [
@@ -72,16 +82,29 @@ export const vegetablesDE: Vegetable[] = [
       "November",
     ],
     vitamins: [
-      { name: "Vitamin A", amount: "469 µg", percentage: "52%" },
-      { name: "Vitamin C", amount: "28.1 mg", percentage: "31%" },
-      { name: "Vitamin K", amount: "482.9 µg", percentage: "402%" },
+      { name: "Vitamin A", amount: "795 µg", percentage: "99%" }, // NRV: 800 µg
+      { name: "Thiamin (Vit. B1)", amount: "90 µg", percentage: "8%" }, // NRV: 1.1 mg
+      { name: "Riboflavin (Vit. B2)", amount: "200 µg", percentage: "14%" }, // NRV: 1.4 mg
+      { name: "Nicotinsäure (Vit. B3)", amount: "620 µg", percentage: "4%" }, // NRV: 16 mg
+      { name: "Vitamin B6", amount: "220 µg", percentage: "16%" }, // NRV: 1.4 mg
+      { name: "Vitamin C", amount: "50 mg", percentage: "63%" }, // NRV: 80 mg
+      { name: "Folsäure", amount: "145 µg", percentage: "73%" }, // NRV: 200 µg
+      { name: "Natrium", amount: "70 mg", percentage: "5%" }, // NRV: 1.5 g
+      { name: "Kalium", amount: "555 mg", percentage: "16%" }, // NRV: 3.5 g
+      { name: "Magnesium", amount: "60 mg", percentage: "16%" }, // NRV: 375 mg
+      { name: "Calcium", amount: "115 mg", percentage: "14%" }, // NRV: 800 mg
+      { name: "Mangan", amount: "645 µg", percentage: "32%" }, // NRV: 2 mg
+      { name: "Eisen", amount: "3.8 mg", percentage: "27%" }, // NRV: 14 mg
+      { name: "Kupfer", amount: "95 µg", percentage: "10%" }, // NRV: 1 mg
+      { name: "Zink", amount: "600 µg", percentage: "6%" }, // NRV: 10 mg
+      { name: "Phosphor", amount: "45 mg", percentage: "6%" }, // NRV: 700 mg
+      { name: "Selen", amount: "1 µg", percentage: "2%" },
     ],
     nutrients: {
-      Ballaststoffe: 2.2,
-      Eiweiß: 2.9,
-      Kohlenhydrate: 3.6,
-      Zucker: 0.4,
-      Fett: 0.4,
+      Ballaststoffe: 2.6,
+      Eiweiß: 2.6,
+      Kohlenhydrate: 0.6,
+      Fett: 0.3,
     },
     benefits: [
       "Reich an Eisen, fördert die Blutbildung",
@@ -103,16 +126,21 @@ export const vegetablesDE: Vegetable[] = [
     image: images.brokkoli,
     season: ["April", "May", "June", "July", "August", "September", "October"],
     vitamins: [
-      { name: "Vitamin C", amount: "89.2 mg", percentage: "99%" },
-      { name: "Vitamin K", amount: "101.6 µg", percentage: "85%" },
-      { name: "Vitamin A", amount: "623 IU", percentage: "12%" },
+      { name: "Vitamin A", amount: "143 µg", percentage: "17.88%" },
+      { name: "Vitamin C", amount: "115 mg", percentage: "143.75%" },
+      { name: "Vitamin E", amount: "1.2 mg", percentage: "10.00%" },
+      { name: "Kalium", amount: "373 mg", percentage: "18.65%" },
+      { name: "Magnesium", amount: "24 mg", percentage: "6.40%" },
+      { name: "Calcium", amount: "105 mg", percentage: "13.13%" },
+      { name: "Eisen", amount: "0.8 mg", percentage: "5.71%" },
+      { name: "Phosphor", amount: "65 mg", percentage: "9.29%" },
     ],
     nutrients: {
-      Ballaststoffe: 2.6,
-      Eiweiß: 2.8,
-      Kohlenhydrate: 6.6,
-      Zucker: 1.7,
-      Fett: 0.4,
+      Brennwert: "117 kJ (28 kcal)",
+      Ballaststoffe: 3.0,
+      Eiweiß: 3.5,
+      Kohlenhydrate: 2.7,
+      Fett: 0.2,
     },
     benefits: [
       "Reich an Antioxidantien, schützt die Zellen",
@@ -133,16 +161,36 @@ export const vegetablesDE: Vegetable[] = [
     image: images.zucchini,
     season: ["June", "July", "August", "September"],
     vitamins: [
-      { name: "Vitamin C", amount: "17 mg", percentage: "19%" },
-      { name: "Vitamin B6", amount: "0.2 mg", percentage: "10%" },
-      { name: "Vitamin A", amount: "200 IU", percentage: "4%" },
+      { name: "Vitamin A", amount: "30 µg", percentage: "3.75%" },
+      { name: "Vitamin B1 (Thiamin)", amount: "211 µg", percentage: "17.58%" },
+      { name: "Vitamin B2 (Riboflavin)", amount: "73 µg", percentage: "5.77%" },
+      { name: "Niacin (Vitamin B3)", amount: "400 µg", percentage: "2.5%" },
+      {
+        name: "Vitamin B5 (Pantothensäure)",
+        amount: "80 µg",
+        percentage: "1.6%",
+      },
+      { name: "Vitamin B6 (Pyridoxin)", amount: "119 µg", percentage: "9.92%" },
+      { name: "Biotin (Vitamin B7)", amount: "2 µg", percentage: "4%" },
+      { name: "Folsäure (Vitamin B9)", amount: "10 µg", percentage: "2.5%" },
+      { name: "Vitamin C", amount: "17,600 µg", percentage: "22%" },
+      {
+        name: "Vitamin E (Alpha-Tocopherol)",
+        amount: "500 µg",
+        percentage: "4.17%",
+      },
+      { name: "Vitamin K", amount: "11 µg", percentage: "9.17%" },
+      { name: "Calcium", amount: "19 mg", percentage: "1,9%" },
+      { name: "Eisen", amount: "0,8 mg", percentage: "5,7%" },
+      { name: "Phosphor", amount: "31 mg", percentage: "4,4%" },
     ],
     nutrients: {
-      Ballaststoffe: 1.0,
-      Eiweiß: 1.2,
-      Kohlenhydrate: 3.1,
-      Zucker: 2.1,
+      Kalorien: 17,
       Fett: 0.3,
+      Kohlenhydrate: 3.1,
+      Ballaststoffe: 1.0,
+      Zucker: 2.5,
+      Eiweiß: 1.2,
     },
     benefits: [
       "Fördert die Verdauung durch Ballaststoffe",
@@ -163,16 +211,25 @@ export const vegetablesDE: Vegetable[] = [
     image: images.tomate,
     season: ["June", "July", "August", "September"],
     vitamins: [
-      { name: "Vitamin C", amount: "13.7 mg", percentage: "15%" },
-      { name: "Vitamin A", amount: "833 IU", percentage: "17%" },
-      { name: "Vitamin K", amount: "7.9 µg", percentage: "7%" },
+      { name: "Vitamin B1", amount: "0.09 mg", percentage: "7.5%" },
+      { name: "Vitamin B2", amount: "0.04 mg", percentage: "2.86%" },
+      { name: "Vitamin B3", amount: "0.5 mg", percentage: "3.33%" },
+      { name: "Vitamin C", amount: "38 mg", percentage: "47.5%" },
+      { name: "Calcium", amount: "11 mg", percentage: "1.1%" },
+      { name: "Eisen", amount: "0.6 mg", percentage: "4.29%" },
+      { name: "Magnesium", amount: "10 mg", percentage: "2.67%" },
+      { name: "Natrium", amount: "3 mg", percentage: "0.13%" },
+      { name: "Phosphor", amount: "27 mg", percentage: "3.86%" },
+      { name: "Kalium", amount: "280 mg", percentage: "8%" },
+      { name: "Zink", amount: "0.24 mg", percentage: "2.18%" },
     ],
     nutrients: {
-      Ballaststoffe: 1.2,
-      Eiweiß: 0.9,
-      Kohlenhydrate: 3.9,
+      Brennwert: "84 kJ (20 kcal)",
+      Eiweiß: 1.0,
+      Kohlenhydrate: 4.0,
       Zucker: 2.6,
-      Fett: 0.2,
+      Ballaststoffe: 1.2,
+      Fett: 0.3,
     },
     benefits: [
       "Schützt die Zellen durch Lycopin",
@@ -193,20 +250,27 @@ export const vegetablesDE: Vegetable[] = [
     image: images.paprika,
     season: ["July", "August", "September", "October"],
     vitamins: [
-      { name: "Vitamin C", amount: "127.7 mg", percentage: "142%" },
-      { name: "Vitamin A", amount: "3131 IU", percentage: "63%" },
-      { name: "Vitamin B6", amount: "0.3 mg", percentage: "15%" },
+      { name: "Folat (Folsäure)", amount: "55 µg", percentage: "13.75%" },
+      { name: "Vitamin B2", amount: "0.12 mg", percentage: "9.23%" },
+      { name: "Vitamin B6", amount: "0.45 mg", percentage: "34.62%" },
+      { name: "Vitamin C", amount: "140 mg", percentage: "175%" },
+      { name: "Vitamin E", amount: "2.9 mg", percentage: "19.33%" },
+      { name: "Beta-Carotin", amount: "2125 µg", percentage: "8.5%" },
+      { name: "Natrium", amount: "5 mg", percentage: "0.21%" },
+      { name: "Kalium", amount: "260 mg", percentage: "7.33%" },
+      { name: "Magnesium", amount: "14 mg", percentage: "3.73%" },
+      { name: "Kalzium", amount: "10 mg", percentage: "1%" },
+      { name: "Eisen", amount: "0.55 mg", percentage: "3.93%" },
     ],
     nutrients: {
-      Ballaststoffe: 2.1,
-      Eiweiß: 1.3,
-      Kohlenhydrate: 6.0,
-      Zucker: 4.2,
+      Kalorien: "(kcal) 40",
       Fett: 0.2,
+      Ballaststoffe: 1.5,
+      Kohlenhydrate: 9.0,
+      Zucker: 5.0,
     },
     benefits: [
       "Stärkt das Immunsystem durch Vitamin C",
-      "Fördert die Augengesundheit durch Vitamin A",
       "Unterstützt die Nervenfunktion durch Vitamin B6",
       "Hilft bei der Zellreparatur durch Antioxidantien",
     ],
@@ -230,16 +294,22 @@ export const vegetablesDE: Vegetable[] = [
       "February",
     ],
     vitamins: [
-      { name: "Folsäure (B9)", amount: "109 µg", percentage: "27%" },
-      { name: "Vitamin C", amount: "4.9 mg", percentage: "6%" },
-      { name: "Vitamin B6", amount: "0.1 mg", percentage: "5%" },
+      { name: "Kalium", amount: "407 mg", percentage: "11.5%" },
+      { name: "Eisen", amount: "890 µg", percentage: "6.36%" },
+      { name: "Vitamin B1", amount: "22 µg", percentage: "1.83%" },
+      { name: "Vitamin B2", amount: "42 µg", percentage: "3.23%" },
+      { name: "Pantothensäure", amount: "130 µg", percentage: "2.6%" },
+      { name: "Vitamin B6", amount: "5 µg", percentage: "0.38%" },
+      { name: "Folsäure", amount: "83 µg", percentage: "20.75%" },
+      { name: "Vitamin C", amount: "10 mg", percentage: "12.5%" },
+      { name: "Oxalsäure", amount: "181 mg", percentage: "N/A" },
     ],
     nutrients: {
-      Ballaststoffe: 2.8,
-      Eiweiß: 1.6,
-      Kohlenhydrate: 10.0,
-      Zucker: 6.8,
-      Fett: 0.2,
+      Brennwert: "175 kJ/41 kcal",
+      Eiweiß: 1.5,
+      Fett: 0.1,
+      Kohlenhydrate: 8.4,
+      Ballaststoffe: 2.5,
     },
     benefits: [
       "Fördert die Blutbildung durch Folsäure",
@@ -256,28 +326,40 @@ export const vegetablesDE: Vegetable[] = [
     name: "Ingwer",
     emoji: "🫚",
     backgroundColor: "#e0d7b3",
-    info: "Ingwer ist eine Wurzel, die weltweit für ihre gesundheitlichen Vorteile und ihren würzigen Geschmack geschätzt wird. Er wird oft in der asiatischen Küche und als Heilmittel in der traditionellen Medizin verwendet. Frischer Ingwer ist besonders reich an Gingerol, das entzündungshemmende Eigenschaften besitzt.",
+    info: "Ingwer ist eine faszinierende Wurzel, die weltweit für ihren einzigartigen, scharfen Geschmack und ihre zahlreichen gesundheitlichen Vorteile geschätzt wird. Bekannt in der asiatischen Küche und als kraftvolles Heilmittel in der traditionellen Medizin, überzeugt Ingwer durch seine vielseitige Anwendung. Die frische Wurzel ist besonders reich an Gingerol, einem natürlichen Stoff mit starken entzündungshemmenden Eigenschaften. Neben seiner gesundheitlichen Wirkung verleiht Ingwer Gerichten und Getränken eine aufregende Schärfe, die sowohl den Gaumen belebt als auch das Wohlbefinden steigert.",
     image: images.inwger,
     season: ["January", "February", "March", "October", "November", "December"],
     vitamins: [
-      { name: "Vitamin C", amount: "5 mg", percentage: "6%" },
-      { name: "Vitamin B6", amount: "0.2 mg", percentage: "12%" },
+      { name: "Kalium", amount: "910 mg", percentage: "45.5%" },
+      { name: "Kalzium", amount: "97 mg", percentage: "12.13%" },
+      { name: "Magnesium", amount: "130 mg", percentage: "34.67%" },
+      { name: "Eisen", amount: "17 mg", percentage: "121.43%" },
+      { name: "Vitamin A", amount: "1 µg", percentage: "0.13%" },
+      { name: "Vitamin B1", amount: "0.02 mg", percentage: "1.67%" },
+      { name: "Vitamin B2", amount: "0.04 mg", percentage: "3.08%" },
+      { name: "Niacin", amount: "0.7 mg", percentage: "4.67%" },
+      { name: "Vitamin B6", amount: "0.16 mg", percentage: "12.31%" },
+      { name: "Vitamin C", amount: "5 mg", percentage: "6.25%" },
     ],
     nutrients: {
-      Ballaststoffe: 2.0,
-      Eiweiß: 1.8,
-      Kohlenhydrate: 17.8,
-      Zucker: 1.7,
+      Kalorien: "(kcal) 80",
       Fett: 0.8,
+      Kohlenhydrate: 18.0,
+      Zucker: 1.7,
+      Ballaststoffe: 2.0,
     },
     benefits: [
-      "Reduziert Entzündungen",
-      "Unterstützt die Verdauung",
-      "Hilft bei der Linderung von Übelkeit",
-      "Stärkt das Immunsystem",
+      "Ingwer enthält Gingerol, das entzündungshemmend wirkt.",
+      "Fördert Verdauungssäfte und verbessert die Darmbewegung.",
+      "Beruhigt den Magen und wirkt auf das Serotonin-System.",
+      "Fördert weiße Blutkörperchen und bekämpft Krankheitserreger.",
+      "Weitet Blutgefäße und verbessert die Sauerstoffversorgung.",
+      "Steigert den Stoffwechsel und zügelt den Appetit.",
+      "Antioxidative Wirkung schützt das Gehirn vor Schäden.",
+      "Verbessert die Insulinempfindlichkeit und stabilisiert den Blutzucker.",
     ],
     regionAvailability: ["Indien", "China", "Nigeria", "Peru"],
-    storageTips: "Im Kühlschrank oder eingefroren aufbewahren.",
+    storageTips: "An einem trockenen, kühlen Ort lagern.",
     recipes: ["Ingwertee", "Asiatischer Ingwer-Honig-Dip"],
   },
   {
@@ -289,21 +371,31 @@ export const vegetablesDE: Vegetable[] = [
     image: images.kurkuma,
     season: ["January", "February", "March", "October", "November", "December"],
     vitamins: [
-      { name: "Vitamin C", amount: "25 mg", percentage: "28%" },
-      { name: "Vitamin B6", amount: "0.1 mg", percentage: "8%" },
+      { name: "Vitamin B1", amount: "0.01 mg", percentage: "0.83%" },
+      { name: "Vitamin B2", amount: "0.02 mg", percentage: "1.54%" },
+      { name: "Niacin (Vitamin B3)", amount: "0.17 mg", percentage: "1.13%" },
+      { name: "Vitamin C", amount: "50 mg", percentage: "62.5%" },
+      { name: "Kalium", amount: "260 mg", percentage: "7.33%" },
+      { name: "Eisen", amount: "6.9 mg", percentage: "49.29%" },
+      { name: "Kalzium", amount: "21 mg", percentage: "2.1%" },
+      { name: "Phosphor", amount: "37 mg", percentage: "5.29%" },
+      { name: "Zink", amount: "0.56 mg", percentage: "5.09%" },
     ],
     nutrients: {
-      Ballaststoffe: 2.1,
-      Eiweiß: 1.8,
-      Kohlenhydrate: 21.0,
-      Zucker: 3.2,
-      Fett: 0.6,
+      Kalorien: "(kcal) 39",
+      Fett: 0.4,
+      Eiweiß: 1.2,
+      Kohlenhydrate: 8.4,
     },
     benefits: [
-      "Hilft bei der Bekämpfung von Entzündungen",
-      "Unterstützt die Gelenkgesundheit",
-      "Fördert die Lebergesundheit",
-      "Verbessert die antioxidative Kapazität des Körpers",
+      "Reduziert Entzündungen", // Kurkuma enthält Curcumin, das eine starke entzündungshemmende Wirkung hat. Es blockiert entzündungsfördernde Moleküle und Enzyme, was zu einer Verringerung von Entzündungen im Körper führt, besonders bei chronischen Erkrankungen wie Arthritis.
+      "Unterstützt die Verdauung", // Curcumin regt die Gallenproduktion an, was die Verdauung von Fetten unterstützt und das allgemeine Verdauungssystem verbessert. Es fördert auch die Bewegung von Nahrung durch den Verdauungstrakt und lindert Beschwerden wie Blähungen oder Völlegefühl.
+      "Hilft bei der Linderung von Schmerzen", // Kurkuma wirkt schmerzlindernd, insbesondere bei Gelenkentzündungen und Arthritis. Die entzündungshemmende Wirkung von Curcumin kann helfen, Schmerzen und Schwellungen zu reduzieren, indem es Entzündungsprozesse im Körper hemmt.
+      "Stärkt das Immunsystem", // Curcumin fördert die Produktion von weißen Blutkörperchen, die für die Bekämpfung von Infektionen und Krankheitserregern wichtig sind. Zudem hat es antimikrobielle Eigenschaften, die das Immunsystem bei der Bekämpfung von Viren und Bakterien unterstützen.
+      "Verbessert die Gehirnfunktion", // Kurkuma erhöht die Produktion von Brain-Derived Neurotrophic Factor (BDNF), einem Protein, das für das Wachstum und die Regeneration von Gehirnzellen wichtig ist. Es hilft, die kognitive Funktion zu verbessern und schützt das Gehirn vor neurodegenerativen Erkrankungen wie Alzheimer.
+      "Fördert die Herzgesundheit", // Curcumin unterstützt die Blutzirkulation, verbessert die Endothelfunktion der Blutgefäße und senkt den Cholesterinspiegel. Es wirkt entzündungshemmend im Kreislaufsystem und kann dazu beitragen, das Risiko von Herzkrankheiten zu verringern.
+      "Hat antioxidative Wirkung", // Kurkuma ist reich an Antioxidantien, die freie Radikale neutralisieren. Diese antioxidative Wirkung schützt Zellen vor oxidativem Stress, der zu vorzeitiger Alterung und Zellschäden führen kann. Dies trägt zur allgemeinen Gesundheit und zum Wohlbefinden bei.
+      "Hilft bei der Gewichtsreduktion", // Curcumin kann den Fettstoffwechsel anregen, indem es die Aktivität von Enzymen beeinflusst, die am Fettabbau beteiligt sind. Es hat auch eine entzündungshemmende Wirkung, die die Fettansammlung im Körper reduzieren und das Abnehmen fördern kann.
     ],
     regionAvailability: ["Indien", "China", "Bangladesch", "Sri Lanka"],
     storageTips: "An einem trockenen, kühlen Ort lagern.",
@@ -318,15 +410,22 @@ export const vegetablesDE: Vegetable[] = [
     image: images.knollensellerie, // Hier den entsprechenden Bildpfad anpassen
     season: ["October", "November", "December", "January", "February"],
     vitamins: [
-      { name: "Vitamin K", amount: "1.5 µg", percentage: "1%" },
-      { name: "Vitamin C", amount: "8.0 mg", percentage: "9%" },
+      { name: "Eisen", amount: "0.5 mg", percentage: "4%" }, // NRV: 14 mg
+      { name: "Vitamin A", amount: "3 µg", percentage: "0.4%" }, // NRV: 800 µg
+      { name: "Vitamin B1", amount: "0.04 mg", percentage: "4%" }, // NRV: 1.1 mg
+      { name: "Vitamin B2", amount: "0.07 mg", percentage: "5%" }, // NRV: 1.4 mg
+      { name: "Niacin", amount: "0.9 mg", percentage: "6%" }, // NRV: 16 mg
+      { name: "Kalium", amount: "323 mg", percentage: "9%" }, // NRV: 3.5 g
+      { name: "Vitamin B6", amount: "0.2 mg", percentage: "14%" }, // NRV: 1.4 mg
+      { name: "Vitamin C", amount: "8 mg", percentage: "10%" }, // NRV: 80 mg
+      { name: "Magnesium", amount: "43 mg", percentage: "11%" }, // NRV: 375 mg
+      { name: "Vitamin E", amount: "0.5 mg", percentage: "4%" }, // NRV: 12 mg
     ],
     nutrients: {
-      Ballaststoffe: 1.8,
-      Eiweiß: 1.3,
-      Kohlenhydrate: 7.0,
-      Zucker: 1.5,
-      Fett: 0.3,
+      Kalorien: "27 kcal",
+      Kohlenhydrate: 2.0,
+      Eiweiß: 1.0,
+      Fett: 0.0,
     },
     benefits: [
       "Fördert eine gesunde Verdauung durch Ballaststoffe",
@@ -347,15 +446,23 @@ export const vegetablesDE: Vegetable[] = [
     image: images.artischocke,
     season: ["March", "April", "May", "June"],
     vitamins: [
-      { name: "Vitamin C", amount: "11.7 mg", percentage: "13%" },
-      { name: "Vitamin K", amount: "15 µg", percentage: "13%" },
+      { name: "Vitamin C", amount: "8 mg", percentage: "10%" }, // NRV: 80 mg
+      { name: "Vitamin B6", amount: "0.10 mg", percentage: "7%" }, // NRV: 1.4 mg
+      { name: "Vitamin B2", amount: "0.01 mg", percentage: "1%" }, // NRV: 1.4 mg
+      { name: "Vitamin B1", amount: "0.14 mg", percentage: "13%" }, // NRV: 1.1 mg
+      { name: "Calcium", amount: "53 mg", percentage: "7%" }, // NRV: 800 mg
+      { name: "Magnesium", amount: "26 mg", percentage: "7%" }, // NRV: 375 mg
+      { name: "Eisen", amount: "1.5 mg", percentage: "11%" }, // NRV: 14 mg
+      { name: "Natrium", amount: "47 mg", percentage: "3%" }, // NRV: 1.5 g
+      { name: "Kalium", amount: "350 mg", percentage: "10%" }, // NRV: 3.5 g
+      { name: "Phosphor", amount: "130 mg", percentage: "19%" }, // NRV: 700 mg
     ],
     nutrients: {
-      Ballaststoffe: 5.4,
-      Eiweiß: 3.3,
-      Kohlenhydrate: 11.0,
-      Zucker: 1.0,
-      Fett: 0.2,
+      Brennwert: "43 kcal",
+      Eiweiß: 2.4,
+      Fett: 0.1,
+      Kohlenhydrate: 2.6,
+      Ballaststoffe: 10.8,
     },
     benefits: [
       "Fördert die Verdauung",
@@ -376,20 +483,49 @@ export const vegetablesDE: Vegetable[] = [
     image: images.chicoree,
     season: ["October", "November", "December", "January", "February", "March"],
     vitamins: [
-      { name: "Vitamin K", amount: "231 µg", percentage: "193%" },
-      { name: "Vitamin C", amount: "4 mg", percentage: "5%" },
+      {
+        name: "Vitamin A (Retinoläquivalent)",
+        amount: "572 µg",
+        percentage: "71%",
+      }, // NRV: 800 µg
+      { name: "Vitamin B1 (Thiamin)", amount: "58 µg", percentage: "5%" }, // NRV: 1.1 mg
+      { name: "Vitamin B2 (Riboflavin)", amount: "36 µg", percentage: "3%" }, // NRV: 1.4 mg
+      { name: "Niacin (Vitamin B3)", amount: "240 µg", percentage: "2%" }, // NRV: 16 mg
+      {
+        name: "Vitamin B5 (Pantothensäure)",
+        amount: "400 µg",
+        percentage: "8%",
+      }, // NRV: 5 mg
+      { name: "Vitamin B6 (Pyridoxin)", amount: "48 µg", percentage: "3%" }, // NRV: 1.4 mg
+      { name: "Biotin (Vitamin B7)", amount: "5 µg", percentage: "10%" }, // NRV: 50 µg
+      { name: "Folsäure (Vitamin B9)", amount: "50 µg", percentage: "25%" }, // NRV: 200 µg
+      { name: "Vitamin C", amount: "8689 µg", percentage: "11%" }, // NRV: 80 mg
+      {
+        name: "Vitamin E (Alpha-Tocopherol)",
+        amount: "100 µg",
+        percentage: "83%",
+      }, // NRV: 120 mg
+      { name: "Calcium", amount: "26 mg", percentage: "3%" }, // NRV: 800 mg
+      { name: "Kalium", amount: "198 mg", percentage: "6%" }, // NRV: 3.5 g
+      { name: "Magnesium", amount: "13 mg", percentage: "3%" }, // NRV: 375 mg
+      { name: "Natrium", amount: "4 mg", percentage: "0.3%" }, // NRV: 1.5 g
+      { name: "Phosphor", amount: "26 mg", percentage: "4%" }, // NRV: 700 mg
     ],
     nutrients: {
-      Ballaststoffe: 3.1,
-      Eiweiß: 1.5,
-      Kohlenhydrate: 4.7,
-      Zucker: 0.7,
+      Kohlenhydrate: 2.3,
+      Nahrungsfasern: 1.3,
       Fett: 0.2,
+      Protein: 1.3,
     },
     benefits: [
       "Fördert die Verdauung",
-      "Unterstützt die Lebergesundheit",
-      "Hilft bei der Gewichtskontrolle",
+      "Unterstützt die Leberfunktion",
+      "Hilft bei der Gewichtsreduktion",
+      "Stärkt das Immunsystem",
+      "Fördert die Herzgesundheit",
+      "Verbessert die Blutzuckerregulation",
+      "Hat entzündungshemmende Wirkung",
+      "Fördert die Nierenfunktion",
     ],
     regionAvailability: ["Belgien", "Frankreich", "Deutschland"],
     storageTips: "Im Kühlschrank im Gemüsefach aufbewahren.",
@@ -404,20 +540,32 @@ export const vegetablesDE: Vegetable[] = [
     image: images.suesskartoffel,
     season: ["October", "November", "December"],
     vitamins: [
-      { name: "Vitamin A", amount: "14187 IU", percentage: "284%" },
-      { name: "Vitamin C", amount: "2.4 mg", percentage: "3%" },
+      { name: "Folat (Folsäure)", amount: "12 µg", percentage: "6%" }, // NRV: 200 µg
+      { name: "Vitamin B6", amount: "0.27 mg", percentage: "19%" }, // NRV: 1.4 mg
+      { name: "Biotin", amount: "4 µg", percentage: "8%" }, // NRV: 50 µg
+      { name: "Vitamin C", amount: "30 mg", percentage: "38%" }, // NRV: 80 mg
+      { name: "Vitamin E", amount: "4.56 mg", percentage: "38%" }, // NRV: 12 mg
+      { name: "Kalium", amount: "360 mg", percentage: "10%" }, // NRV: 3.5 g
+      { name: "Magnesium", amount: "18 mg", percentage: "5%" }, // NRV: 375 mg
+      { name: "Kalzium", amount: "22 mg", percentage: "3%" }, // NRV: 800 mg
+      { name: "Phosphor", amount: "39 mg", percentage: "6%" }, // NRV: 700 mg
     ],
     nutrients: {
-      Ballaststoffe: 3.3,
-      Eiweiß: 2.0,
-      Kohlenhydrate: 20.7,
-      Zucker: 6.5,
-      Fett: 0.1,
+      Brennwert: "11 kcal",
+      Eiweiß: 1.63,
+      Fett: 0.6,
+      Kohlenhydrate: 24.08,
+      Ballaststoffe: 3.14,
     },
     benefits: [
-      "Stärkt das Immunsystem",
-      "Verbessert die Sehkraft",
+      "Reich an Antioxidantien",
+      "Fördert die Verdauung",
+      "Unterstützt das Immunsystem",
+      "Hilft bei der Blutzuckerregulation",
+      "Fördert die Hautgesundheit",
+      "Steigert die Energie",
       "Fördert die Herzgesundheit",
+      "Hilft beim Gewichtsmanagement",
     ],
     regionAvailability: ["USA", "China", "Indien"],
     storageTips: "An einem kühlen, trockenen Ort lagern.",
@@ -432,15 +580,35 @@ export const vegetablesDE: Vegetable[] = [
     image: images.zuckerschote,
     season: ["May", "June", "July"],
     vitamins: [
-      { name: "Vitamin C", amount: "60 mg", percentage: "67%" },
-      { name: "Vitamin K", amount: "25 µg", percentage: "21%" },
+      {
+        name: "Vitamin A (Retinoläquivalent)",
+        amount: "68 µg",
+        percentage: "8.5%",
+      }, // NRV: 800 µg
+      { name: "Vitamin B1 (Thiamin)", amount: "170 µg", percentage: "15%" }, // NRV: 1.1 mg
+      { name: "Vitamin B2 (Riboflavin)", amount: "150 µg", percentage: "11%" }, // NRV: 1.4 mg
+      { name: "Niacin (Vitamin B3)", amount: "2700 µg", percentage: "17%" }, // NRV: 16 mg
+      {
+        name: "Vitamin B5 (Pantothensäure)",
+        amount: "750 µg",
+        percentage: "15%",
+      }, // NRV: 5 mg
+      { name: "Vitamin B6 (Pyridoxin)", amount: "160 µg", percentage: "11%" }, // NRV: 1.4 mg
+      { name: "Biotin (Vitamin B7)", amount: "3 µg", percentage: "6%" }, // NRV: 50 µg
+      { name: "Folsäure (Vitamin B9)", amount: "33 µg", percentage: "17%" }, // NRV: 200 µg
+      { name: "Vitamin C", amount: "25000 µg", percentage: "31%" }, // NRV: 80 mg
+      {
+        name: "Vitamin E (Alpha-Tocopherol)",
+        amount: "500 µg",
+        percentage: "417%",
+      }, // NRV: 120 mg
     ],
     nutrients: {
-      Ballaststoffe: 2.0,
-      Eiweiß: 2.8,
-      Kohlenhydrate: 7.0,
-      Zucker: 3.0,
-      Fett: 0.3,
+      Brennwert: "69 kcal",
+      Kohlenhydrate: 10.0,
+      Ballaststoffe: 5.0,
+      Eiweiß: 4.0,
+      Fett: 0.2,
     },
     benefits: [
       "Gut für die Verdauung",
@@ -460,20 +628,45 @@ export const vegetablesDE: Vegetable[] = [
     image: images.rettich,
     season: ["March", "April", "May", "June", "July"],
     vitamins: [
-      { name: "Vitamin C", amount: "14.8 mg", percentage: "16%" },
-      { name: "Folsäure", amount: "25 µg", percentage: "6%" },
+      {
+        name: "Vitamin A (Retinoläquivalent)",
+        amount: "2 µg",
+        percentage: "0.25%",
+      }, // NRV: 800 µg
+      { name: "Vitamin B1 (Thiamin)", amount: "30 µg", percentage: "2.7%" }, // NRV: 1.1 mg
+      { name: "Vitamin B2 (Riboflavin)", amount: "30 µg", percentage: "2.1%" }, // NRV: 1.4 mg
+      { name: "Niacin (Vitamin B3)", amount: "400 µg", percentage: "2.5%" }, // NRV: 16 mg
+      {
+        name: "Vitamin B5 (Pantothensäure)",
+        amount: "180 µg",
+        percentage: "3.6%",
+      }, // NRV: 5 mg
+      { name: "Vitamin B6 (Pyridoxin)", amount: "60 µg", percentage: "4.3%" }, // NRV: 1.4 mg
+      { name: "Biotin (Vitamin B7)", amount: "0.5 µg", percentage: "1%" }, // NRV: 50 µg
+      { name: "Folsäure (Vitamin B9)", amount: "24 µg", percentage: "12%" }, // NRV: 200 µg
+      { name: "Vitamin C", amount: "27000 µg", percentage: "33.75%" }, // NRV: 80 mg
+      {
+        name: "Vitamin E (Alpha-Tocopherol)",
+        amount: "10 µg",
+        percentage: "8.33%",
+      }, // NRV: 120 mg
     ],
     nutrients: {
-      Ballaststoffe: 1.6,
-      Eiweiß: 0.7,
+      Brennwert: "16 kcal",
+      Fett: 0.1,
       Kohlenhydrate: 3.4,
       Zucker: 1.9,
-      Fett: 0.1,
+      Ballaststoffe: 1.6,
+      Protein: 0.7,
     },
     benefits: [
       "Entgiftet den Körper",
       "Fördert die Verdauung",
+      "Unterstützt die Leberfunktion",
+      "Reich an Antioxidantien",
+      "Hilft bei der Entwässerung",
       "Stärkt das Immunsystem",
+      "Fördert die Hautgesundheit",
     ],
     regionAvailability: ["Deutschland", "Indien", "Japan"],
     storageTips: "An einem kühlen, dunklen Ort aufbewahren.",
@@ -488,20 +681,45 @@ export const vegetablesDE: Vegetable[] = [
     image: images.pakChoi,
     season: ["March", "April", "May", "June", "September", "October"],
     vitamins: [
-      { name: "Vitamin A", amount: "4468 IU", percentage: "89%" },
-      { name: "Vitamin C", amount: "45 mg", percentage: "50%" },
+      {
+        name: "Vitamin A (Retinoläquivalent)",
+        amount: "71 µg",
+        percentage: "8.9%",
+      }, // NRV: 800 µg
+      { name: "Vitamin B1 (Thiamin)", amount: "33 µg", percentage: "3%" }, // NRV: 1.1 mg
+      { name: "Vitamin B2 (Riboflavin)", amount: "37 µg", percentage: "2.6%" }, // NRV: 1.4 mg
+      { name: "Niacin (Vitamin B3)", amount: "400 µg", percentage: "2.5%" }, // NRV: 16 mg
+      {
+        name: "Vitamin B5 (Pantothensäure)",
+        amount: "200 µg",
+        percentage: "4%",
+      }, // NRV: 5 mg
+      { name: "Vitamin B6 (Pyridoxin)", amount: "121 µg", percentage: "8.6%" }, // NRV: 1.4 mg
+      { name: "Biotin (Vitamin B7)", amount: "0.5 µg", percentage: "1%" }, // NRV: 50 µg
+      { name: "Folsäure (Vitamin B9)", amount: "66 µg", percentage: "33%" }, // NRV: 200 µg
+      { name: "Vitamin C", amount: "26000 µg", percentage: "32.5%" }, // NRV: 80 mg
+      {
+        name: "Vitamin E (Alpha-Tocopherol)",
+        amount: "240 µg",
+        percentage: "200%",
+      }, // NRV: 120 mg
+      { name: "Vitamin K", amount: "80 µg", percentage: "67%" },
     ],
     nutrients: {
-      Ballaststoffe: 1.0,
-      Eiweiß: 1.5,
-      Kohlenhydrate: 2.2,
-      Zucker: 1.0,
+      Brennwert: "17 kcal",
       Fett: 0.2,
+      Kohlenhydrate: 2.2,
+      Ballaststoffe: 1.0,
+      Zucker: 1.2,
+      Eiweiß: 1.0,
     },
     benefits: [
-      "Stärkt das Immunsystem",
-      "Gut für die Sehkraft",
-      "Unterstützt die Knochengesundheit",
+      "Stärkt das Immunsystem: Pak Choi ist reich an Vitamin C, das das Immunsystem unterstützt.",
+      "Gut für die Sehkraft: Der hohe Gehalt an Vitamin A schützt die Augen und fördert die Sehkraft.",
+      "Unterstützt die Knochengesundheit: Kalzium und Vitamin K in Pak Choi stärken die Knochen.",
+      "Fördert die Verdauung: Der Ballaststoffgehalt hilft bei der Regulierung der Verdauung.",
+      "Hilft beim Entgiften: Antioxidantien und schwefelhaltige Verbindungen fördern die Entgiftung.",
+      "Hält das Herz gesund: Kalium unterstützt die Blutdruckregulation und fördert die Herzgesundheit.",
     ],
     regionAvailability: ["China", "Japan", "Thailand", "Vietnam"],
     storageTips: "Im Kühlschrank im Gemüsefach aufbewahren.",
@@ -516,22 +734,31 @@ export const vegetablesDE: Vegetable[] = [
     image: images.fenchel,
     season: ["April", "May", "June", "July", "October"],
     vitamins: [
-      { name: "Vitamin C", amount: "12 mg", percentage: "13%" },
-      { name: "Vitamin K", amount: "7 µg", percentage: "6%" },
-      { name: "Vitamin B6", amount: "0.1 mg", percentage: "5%" },
+      { name: "Vitamin A", amount: "783 µg", percentage: "97.9%" }, // NRV: 800 µg
+      { name: "Vitamin B1 (Thiamin)", amount: "30 µg", percentage: "2.7%" }, // NRV: 1.1 mg
+      { name: "Vitamin B2 (Riboflavin)", amount: "110 µg", percentage: "7.9%" }, // NRV: 1.4 mg
+      { name: "Niacin (Vitamin B3)", amount: "200 µg", percentage: "1.3%" }, // NRV: 16 mg
+      { name: "Vitamin B6 (Pyridoxin)", amount: "100 µg", percentage: "7.1%" }, // NRV: 1.4 mg
+      { name: "Vitamin C", amount: "93 mg", percentage: "116.25%" }, // NRV: 80 mg
+      { name: "Kalium (Potassium)", amount: "395 mg", percentage: "11.3%" }, // NRV: 3.5 g
+      { name: "Eisen (Iron)", amount: "2.7 mg", percentage: "19%" }, // NRV: 14 mg
+      { name: "Kalzium (Calcium)", amount: "38 mg", percentage: "4.8%" }, // NRV: 800 mg
+      { name: "Magnesium", amount: "12 mg", percentage: "3.2%" },
     ],
     nutrients: {
-      Ballaststoffe: 3.1,
-      Eiweiß: 1.2,
-      Kohlenhydrate: 7.3,
-      Zucker: 3.9,
+      Brennwert: "31 kcal",
       Fett: 0.2,
+      Kohlenhydrate: 7.0,
+      Ballaststoffe: 3.1,
+      Protein: 1.2,
     },
     benefits: [
-      "Fördert die Verdauung",
-      "Unterstützt die Herzgesundheit",
-      "Verbessert die Knochengesundheit durch Calcium und Vitamin K",
-      "Hilft bei der Reduzierung von Entzündungen",
+      "Fördert die Verdauung: Fenchel hilft bei der Linderung von Blähungen und unterstützt eine gesunde Verdauung.",
+      "Stärkt das Immunsystem: Der hohe Vitamin C-Gehalt stärkt das Immunsystem und schützt vor Infektionen.",
+      "Reduziert Entzündungen: Fenchel enthält Antioxidantien, die Entzündungen im Körper verringern können.",
+      "Unterstützt die Gewichtsreduktion: Fenchel hat einen geringen Kaloriengehalt und fördert das Sättigungsgefühl.",
+      "Fördert die Herzgesundheit: Fenchel enthält Kalium, das hilft, den Blutdruck zu regulieren und das Herz zu schützen.",
+      "Verbessert die Atemwege: Fenchel hat eine schleimlösende Wirkung und hilft bei der Linderung von Husten und Atemwegsproblemen.",
     ],
     regionAvailability: [
       "Deutschland",

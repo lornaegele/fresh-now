@@ -61,13 +61,13 @@ const VegetableDetails = ({ route }: { route: VegetableDetailsRouteProp }) => {
             {/* Vitamine */}
             <View className="bg-white rounded-xl p-2 px-4">
               <View className="flex flex-row justify-between items-start pb-1">
-                <Text className="text-lg font-semibold text-gray-700">
-                  Vitamine pro 100g
+                <Text className="text-lg font-semibold text-gray-700 leading-5">
+                  Vitamine pro 100g*
                 </Text>
                 <View className="flex flex-row gap-2 pt-1">
                   <Text className="font-medium  text-gray-700">Menge</Text>
-                  <Text className="w-12 text-right font-medium  text-gray-600">
-                    NRV*
+                  <Text className="w-16 text-right font-medium  text-gray-600">
+                    NRV**
                   </Text>
                 </View>
               </View>
@@ -76,7 +76,7 @@ const VegetableDetails = ({ route }: { route: VegetableDetailsRouteProp }) => {
                   <Text>{vitamin.name}</Text>
                   <View className="flex flex-row gap-2">
                     <Text>{vitamin.amount}</Text>
-                    <Text className="w-12 text-right">
+                    <Text className="w-16 text-right">
                       {vitamin.percentage}
                     </Text>
                   </View>
@@ -88,7 +88,7 @@ const VegetableDetails = ({ route }: { route: VegetableDetailsRouteProp }) => {
             <View className="bg-white rounded-xl p-2 px-4">
               <View className="flex flex-row justify-between items-start pb-1">
                 <Text className="text-lg font-semibold text-gray-700">
-                  Nährstoffe pro 100g
+                  Nährstoffe pro 100g*
                 </Text>
                 <Text className="text-right font-medium  text-gray-600 pt-1">
                   Menge
@@ -97,10 +97,11 @@ const VegetableDetails = ({ route }: { route: VegetableDetailsRouteProp }) => {
               <View className="space-y-1">
                 {Object.entries(item.nutrients).map(([key, value]) => (
                   <View key={key} className="flex flex-row justify-between">
+                    <Text>{key == "Zucker" ? "- davon Zucker" : key}</Text>
                     <Text>
-                      {`${key.charAt(0).toUpperCase() + key.slice(1)}`}
+                      {value}
+                      {!/[a-zA-Z]/.test(String(value)) && "g"}
                     </Text>
-                    <Text> {value}g</Text>
                   </View>
                 ))}
               </View>
@@ -149,7 +150,11 @@ const VegetableDetails = ({ route }: { route: VegetableDetailsRouteProp }) => {
             </View>
             <View>
               <Text className="text-gray-500 px-2 text-sm">
-                *NRV: Nährstoffbezugswerte (nutritient reference values) sind
+                * Vitamine und Mineralstoffe pro 100 g sind im Rohzustand also
+                ungekocht & unverarbeitet.
+              </Text>
+              <Text className="text-gray-500 px-2 text-sm">
+                **NRV: Nährstoffbezugswerte (nutritient reference values) sind
                 rechtlich festgelegte Referenzmengen für die Tageszufuhr von
                 Vitaminen und Mineralstoffen.
               </Text>
