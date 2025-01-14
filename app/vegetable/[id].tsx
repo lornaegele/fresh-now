@@ -150,8 +150,12 @@ const VegetableDetails = ({ route }: { route: VegetableDetailsRouteProp }) => {
             </View>
             <View>
               <Text className="text-gray-500 px-2 text-sm">
-                * Vitamine und Mineralstoffe pro 100 g sind im Rohzustand also
-                ungekocht & unverarbeitet.
+                Disclaimer: Keine Verantwortung für die Richtigkeit der Angaben
+                wird übernommen.
+              </Text>
+              <Text className="text-gray-500 px-2 text-sm">
+                *Nährstoffe, Vitamine und Mineralstoffe pro 100 g sind im
+                Rohzustand also ungekocht & unverarbeitet.
               </Text>
               <Text className="text-gray-500 px-2 text-sm">
                 **NRV: Nährstoffbezugswerte (nutritient reference values) sind
