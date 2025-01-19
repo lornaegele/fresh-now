@@ -54,7 +54,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
     );
 
     if (itemExists) {
-      Alert.alert("Doppelt", `${newName} ist schon in deiner Liste.`);
+      Alert.alert("Ups!", `${newName} ist schon in deiner Liste.`);
       return;
     }
 
@@ -160,12 +160,35 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
       setDoneItem(item);
 
       setTimeout(async () => {
+        // Update the item status to "done"
         let updatedList: ShoppingListItem = {
           ...shoppingList,
           items: shoppingList.items!.map((item) =>
             item.id === itemId ? { ...item, status: "done" } : item
           ),
         };
+
+        // Move the done item to the front of the array
+        updatedList.items!.sort((a, b) => {
+          if (a.status === "done" && b.status !== "done") {
+            return -1; // Move "done" items to the front
+          }
+          if (a.status !== "done" && b.status === "done") {
+            return 1; // Keep "open" items after "done" items
+          }
+          return 0; // No change if both have the same status
+        });
+
+        // Check if the "done" list is longer than 20, and remove the last item if needed
+        const doneItems = updatedList.items!.filter(
+          (item) => item.status === "done"
+        );
+        if (doneItems.length > 20) {
+          const lastDoneItemIndex = updatedList.items!.findIndex(
+            (item) => item.id === doneItems[doneItems.length - 1].id
+          );
+          updatedList.items!.splice(lastDoneItemIndex, 1);
+        }
 
         setShoppingList(updatedList);
 
@@ -180,6 +203,18 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
         }
       }, 400);
     } else {
+      // Check if the item is already "done"
+      const isAlreadyDone = shoppingList.items!.find(
+        (existingItem) =>
+          existingItem.name === item.name && existingItem.status === "open"
+      );
+
+      // If item is already "done", alert the user and return
+      if (isAlreadyDone) {
+        Alert.alert("Ups!", `${isAlreadyDone.name} ist schon in deiner Liste.`);
+        return;
+      }
+      // If the item is already "done" and we're reverting it to "open"
       setDoneItem(null);
       let updatedList: ShoppingListItem = {
         ...shoppingList,
@@ -201,6 +236,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
       }
     }
   };
+
   const handleChangeText = (text: string) => {
     setNewItemName(text);
 
