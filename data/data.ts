@@ -1,8 +1,8 @@
 export const filterVariantsDE: FilterVariantsDE[] = [
   "Gemüse",
   "Obst",
+  "Einkaufs-Tipps",
   "Gesundheits-Tipps",
-  "Tipps beim Einkaufen",
 ];
 export const filterVariantsEN: FilterVariantsEN[] = [
   "Vegetables",

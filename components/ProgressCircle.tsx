@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CircularProgress } from "react-native-circular-progress";
+import * as Progress from "react-native-progress";
 
 const ProgressCircle = ({
   color,
@@ -18,8 +18,8 @@ const ProgressCircle = ({
 
     const updateProgress = () => {
       const elapsed = Date.now() - startTime;
-      const newProgress = Math.min(elapsed / duration, 1); // 2 seconds = 2000ms
-      setProgress(newProgress * 100); // Progress as percentage
+      const newProgress = Math.min(elapsed / duration); // 2 seconds = 2000ms
+      setProgress(newProgress);
 
       if (newProgress < 1) {
         animationFrame = requestAnimationFrame(updateProgress);
@@ -31,12 +31,12 @@ const ProgressCircle = ({
   }, []);
 
   return (
-    <CircularProgress
-      size={size ? size : 18}
-      width={4}
-      fill={progress}
-      tintColor={color}
-      backgroundColor="white"
+    <Progress.Circle
+      size={size || 20}
+      progress={progress}
+      thickness={4}
+      color={color}
+      borderWidth={0}
     />
   );
 };

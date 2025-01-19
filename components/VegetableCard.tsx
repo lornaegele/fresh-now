@@ -59,7 +59,7 @@ const VegetableCard = ({ item, onPress }: Props) => {
 
       // Show loading progress before displaying the checkmark
       setLoading(true);
-      setTimeout(() => setLoading(false), 500);
+      setTimeout(() => setLoading(false), 600);
     } catch (error) {
       console.error("Error adding item to list:", error);
     }
@@ -99,7 +99,7 @@ const VegetableCard = ({ item, onPress }: Props) => {
         className="bg-white absolute justify-center items-center right-2 top-2 w-10 h-10 rounded-xl shadow shadow-zinc-500"
       >
         {loading ? (
-          <ProgressCircle color="green" duration={500} size={20} />
+          <ProgressCircle color="green" duration={600} size={22} />
         ) : isItemInList ? (
           <Text className="text-lg">✔️</Text>
         ) : (

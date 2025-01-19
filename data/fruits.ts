@@ -1221,4 +1221,42 @@ export const fruitsDE: Fruit[] = [
     ],
     info: "Himbeeren sind reich an Ballaststoffen und Vitamin C und haben starke antioxidative Eigenschaften, die das Immunsystem stärken und die Hautgesundheit fördern.",
   },
+  {
+    id: "veg043",
+    name: "Aronia Beere",
+    emoji: "🫐",
+    backgroundColor: "#e8d9f4",
+    info: "Die Aronia Beere, auch als Apfelbeere bekannt, ist eine kleine, dunkle Frucht mit einem herben, leicht süßen Geschmack. Sie ist reich an Antioxidantien und wird oft für Säfte, Marmeladen oder als Superfood verwendet.",
+    image: images.aroniaBeere,
+    season: ["August", "September", "October"],
+    vitamins: [
+      { name: "Vitamin C", amount: "21 mg", percentage: "26.3%" }, // NRV: 80 mg
+      { name: "Vitamin K", amount: "22 µg", percentage: "29.3%" }, // NRV: 75 µg
+      { name: "Folat (Vitamin B9)", amount: "12 µg", percentage: "6%" }, // NRV: 200 µg
+      { name: "Kalium (Potassium)", amount: "160 mg", percentage: "4.6%" }, // NRV: 3.5 g
+      { name: "Eisen (Iron)", amount: "1.2 mg", percentage: "8.6%" }, // NRV: 14 mg
+      { name: "Calcium", amount: "30 mg", percentage: "3.8%" }, // NRV: 800 mg
+      { name: "Magnesium", amount: "7 mg", percentage: "1.9%" },
+      { name: "Phosphor", amount: "15 mg", percentage: "2.1%" }, // NRV: 700 mg
+    ],
+    nutrients: {
+      Brennwert: "47 kcal",
+      Fett: 0.5,
+      Kohlenhydrate: 9.6,
+      Ballaststoffe: 5.3,
+      Protein: 1.4,
+    },
+    benefits: [
+      "Reich an Antioxidantien: Die Beeren sind vollgepackt mit Polyphenolen, die Zellschäden durch freie Radikale vorbeugen können.",
+      "Fördern die Herzgesundheit: Unterstützen durch den Gehalt an Anthocyanen eine gesunde Durchblutung.",
+      "Stärken das Immunsystem: Der hohe Vitamin C-Gehalt trägt zur Abwehr von Infektionen bei.",
+      "Verbessern die Verdauung: Der hohe Ballaststoffgehalt fördert eine gesunde Darmfunktion.",
+      "Regulieren den Blutzucker: Können helfen, den Blutzuckerspiegel zu stabilisieren.",
+      "Unterstützen die Entgiftung: Fördern die natürliche Entgiftung des Körpers durch Antioxidantien.",
+    ],
+    regionAvailability: ["Deutschland", "Polen", "Ukraine", "Russland"],
+    storageTips:
+      "Frisch im Kühlschrank aufbewahren oder einfrieren, um die Haltbarkeit zu verlängern.",
+    recipes: ["Aronia-Smoothie", "Aronia-Marmelade", "Aronia-Saft"],
+  },
 ];

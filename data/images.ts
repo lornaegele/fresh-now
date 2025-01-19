@@ -41,6 +41,7 @@ import topinambur from "@/assets/images/vegetables/topinambur.png";
 import erbsen from "@/assets/images/vegetables/erbsen.png";
 import spitzkohl from "@/assets/images/vegetables/spitzkohl.png";
 import wirsing from "@/assets/images/vegetables/wirsing.png";
+import champignons from "@/assets/images/vegetables/champignons.png";
 
 //Fruits
 import apfel from "@/assets/images/fruits/apfel.png";
@@ -79,6 +80,7 @@ import maracuja from "@/assets/images/fruits/maracuja.png";
 import blaubeeren from "@/assets/images/fruits/blaubeeren.png";
 import himbeeren from "@/assets/images/fruits/himbeeren.png";
 import ananas from "@/assets/images/fruits/ananas.png";
+import aroniaBeere from "@/assets/images/fruits/aronia_beere.png";
 
 export default {
   karotte,
@@ -159,4 +161,6 @@ export default {
   blaubeeren,
   himbeeren,
   ananas,
+  champignons,
+  aroniaBeere,
 };

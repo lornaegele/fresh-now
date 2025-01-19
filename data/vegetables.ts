@@ -1560,4 +1560,69 @@ export const vegetablesDE: Vegetable[] = [
       "Wirsing mit Speck und Zwiebeln",
     ],
   },
+  {
+    id: "veg0266",
+    name: "Champignons",
+    emoji: "🍄‍🟫",
+    backgroundColor: "#f0f0e0",
+    info: "Champignons sind vielseitige Speisepilze mit mildem, nussigem Geschmack. Sie eignen sich hervorragend für Salate, Suppen, Saucen und Pfannengerichte.",
+    image: images.champignons,
+    season: [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
+    vitamins: [
+      { name: "Vitamin B1 (Thiamin)", amount: "90 µg", percentage: "8.2%" }, // NRV: 1.1 mg
+      {
+        name: "Vitamin B2 (Riboflavin)",
+        amount: "450 µg",
+        percentage: "32.1%",
+      }, // NRV: 1.4 mg
+      { name: "Niacin (Vitamin B3)", amount: "3.8 mg", percentage: "23.8%" }, // NRV: 16 mg
+      {
+        name: "Vitamin B5 (Pantothensäure)",
+        amount: "1.7 mg",
+        percentage: "28.3%",
+      }, // NRV: 6 mg
+      { name: "Vitamin B6 (Pyridoxin)", amount: "120 µg", percentage: "8.6%" }, // NRV: 1.4 mg
+      { name: "Vitamin D", amount: "1.9 µg", percentage: "38%" }, // NRV: 5 µg
+      { name: "Kalium (Potassium)", amount: "420 mg", percentage: "12%" }, // NRV: 3.5 g
+      { name: "Eisen (Iron)", amount: "1.3 mg", percentage: "9.3%" }, // NRV: 14 mg
+      { name: "Phosphor", amount: "120 mg", percentage: "17.1%" }, // NRV: 700 mg
+      { name: "Magnesium", amount: "12 mg", percentage: "3.2%" },
+    ],
+    nutrients: {
+      Brennwert: "22 kcal",
+      Fett: 0.3,
+      Kohlenhydrate: 3.3,
+      Ballaststoffe: 1.0,
+      Protein: 2.5,
+    },
+    benefits: [
+      "Kalorienarm und nahrhaft: Champignons sind reich an Vitaminen und Mineralien bei gleichzeitig niedrigem Kaloriengehalt.",
+      "Fördern die Knochengesundheit: Enthalten Vitamin D, das die Kalziumaufnahme unterstützt.",
+      "Unterstützen die Immunfunktion: Der Gehalt an B-Vitaminen stärkt das Immunsystem.",
+      "Verbessern die Verdauung: Ballaststoffe fördern eine gesunde Darmfunktion.",
+      "Gut für die Herzgesundheit: Kalium hilft, den Blutdruck zu regulieren.",
+      "Unterstützen die Zellgesundheit: Enthalten Antioxidantien, die freie Radikale bekämpfen.",
+    ],
+    regionAvailability: ["Deutschland", "Niederlande", "Frankreich", "Polen"],
+    storageTips:
+      "Am besten in einer Papiertüte im Kühlschrank aufbewahren, um Feuchtigkeitsbildung zu vermeiden.",
+    recipes: [
+      "Champignon-Rahmsauce",
+      "Gefüllte Champignons",
+      "Champignon-Pfanne",
+    ],
+  },
 ];

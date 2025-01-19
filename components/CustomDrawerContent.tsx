@@ -40,7 +40,7 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({ navigation }) => {
   const rotateIcon = () =>
     Animated.timing(rotationValue, {
       toValue: isAdding ? 0 : 1,
-      duration: 200,
+      duration: 300,
       useNativeDriver: true,
     }).start();
 

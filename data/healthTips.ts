@@ -15,10 +15,10 @@ export const healthTips: HealthTip[] = [
   },
   {
     id: "005",
-    name: "Umweltschutz leicht gemacht",
+    name: "Ballaststoffe für die Darmgesundheit",
     content:
-      "Durch den Verzehr saisonaler Lebensmittel reduzieren Sie den CO₂-Fußabdruck, da lange Transportwege vermieden werden.",
-    emoji: "🌍",
+      "Ballaststoffreiche Lebensmittel wie Haferflocken, Linsen und Chia-Samen fördern eine gesunde Verdauung und unterstützen die Gewichtskontrolle.",
+    emoji: "🌾",
   },
   {
     id: "007",
@@ -43,20 +43,40 @@ export const healthTips: HealthTip[] = [
   },
   {
     id: "013",
-    name: "Besserer Geschmack und mehr Nährstoffe",
+    name: "Vermeiden Sie Zuckerersatzstoffe",
     content:
-      "Saisonale Produkte sind oft geschmackvoller und voller Nährstoffe – eine köstliche und gesunde Ergänzung zu Ihrer Ernährung.",
-    emoji: "🥕",
+      "Zuckerersatzstoffe wie Aspartam und Sucralose können den Appetit anregen und den Blutzuckerspiegel destabilisieren. Versuchen Sie, natürlichen Zucker aus Obst und Honig zu verwenden.",
+    emoji: "🍯",
   },
 
   {
     id: "015",
-    name: "Unterstützung lokaler Bauern",
+    name: "Fermentierte Lebensmittel für das Mikrobiom",
     content:
-      "Mit dem Kauf saisonaler Produkte fördern Sie lokale Landwirte und stärken die regionale Landwirtschaft.",
-    emoji: "🌽",
+      "Probiotische Lebensmittel wie Sauerkraut, Kimchi und Kefir fördern die Gesundheit des Mikrobioms und stärken das Immunsystem.",
+    emoji: "🥒",
   },
-
+  {
+    id: "017",
+    name: "Gesunde Fette für den Körper",
+    content:
+      "Gesunde Fette aus Avocados, Nüssen und Olivenöl unterstützen das Herz-Kreislauf-System, verbessern die Hautgesundheit und fördern den Hormonhaushalt.",
+    emoji: "🥑",
+  },
+  {
+    id: "019",
+    name: "Wasser mit Apfelessig",
+    content:
+      "Ein Teelöffel Apfelessig in einem Glas Wasser kann die Verdauung anregen, den Blutzuckerspiegel stabilisieren und den Stoffwechsel fördern.",
+    emoji: "🍎",
+  },
+  {
+    id: "021",
+    name: "Magnesiumreiche Lebensmittel",
+    content:
+      "Magnesiumreiche Lebensmittel wie Mandeln, Spinat und dunkle Schokolade können helfen, Muskelkrämpfe zu verhindern, den Schlaf zu verbessern und Stress abzubauen.",
+    emoji: "🥜",
+  },
   {
     id: "002",
     name: "Dummy-Eintrag",

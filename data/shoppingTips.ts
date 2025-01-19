@@ -1,31 +1,33 @@
 export const shoppingTips: HealthTip[] = [
   {
     id: "001",
-    name: "Frischer Spargel im Frühling",
+    name: "Eigenmarken nutzen",
     content:
-      "Frühling ist die perfekte Zeit, um frischen Spargel zu kaufen. Achten Sie auf feste Stangen und geschlossene Köpfe für besten Geschmack.",
+      "Viele Supermärkte bieten Bio-Eigenmarken an, die von renommierten Herstellern produziert werden. Diese sind oft günstiger als Markenprodukte und dennoch von hoher Qualität.",
     emoji: "🌱",
   },
+
   {
     id: "003",
-    name: "Sommerzeit ist Beerenzeit",
+    name: "Bio-Lebensmittel bei dm",
     content:
-      "Kaufen Sie im Sommer lokale Beeren wie Erdbeeren, Himbeeren oder Blaubeeren. Sie sind frisch, süß und reich an Vitaminen.",
-    emoji: "🫐",
+      "Die Drogeriekette dm führt ein umfangreiches Sortiment an Bio-Lebensmitteln zu meist günstigen Preisen. Hier finden Sie alles von Grundnahrungsmitteln bis zu Snacks in Bio-Qualität.",
+    emoji: "🌿",
   },
   {
     id: "005",
-    name: "Kürbisvielfalt im Herbst",
+    name: "Bioland-Produkte bei Lidl",
     content:
-      "Herbst ist Kürbiszeit! Greifen Sie zu Hokkaido, Butternut oder Muskatkürbis – ideal für Suppen, Ofengerichte oder als Beilage.",
-    emoji: "🎃",
+      "Lidl bietet eine Vielzahl von Bioland-zertifizierten Produkten an, die ausschließlich in Deutschland und Südtirol produziert werden. Diese Produkte sind nicht nur bio, sondern auch regional und oft preiswert.",
+
+    emoji: "👨‍🌾",
   },
   {
     id: "007",
-    name: "Wurzelgemüse im Winter",
+    name: "Unverpackt-Läden ausprobieren",
     content:
-      "Karotten, Pastinaken, Rote Bete und Sellerie sind im Winter frisch und nährstoffreich. Perfekt für wärmende Eintöpfe und Gerichte.",
-    emoji: "🥕",
+      "In Unverpackt-Läden können Sie Lebensmittel in der gewünschten Menge kaufen, oft bio und ohne unnötige Verpackung. Ideal, um nachhaltig und günstig einzukaufen.",
+    emoji: "🌾",
   },
   {
     id: "009",
@@ -43,13 +45,27 @@ export const shoppingTips: HealthTip[] = [
   },
   {
     id: "013",
+    name: "TK-Produkte nicht vergessen",
+    content:
+      "Tiefgekühltes Bio-Gemüse ist oft günstiger als frische Ware und genauso nährstoffreich. Ideal, wenn es schnell gehen muss.",
+    emoji: "❄️",
+  },
+  {
+    id: "015",
+    name: "Reste-Tipps: Foodsharing",
+    content:
+      "Über Plattformen wie Foodsharing oder Too Good To Go können Sie Bio-Lebensmittel retten und günstig einkaufen.",
+    emoji: "♻️",
+  },
+  {
+    id: "017",
     name: "Planen Sie Ihre Einkäufe",
     content:
       "Erstellen Sie eine Einkaufsliste basierend auf saisonalem Gemüse. So kaufen Sie bewusster ein und sparen Geld.",
     emoji: "📝",
   },
   {
-    id: "015",
+    id: "019",
     name: "Lagerung beachten",
     content:
       "Lagern Sie saisonales Gemüse richtig, um seine Frische zu bewahren. Zum Beispiel gehört Kürbis an einen kühlen, trockenen Ort. Tipps zur Lagerung findest du bei jedem Gemüse auf der Übersichtsseite.",
@@ -99,6 +115,18 @@ export const shoppingTips: HealthTip[] = [
   },
   {
     id: "016",
+    name: "Dummy-Eintrag",
+    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
+    emoji: "📄",
+  },
+  {
+    id: "018",
+    name: "Dummy-Eintrag",
+    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
+    emoji: "📄",
+  },
+  {
+    id: "20",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
     emoji: "📄",

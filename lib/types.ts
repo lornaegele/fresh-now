@@ -10,7 +10,7 @@ type FilterVariantsEN =
 type FilterVariantsDE =
   | "Gemüse"
   | "Obst"
-  | "Tipps beim Einkaufen"
+  | "Einkaufs-Tipps"
   | "Gesundheits-Tipps";
 type DropdownFilterVariantsDE = "Aktuell in Saison" | "Alle";
 type DropdownFilterVariantsEN = "Currently in season" | "All";
