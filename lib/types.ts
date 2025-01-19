@@ -6,12 +6,17 @@ type FilterVariantsEN =
   | "Vegetables"
   | "Fruits"
   | "Shopping tips"
-  | "Health tips";
+  | "Health tips"
+  | "Vitamins overview";
+
 type FilterVariantsDE =
   | "Gemüse"
   | "Obst"
   | "Einkaufs-Tipps"
-  | "Gesundheits-Tipps";
+  | "Gesundheits-Tipps"
+  | "Vitamin Übersicht"
+  | "Mineralien Übersicht";
+
 type DropdownFilterVariantsDE = "Aktuell in Saison" | "Alle";
 type DropdownFilterVariantsEN = "Currently in season" | "All";
 
@@ -106,6 +111,12 @@ type HealthTip = {
   name: string;
   content: string;
   emoji: string;
+};
+
+type VitaminInfo = {
+  id: string;
+  name: string;
+  content: string;
 };
 
 interface ShoppingListContextValue {

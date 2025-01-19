@@ -1,6 +1,5 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
-import { Ionicons } from "@expo/vector-icons";
 
 const Tips = ({ item }: { item: HealthTip }) => {
   return (

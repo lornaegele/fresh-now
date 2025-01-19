@@ -15,6 +15,9 @@ import { healthTips } from "@/data/healthTips";
 import { shoppingTips } from "@/data/shoppingTips";
 import Tips from "@/components/Tips";
 import VegetableCard from "@/components/VegetableCard";
+import { vitamins } from "@/data/vitamins";
+import VitaminsInfo from "@/components/VitaminsInfo";
+import { minerals } from "@/data/minerals";
 
 type SeasonalNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -44,8 +47,12 @@ const Seasonal = () => {
           : fruitsDE.filter((item) => item.season.includes(currentMonth));
       case "Gesundheits-Tipps":
         return healthTips;
-      default:
+      case "Einkaufs-Tipps":
         return shoppingTips;
+      case "Vitamin Übersicht":
+        return vitamins;
+      default:
+        return minerals;
     }
   }, [selectedFilter, viewAll, currentMonth]);
 
@@ -122,7 +129,10 @@ const Seasonal = () => {
       <FlatList
         data={sortedData}
         renderItem={({ item }) =>
-          selectedFilter === "Gemüse" || selectedFilter === "Obst" ? (
+          selectedFilter === "Vitamin Übersicht" ||
+          selectedFilter === "Mineralien Übersicht" ? (
+            <VitaminsInfo item={item as VitaminInfo} />
+          ) : selectedFilter === "Gemüse" || selectedFilter === "Obst" ? (
             <MemoizedVegetableCard
               item={item as Fruit | Vegetable}
               onPress={() => navigateToDetails(item.id)}

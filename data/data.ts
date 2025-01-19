@@ -3,12 +3,15 @@ export const filterVariantsDE: FilterVariantsDE[] = [
   "Obst",
   "Einkaufs-Tipps",
   "Gesundheits-Tipps",
+  "Vitamin Übersicht",
+  "Mineralien Übersicht",
 ];
 export const filterVariantsEN: FilterVariantsEN[] = [
   "Vegetables",
   "Fruits",
   "Health tips",
   "Shopping tips",
+  "Vitamins overview",
 ];
 
 export const months: Month[] = [
