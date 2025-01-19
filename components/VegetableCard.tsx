@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { getTimeSpan } from "@/lib/getTimeSpan";
 import useAppInitialization from "@/lib/useAppInitialization";
 import { saveShoppingLists } from "@/lib/AsyncStorage";
-import ProgressCircle from "./ProgressCircle"; // Import ProgressCircle component
 import { useShoppingList } from "@/context/ShoppingListContext";
 
 interface Props {
@@ -14,8 +13,6 @@ interface Props {
 const VegetableCard = ({ item, onPress }: Props) => {
   const { activeListId, setShoppingLists } = useAppInitialization();
   const { shoppingLists } = useShoppingList();
-
-  const [loading, setLoading] = useState(false);
 
   // Find active shopping list and check if the item is in the list
   const activeList = shoppingLists.find((list) => list.id === activeListId);
@@ -56,10 +53,6 @@ const VegetableCard = ({ item, onPress }: Props) => {
       // Save updated lists and trigger re-render
       await saveShoppingLists(shoppingLists);
       setShoppingLists([...shoppingLists]);
-
-      // Show loading progress before displaying the checkmark
-      setLoading(true);
-      setTimeout(() => setLoading(false), 600);
     } catch (error) {
       console.error("Error adding item to list:", error);
     }
@@ -98,9 +91,7 @@ const VegetableCard = ({ item, onPress }: Props) => {
         onPress={addToList}
         className="bg-white absolute justify-center items-center right-2 top-2 w-10 h-10 rounded-xl shadow shadow-zinc-500"
       >
-        {loading ? (
-          <ProgressCircle color="green" duration={600} size={22} />
-        ) : isItemInList ? (
+        {isItemInList ? (
           <Text className="text-lg">✔️</Text>
         ) : (
           <Text className="text-lg">🛒</Text>

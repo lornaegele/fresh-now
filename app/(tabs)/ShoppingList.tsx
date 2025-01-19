@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { getShoppingLists, saveShoppingLists } from "@/lib/AsyncStorage";
-import ProgressCircle from "@/components/ProgressCircle";
 import { ScrollView } from "react-native-gesture-handler";
 import { fruitsDE } from "@/data/fruits";
 import { vegetablesDE } from "@/data/vegetables";
@@ -201,7 +200,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
         } catch (error) {
           console.error("Error finalizing shopping list update:", error);
         }
-      }, 400);
+      }, 200);
     } else {
       // Check if the item is already "done"
       const isAlreadyDone = shoppingList.items!.find(
@@ -354,11 +353,6 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
                   >
                     {item.emoji} {item.name}
                   </Text>
-                  <View className="flex flex-row gap-2 items-center">
-                    {doneItem === item && (
-                      <ProgressCircle color="#60957A" duration={400} />
-                    )}
-                  </View>
                 </TouchableOpacity>
               ))}
           </View>
