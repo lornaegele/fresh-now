@@ -129,7 +129,18 @@ const ShoppingListWithTabs = ({
         options={{
           tabBarActiveTintColor: "",
           tabBarInactiveTintColor: "#60957A",
-          tabBarIcon: () => <Text className="text-2xl">🛒</Text>,
+          tabBarIcon: ({ focused }) => (
+            <View>
+              <Text
+                className="text-2xl"
+                style={{
+                  opacity: focused ? 1 : 0.5, // Set opacity to 1 when focused, 0.5 when inactive
+                }}
+              >
+                🛒
+              </Text>
+            </View>
+          ),
         }}
         listeners={{
           focus: () => setActiveTab("ShoppingList"),
@@ -147,7 +158,18 @@ const ShoppingListWithTabs = ({
         options={{
           tabBarActiveTintColor: "#0F5933",
           tabBarInactiveTintColor: "#878787",
-          tabBarIcon: () => <Text className="text-2xl">🥬</Text>,
+          tabBarIcon: ({ focused }) => (
+            <View>
+              <Text
+                className="text-2xl"
+                style={{
+                  opacity: focused ? 1 : 0.6, // Set opacity to 1 when focused, 0.5 when inactive
+                }}
+              >
+                🥬
+              </Text>
+            </View>
+          ),
         }}
         listeners={{
           focus: () => setActiveTab("Seasonal"),
