@@ -8,7 +8,7 @@ export const healthTips: HealthTip[] = [
   },
   {
     id: "003",
-    name: "Mehr Rohkost am Abend meiden",
+    name: "Zu viel Rohkost am Abend meiden",
     content:
       "Rohkost ist gesund, kann aber am Abend die Verdauung belasten. Gekochtes Gemüse ist eine bessere Wahl für ein leichtes Abendessen.",
     emoji: "🥗",

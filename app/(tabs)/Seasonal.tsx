@@ -130,7 +130,7 @@ const Seasonal = () => {
         data={sortedData}
         renderItem={({ item }) =>
           selectedFilter === "Vitamin Übersicht" ||
-          selectedFilter === "Mineralien Übersicht" ? (
+          selectedFilter === "Mineralstoffe Übersicht" ? (
             <VitaminsInfo item={item as VitaminInfo} />
           ) : selectedFilter === "Gemüse" || selectedFilter === "Obst" ? (
             <MemoizedVegetableCard
@@ -155,6 +155,20 @@ const Seasonal = () => {
           </View>
         }
         ListHeaderComponent={renderHeader}
+        ListFooterComponent={
+          <View className="px-4 py-4">
+            <Text className="text-sm text-gray-500 text-center">
+              {selectedFilter === "Einkaufs-Tipps" && (
+                <Text>
+                  *Es besteht keine Kooperation, das ist lediglich eine
+                  Empfehlung von uns persönlich. {"\n"}
+                </Text>
+              )}
+              Hinweis: Diese Informationen dienen nur zu allgemeinen
+              Bildungszwecken und ersetzen keine professionelle Beratung.
+            </Text>
+          </View>
+        }
       />
     </View>
   );

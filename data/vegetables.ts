@@ -1714,7 +1714,7 @@ export const vegetablesDE: Vegetable[] = [
       Protein: 2.5,
     },
     benefits: [
-      "Kalorienarm und nahrhaft: Champignons sind reich an Vitaminen und Mineralien bei gleichzeitig niedrigem Kaloriengehalt.",
+      "Kalorienarm und nahrhaft: Champignons sind reich an Vitaminen und Mineralstoffe bei gleichzeitig niedrigem Kaloriengehalt.",
       "Fördern die Knochengesundheit: Enthalten Vitamin D, das die Kalziumaufnahme unterstützt.",
       "Unterstützen die Immunfunktion: Der Gehalt an B-Vitaminen stärkt das Immunsystem.",
       "Verbessern die Verdauung: Ballaststoffe fördern eine gesunde Darmfunktion.",

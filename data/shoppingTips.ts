@@ -9,16 +9,16 @@ export const shoppingTips: HealthTip[] = [
 
   {
     id: "003",
-    name: "Bio-Lebensmittel bei dm",
+    name: "Bio-Lebensmittel bei dm*",
     content:
       "Die Drogeriekette dm führt ein umfangreiches Sortiment an Bio-Lebensmitteln zu meist günstigen Preisen. Hier finden Sie alles von Grundnahrungsmitteln bis zu Snacks in Bio-Qualität.",
     emoji: "🌿",
   },
   {
     id: "005",
-    name: "Bioland-Produkte bei Lidl",
+    name: "Bioland-Produkte bei Lidl*",
     content:
-      "Lidl bietet eine Vielzahl von Bioland-zertifizierten Produkten an, die ausschließlich in Deutschland und Südtirol produziert werden. Diese Produkte sind nicht nur bio, sondern auch regional und oft preiswert.",
+      "Lidl bietet eine Vielzahl von Bioland-zertifizierten Produkten an, die ausschließlich in Deutschland und Südtirol produziert werden. Diese Produkte sind nicht nur bio, sondern auch regional und oft preiswert. ",
 
     emoji: "👨‍🌾",
   },

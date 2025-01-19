@@ -15,7 +15,7 @@ type FilterVariantsDE =
   | "Einkaufs-Tipps"
   | "Gesundheits-Tipps"
   | "Vitamin Übersicht"
-  | "Mineralien Übersicht";
+  | "Mineralstoffe Übersicht";
 
 type DropdownFilterVariantsDE = "Aktuell in Saison" | "Alle";
 type DropdownFilterVariantsEN = "Currently in season" | "All";

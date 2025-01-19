@@ -4,7 +4,7 @@ export const filterVariantsDE: FilterVariantsDE[] = [
   "Einkaufs-Tipps",
   "Gesundheits-Tipps",
   "Vitamin Übersicht",
-  "Mineralien Übersicht",
+  "Mineralstoffe Übersicht",
 ];
 export const filterVariantsEN: FilterVariantsEN[] = [
   "Vegetables",

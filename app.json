@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "FrischZeit",
-    "slug": "frisch-zeit",
+    "slug": "frischZeit",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -29,7 +29,6 @@
         "expo-splash-screen",
         {
           "image": "./assets/images/icon.png",
-          "resizeMode": "cover",
           "backgroundColor": "#ffffff",
           "enableFullScreenImage_legacy": true
         }
@@ -50,6 +49,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "7c666289-d0a8-45c2-b9ac-2fcf836161e5"
+      }
     }
   }
 }

@@ -963,7 +963,7 @@ export const fruitsDE: Fruit[] = [
       "Cantaloupe-Popsicles",
       "Cantaloupe-Dessert",
     ],
-    info: "Cantaloupe, auch als Netzmelone bekannt, ist eine köstliche und erfrischende Sommerfrucht, die reich an Vitaminen und Mineralien ist.",
+    info: "Cantaloupe, auch als Netzmelone bekannt, ist eine köstliche und erfrischende Sommerfrucht, die reich an Vitaminen und Mineralstoffe ist.",
   },
 
   {

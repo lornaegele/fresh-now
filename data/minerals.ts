@@ -224,7 +224,7 @@ export const minerals: VitaminInfo[] = [
     id: "035",
     name: "Boron",
     content:
-      "Boron ist ein Mineral, das die Knochengesundheit unterstützt und die Aufnahme von Vitaminen und Mineralien wie Kalzium, Magnesium und Vitamin D fördert.",
+      "Boron ist ein Mineral, das die Knochengesundheit unterstützt und die Aufnahme von Vitaminen und Mineralstoffe wie Kalzium, Magnesium und Vitamin D fördert.",
   },
 
   {
