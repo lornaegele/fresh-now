@@ -27,7 +27,6 @@ const Home = () => {
   const [activeTab, setActiveTab] = useState<string | null>(null);
   const [settingsVisible, setSettingsVisible] = useState(false);
 
-  const openSettings = () => setSettingsVisible(true);
   const closeSettings = () => setSettingsVisible(false);
 
   if (!fontsLoaded) return null;
@@ -36,7 +35,7 @@ const Home = () => {
     <>
       <Drawer.Navigator
         screenOptions={{
-          headerShown: activeTab !== "Seasonal",
+          headerShown: activeTab !== "Saisonal",
           headerBackground: () => null,
           headerTintColor: "#0F5933",
           headerLeft: () => <DrawerHamburgerIcon />,

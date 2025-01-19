@@ -54,7 +54,7 @@ export const shoppingTips: HealthTip[] = [
     id: "015",
     name: "Reste-Tipps: Foodsharing",
     content:
-      "Über Plattformen wie Foodsharing oder Too Good To Go können Sie Bio-Lebensmittel retten und günstig einkaufen.",
+      "Über Plattformen wie Foodsharing* oder Too Good To Go* können Sie Bio-Lebensmittel retten und günstig einkaufen.",
     emoji: "♻️",
   },
   {
