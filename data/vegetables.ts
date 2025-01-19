@@ -1730,4 +1730,95 @@ export const vegetablesDE: Vegetable[] = [
       "Champignon-Pfanne",
     ],
   },
+  {
+    id: "veg026",
+    name: "Rucola",
+    emoji: "🥬",
+    backgroundColor: "#d0e8c7",
+    info: "Rucola ist ein würziges Blattgemüse mit einem leicht scharfen Geschmack, das reich an Vitaminen und Mineralstoffen ist.",
+    image: images.rucula,
+    season: ["March", "April", "May", "June", "July", "August", "September"],
+    vitamins: [
+      {
+        name: "Vitamin A (Retinoläquivalent)",
+        amount: "119 µg",
+        percentage: "14.9%",
+      },
+      {
+        name: "Vitamin B1 (Thiamin)",
+        amount: "40 µg",
+        percentage: "3.6%",
+      },
+      {
+        name: "Vitamin B2 (Riboflavin)",
+        amount: "30 µg",
+        percentage: "2.1%",
+      },
+      {
+        name: "Niacin (Vitamin B3)",
+        amount: "500 µg",
+        percentage: "3.1%",
+      },
+      {
+        name: "Vitamin B5 (Pantothensäure)",
+        amount: "260 µg",
+        percentage: "5.2%",
+      },
+      {
+        name: "Vitamin B6 (Pyridoxin)",
+        amount: "120 µg",
+        percentage: "8.6%",
+      },
+      {
+        name: "Biotin (Vitamin B7)",
+        amount: "0.6 µg",
+        percentage: "1.2%",
+      },
+      {
+        name: "Folsäure (Vitamin B9)",
+        amount: "97 µg",
+        percentage: "48.5%",
+      },
+      {
+        name: "Vitamin C",
+        amount: "150 mg",
+        percentage: "187.5%",
+      },
+      {
+        name: "Vitamin E (Alpha-Tocopherol)",
+        amount: "500 µg",
+        percentage: "417%",
+      },
+      {
+        name: "Vitamin K",
+        amount: "108 µg",
+        percentage: "90%",
+      },
+    ],
+    nutrients: {
+      Brennwert: "25 kcal",
+      Fett: "0.7 g",
+      Kohlenhydrate: "3.7 g",
+      Ballaststoffe: "1.6 g",
+      Zucker: "2.1 g",
+      Eiweiß: "2.6 g",
+    },
+    benefits: [
+      "Fördert die Immunabwehr: Der hohe Vitamin C-Gehalt stärkt das Immunsystem.",
+      "Gut für die Knochengesundheit: Vitamin K ist wichtig für die Knochengesundheit und hilft bei der Blutgerinnung.",
+      "Unterstützt die Sehkraft: Vitamin A schützt das Auge und fördert die Sehkraft.",
+      "Hilft bei der Verdauung: Der Ballaststoffgehalt in Rucola unterstützt die Verdauung und reguliert den Stuhlgang.",
+      "Fördert die Entgiftung: Antioxidantien helfen, den Körper von schädlichen freien Radikalen zu befreien.",
+      "Stärkt das Herz: Der Gehalt an Kalium unterstützt die Herzgesundheit und reguliert den Blutdruck.",
+    ],
+    regionAvailability: [
+      "Europa",
+      "Nordamerika",
+      "Australien",
+      "Mittelmeerregion",
+    ],
+    storageTips:
+      "Im Kühlschrank aufbewahren und innerhalb weniger Tage verbrauchen.",
+    recipes: ["Rucola-Salat mit Parmesan", "Pasta mit Rucola und Tomaten"],
+  },
 ];

@@ -301,6 +301,7 @@ const ShoppingList = ({ list }: { list: ShoppingListItem }) => {
         onChangeText={handleChangeText}
         onSubmitEditing={() => handleAddNewItem(newItemName)}
         submitBehavior="submit" // This replaces the blurOnSubmit prop
+        placeholderTextColor="#9e9d9d" // Set placeholder color here (can be any valid color string)
       />
       {/* Suggestions dropdown */}
       {suggestions.length > 0 && newItemName.trim() !== "" && (

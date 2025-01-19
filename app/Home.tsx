@@ -105,24 +105,7 @@ const Home = () => {
           </Drawer.Screen>
         )}
       </Drawer.Navigator>
-      <Modal
-        animationType={Platform.OS === "ios" ? "slide" : "fade"}
-        transparent={true}
-        visible={settingsVisible}
-        onRequestClose={closeSettings}
-      >
-        <View className="flex-1 justify-start items-start relative bg-white bg-opacity-50 mt-16 shadow-lg rounded-3xl p-4">
-          <TouchableOpacity
-            onPress={closeSettings}
-            className="absolute left-4 top-4"
-          >
-            <Text className="text-primary-200 text-center text-lg">
-              Schließen
-            </Text>
-          </TouchableOpacity>
-          <Settings />
-        </View>
-      </Modal>
+
       {/* <WelcomeModal visible={modalVisible} onClose={handleCloseModal} /> */}
     </>
   );
@@ -163,7 +146,7 @@ const ShoppingListWithTabs = ({
         component={SeasonalStack}
         options={{
           tabBarActiveTintColor: "#0F5933",
-          tabBarInactiveTintColor: "grey",
+          tabBarInactiveTintColor: "#878787",
           tabBarIcon: () => <Text className="text-2xl">🥬</Text>,
         }}
         listeners={{

@@ -42,6 +42,7 @@ import erbsen from "@/assets/images/vegetables/erbsen.png";
 import spitzkohl from "@/assets/images/vegetables/spitzkohl.png";
 import wirsing from "@/assets/images/vegetables/wirsing.png";
 import champignons from "@/assets/images/vegetables/champignons.png";
+import rucula from "@/assets/images/vegetables/rucula.png";
 
 //Fruits
 import apfel from "@/assets/images/fruits/apfel.png";
@@ -163,4 +164,5 @@ export default {
   ananas,
   champignons,
   aroniaBeere,
+  rucula,
 };

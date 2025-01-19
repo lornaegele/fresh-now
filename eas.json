@@ -16,6 +16,12 @@
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {
+        "appleId": "lorenz.naegele@mail.de",
+        "ascAppId": "6740751149",
+        "appleTeamId": "LR43F7P7MT"
+      }
+    }
   }
 }

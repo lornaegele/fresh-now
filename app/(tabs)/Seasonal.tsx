@@ -125,7 +125,7 @@ const Seasonal = () => {
   }, [selectedFilter, viewAll, handleCategory]);
 
   return (
-    <View className="h-full pt-14">
+    <View className="h-full">
       <FlatList
         data={sortedData}
         renderItem={({ item }) =>
