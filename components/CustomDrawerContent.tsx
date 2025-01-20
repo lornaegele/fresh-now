@@ -142,6 +142,7 @@ const CustomDrawerContent: React.FC<DrawerContentProps> = ({ navigation }) => {
             ref={inputRef}
             className="border border-primary-300 rounded-2xl p-4 text-base"
             placeholder="Neuen Listennamen eingeben"
+            placeholderTextColor="#9e9d9d" // Set placeholder color here (can be any valid color string)
             value={newListName}
             onChangeText={setNewListName}
             onSubmitEditing={handleAddNewList}

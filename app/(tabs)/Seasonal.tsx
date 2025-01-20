@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   FlatList,
   ScrollView,
+  TextInput,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -18,6 +19,7 @@ import VegetableCard from "@/components/VegetableCard";
 import { vitamins } from "@/data/vitamins";
 import VitaminsInfo from "@/components/VitaminsInfo";
 import { minerals } from "@/data/minerals";
+import { Ionicons } from "@expo/vector-icons";
 
 type SeasonalNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -30,31 +32,48 @@ const Seasonal = () => {
   const [selectedFilter, setSelectedFilter] =
     useState<FilterVariantsDE>("Gemüse");
   const [viewAll, setViewAll] = useState(false);
+  const [searchText, setSearchText] = useState(""); // New state for the search text
 
   const navigation = useNavigation<SeasonalNavigationProp>();
 
   const currentMonth = useMemo(() => months[new Date().getMonth()], [months]);
 
+  // Function to filter data based on the selected filter and search text
   const getFilteredData = useCallback(() => {
+    let data = [];
     switch (selectedFilter) {
       case "Gemüse":
-        return viewAll
+        data = viewAll
           ? vegetablesDE
           : vegetablesDE.filter((item) => item.season.includes(currentMonth));
+        break;
       case "Obst":
-        return viewAll
+        data = viewAll
           ? fruitsDE
           : fruitsDE.filter((item) => item.season.includes(currentMonth));
+        break;
       case "Gesundheits-Tipps":
-        return healthTips;
+        data = healthTips;
+        break;
       case "Einkaufs-Tipps":
-        return shoppingTips;
+        data = shoppingTips;
+        break;
       case "Vitamin Übersicht":
-        return vitamins;
+        data = vitamins;
+        break;
       default:
-        return minerals;
+        data = minerals;
     }
-  }, [selectedFilter, viewAll, currentMonth]);
+
+    // Filter data based on the search text (case-insensitive)
+    if (searchText) {
+      data = data.filter((item) =>
+        item.name.toLowerCase().includes(searchText.toLowerCase())
+      );
+    }
+
+    return data;
+  }, [selectedFilter, viewAll, currentMonth, searchText]);
 
   const sortedData = useMemo(() => {
     const data = getFilteredData();
@@ -78,6 +97,11 @@ const Seasonal = () => {
     },
     [navigation]
   );
+
+  const onInput = (input: string) => {
+    if (!viewAll) setViewAll(true);
+    setSearchText(input);
+  };
 
   const renderHeader = useMemo(() => {
     return (
@@ -111,6 +135,29 @@ const Seasonal = () => {
             </TouchableOpacity>
           ))}
         </ScrollView>
+
+        {/* Search input field for "Gemüse" and "Obst" */}
+        {(selectedFilter === "Gemüse" || selectedFilter === "Obst") && (
+          <View className="mb-4">
+            <TextInput
+              className=" bg-white shadow shadow-zinc-200 rounded-2xl p-4 pl-10 relative"
+              placeholder=" Search..."
+              placeholderTextColor="#9e9d9d" // Set placeholder color here (can be any valid color string)
+              value={searchText}
+              onChangeText={onInput}
+            />
+            <Text className="absolute top-4 left-3 opacity-50">🔎</Text>
+            {searchText !== "" && (
+              <TouchableOpacity
+                onPress={() => setSearchText("")}
+                className="absolute top-1.5 right-2 p-2  rounded-xl"
+              >
+                <Ionicons name="close" size={20} color={"#666666"}></Ionicons>
+              </TouchableOpacity>
+            )}
+          </View>
+        )}
+
         {(selectedFilter === "Gemüse" || selectedFilter === "Obst") && (
           <View className="flex-row justify-end items-center mb-4">
             <TouchableOpacity onPress={() => setViewAll((prev) => !prev)}>
@@ -122,7 +169,7 @@ const Seasonal = () => {
         )}
       </View>
     );
-  }, [selectedFilter, viewAll, handleCategory]);
+  }, [selectedFilter, viewAll, searchText, handleCategory]);
 
   return (
     <View className="h-full">
