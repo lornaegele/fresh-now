@@ -115,7 +115,8 @@ type HealthTip = {
 
 type VitaminInfo = {
   id: string;
-  name: string;
+  name: VitaminMineralName;
+
   content: string;
 };
 
@@ -123,3 +124,52 @@ interface ShoppingListContextValue {
   shoppingLists: ShoppingList;
   setShoppingLists: React.Dispatch<React.SetStateAction<ShoppingList>>;
 }
+
+type VitaminMineralName =
+  | "Calcium"
+  | "Magnesium"
+  | "Kalium"
+  | "Eisen"
+  | "Zink"
+  | "Kupfer"
+  | "Jod"
+  | "Selen"
+  | "Mangan"
+  | "Chrom"
+  | "Fluorid"
+  | "Silizium"
+  | "Schwefel"
+  | "Vanadium"
+  | "Nickel"
+  | "Cobalt"
+  | "Lithium"
+  | "Boron"
+  | "Molybdän"
+  | "Iod"
+  | "Calciumfluorid"
+  | "Phosphor"
+  | "Jod"
+  | "Dummy-Eintrag"
+  | "Vitamin A"
+  | "Vitamin C"
+  | "Vitamin D"
+  | "Vitamin E"
+  | "Vitamin K"
+  | "Vitamin B1 (Thiamin)"
+  | "Vitamin B2 (Riboflavin)"
+  | "Vitamin B3 (Niacin)"
+  | "Vitamin B5 (Pantothensäure)"
+  | "Vitamin B6 (Pyridoxin)"
+  | "Vitamin B7 (Biotin)"
+  | "Vitamin B9 (Folsäure)"
+  | "Vitamin B12 (Cobalamin)"
+  | "Vitamin C1 (Ascorbinsäure)"
+  | "Vitamin P (Bioflavonoide)"
+  | "Vitamin U"
+  | "Vitamin F (Essentielle Fettsäuren)"
+  | "Vitamin H (Biotin)"
+  | "Vitamin L1 (Lipoinsäure)"
+  | "Vitamin L2 (Lipoinsäure)"
+  | "Vitamin T"
+  | "Vitamin W"
+  | "Vitamin M (Folsäure)";
