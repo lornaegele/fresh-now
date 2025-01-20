@@ -1011,20 +1011,38 @@ export const vegetablesDE: Vegetable[] = [
     image: images.grueneBohnen,
     season: ["June", "July", "August", "September"],
     vitamins: [
-      { name: "Folat", amount: "110 µg", percentage: "28%" },
-      { name: "Vitamin B9", amount: "90 µg", percentage: "22%" },
+      { name: "Folat (Folsäure)", amount: "56 µg", percentage: "14%" }, // NRV for Folate: 400 µg
+      { name: "Vitamin B1", amount: "0.08 mg", percentage: "6.67%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin B2", amount: "0.11 mg", percentage: "8.46%" }, // NRV for Vitamin B2: 1.4 mg
+      { name: "Vitamin B6", amount: "0.26 mg", percentage: "20%" }, // NRV for Vitamin B6: 1.4 mg
+      { name: "Vitamin C", amount: "18.94 mg", percentage: "23.68%" }, // NRV for Vitamin C: 80 mg
+      {
+        name: "Pantothensäure (Vitamin B5)",
+        amount: "0.5 mg",
+        percentage: "10%",
+      }, // NRV for Vitamin B5: 6 mg
+      { name: "Vitamin K", amount: "36 µg", percentage: "30%" }, // NRV for Vitamin K: 75 µg
+      { name: "Beta-Carotin", amount: "323 µg", percentage: "N/A" }, // NRV for Vitamin A (from Beta-Carotin): 600 µg
+      { name: "Natrium", amount: "10 mg", percentage: "0.42%" }, // NRV for Sodium: 2,000 mg
+      { name: "Kalium", amount: "262 mg", percentage: "7.48%" }, // NRV for Potassium: 3,500 mg
+      { name: "Magnesium", amount: "22 mg", percentage: "5.87%" }, // NRV for Magnesium: 375 mg
+      { name: "Kalzium", amount: "64 mg", percentage: "6.4%" }, // NRV for Calcium: 1,000 mg
+      { name: "Eisen", amount: "0.74 mg", percentage: "5.29%" }, // NRV for Iron: 14 mg
     ],
     nutrients: {
-      Ballaststoffe: 6.0,
-      Eiweiß: 8.0,
-      Kohlenhydrate: 27.0,
-      Zucker: 0.5,
-      Fett: 0.6,
+      Brennwert: "37 kcal",
+      Eiweiß: 2.39,
+      Fett: 0.24,
+      Kohlenhydrate: 5.09,
+      Ballaststoffe: 1.89,
     },
     benefits: [
-      "Fördert das Wachstum und die Zellerneuerung durch Folat",
-      "Unterstützt die Herzgesundheit mit Ballaststoffen",
-      "Hilft bei der Regulierung des Blutzuckerspiegels",
+      "Stärken das Immunsystem: Grüne Bohnen sind reich an Vitamin C, das das Immunsystem unterstützt und die Abwehrkräfte stärkt.",
+      "Fördern die Verdauung: Der hohe Ballaststoffgehalt von grünen Bohnen hilft, die Verdauung zu regulieren und Verstopfung vorzubeugen.",
+      "Unterstützen die Knochengesundheit: Grüne Bohnen enthalten Vitamin K, das wichtig für starke Knochen und eine gute Knochenmineraldichte ist.",
+      "Hilft bei der Gewichtsreduktion: Grüne Bohnen sind kalorienarm und ballaststoffreich, was für ein langanhaltendes Sättigungsgefühl sorgt.",
+      "Fördern die Herzgesundheit: Der hohe Gehalt an Kalium unterstützt eine gesunde Bluthochdruckregulation und fördert die Herzgesundheit.",
+      "Unterstützen die Blutzuckerregulation: Grüne Bohnen haben einen niedrigen glykämischen Index und helfen, den Blutzuckerspiegel stabil zu halten.",
     ],
     regionAvailability: ["USA", "Mexiko", "Brasilien", "Spanien"],
     storageTips: "Getrocknete Bohnen an einem kühlen, trockenen Ort lagern.",
@@ -1039,20 +1057,51 @@ export const vegetablesDE: Vegetable[] = [
     image: images.zuckerruebe,
     season: ["October", "November", "December", "January", "February"],
     vitamins: [
-      { name: "Vitamin C", amount: "4.0 mg", percentage: "4%" },
-      { name: "Folat", amount: "50 µg", percentage: "13%" },
+      {
+        name: "Vitamin A (Retinoläquivalent)",
+        amount: "1637 µg",
+        percentage: "272.83%",
+      }, // NRV for Vitamin A: 600 µg
+      { name: "Vitamin B1 (Thiamin)", amount: "111 µg", percentage: "10%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin B2 (Riboflavin)", amount: "14 µg", percentage: "1%" }, // NRV for Vitamin B2: 1.4 mg
+      { name: "Niacin (Vitamin B3)", amount: "580 µg", percentage: "38.67%" }, // NRV for Niacin: 1.5 mg
+      {
+        name: "Vitamin B5 (Pantothensäure)",
+        amount: "270 µg",
+        percentage: "4.5%",
+      }, // NRV for Vitamin B5: 6 mg
+      { name: "Vitamin B6 (Pyridoxin)", amount: "168 µg", percentage: "12%" }, // NRV for Vitamin B6: 1.4 mg
+      { name: "Biotin (Vitamin B7)", amount: "5 µg", percentage: "10%" }, // NRV for Biotin: 50 µg
+      { name: "Folsäure (Vitamin B9)", amount: "17 µg", percentage: "4.25%" }, // NRV for Folate: 400 µg
+      { name: "Vitamin B12 (Cobalamin)", amount: "N/A", percentage: "N/A" }, // NRV for Vitamin B12: 2.5 µg
+      { name: "Vitamin C", amount: "3220 µg", percentage: "4%" }, // NRV for Vitamin C: 80 mg
+      { name: "Vitamin D", amount: "N/A", percentage: "N/A" }, // NRV for Vitamin D: 20 µg
+      {
+        name: "Vitamin E (Alpha-Tocopherol)",
+        amount: "440 µg",
+        percentage: "4.4%",
+      }, // NRV for Vitamin E: 10 mg
+      { name: "Vitamin K", amount: "15 µg", percentage: "20%" }, // NRV for Vitamin K: 75 µg
+      { name: "Calcium", amount: "21 mg", percentage: "2.1%" }, // NRV for Calcium: 1,000 mg
+      { name: "Kalium", amount: "355 mg", percentage: "10.14%" }, // NRV for Potassium: 3,500 mg
+      { name: "Magnesium", amount: "12 mg", percentage: "3.2%" }, // NRV for Magnesium: 375 mg
+      { name: "Natrium", amount: "23 mg", percentage: "1.15%" }, // NRV for Sodium: 2,000 mg
+      { name: "Phosphor", amount: "36 mg", percentage: "5.14%" }, // NRV for Phosphorus: 700 mg
     ],
     nutrients: {
-      Ballaststoffe: 2.0,
-      Eiweiß: 1.5,
-      Kohlenhydrate: 10.0,
-      Zucker: 8.0,
-      Fett: 0.1,
+      Brennwert: "305 kcal",
+      Fett: "< 0.5 g",
+      Kohlenhydrate: 70.0,
+      Zucker: 66.0,
+      Ballaststoffe: 4.5,
+      Eiweiß: 2.3,
     },
     benefits: [
-      "Hilft bei der Regulierung des Blutzuckerspiegels",
-      "Fördert die Verdauung durch Ballaststoffe",
-      "Schützt die Haut durch Vitamin C",
+      "Fördern die Verdauung: Zuckerrüben sind reich an Ballaststoffen, die die Verdauung fördern und Verstopfung vorbeugen.",
+      "Unterstützen die Herzgesundheit: Zuckerrüben enthalten Kalium und Nitrate, die helfen, den Blutdruck zu regulieren und das Herz zu schützen.",
+      "Fördern die Lebergesundheit: Zuckerrüben unterstützen die Entgiftung und fördern die Gesundheit der Leber durch ihre antioxidativen Eigenschaften.",
+      "Helfen bei der Gewichtsreduktion: Zuckerrüben sind kalorienarm und ballaststoffreich, was ein Sättigungsgefühl fördert und die Gewichtsreduktion unterstützt.",
+      "Verbessern die Ausdauer: Der Nitratgehalt in Zuckerrüben kann die körperliche Ausdauer und Leistungsfähigkeit steigern.",
     ],
     regionAvailability: ["USA", "Deutschland", "Frankreich", "Polen"],
     storageTips: "An einem kühlen, trockenen Ort aufbewahren.",
@@ -1067,24 +1116,45 @@ export const vegetablesDE: Vegetable[] = [
     image: images.rosenkohl,
     season: ["October", "November", "December", "January", "February"],
     vitamins: [
-      { name: "Vitamin C", amount: "85.0 mg", percentage: "95%" },
-      { name: "Vitamin K", amount: "140 µg", percentage: "117%" },
+      { name: "Folat (Folsäure)", amount: "101 µg", percentage: "25.25%" }, // NRV for Folate: 400 µg
+      { name: "Vitamin B1", amount: "0.13 mg", percentage: "11.82%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin B2", amount: "0.13 mg", percentage: "9.29%" }, // NRV for Vitamin B2: 1.4 mg
+      { name: "Vitamin B6", amount: "0.35 mg", percentage: "25%" }, // NRV for Vitamin B6: 1.4 mg
+      { name: "Vitamin C", amount: "112 mg", percentage: "140%" }, // NRV for Vitamin C: 80 mg
+      { name: "Vitamin K", amount: "153 µg", percentage: "204%" }, // NRV for Vitamin K: 75 µg
+      { name: "Kalium", amount: "471 mg", percentage: "13.49%" }, // NRV for Potassium: 3,500 mg
+      { name: "Magnesium", amount: "34 mg", percentage: "9.07%" }, // NRV for Magnesium: 375 mg
+      { name: "Kalzium", amount: "35 mg", percentage: "3.5%" }, // NRV for Calcium: 1,000 mg
+      { name: "Eisen", amount: "0.92 mg", percentage: "6.57%" }, // NRV for Iron: 14 mg
+      { name: "Phosphor", amount: "84 mg", percentage: "12%" }, // NRV for Phosphorus: 700 mg
+      { name: "Zink", amount: "0.54 mg", percentage: "5.4%" }, // NRV for Zinc: 10 mg
     ],
     nutrients: {
-      Ballaststoffe: 3.8,
-      Eiweiß: 3.4,
-      Kohlenhydrate: 9.0,
-      Zucker: 2.0,
-      Fett: 0.3,
+      Brennwert: "44 kcal",
+      Eiweiß: 4.45,
+      Fett: 0.34,
+      Kohlenhydrate: 3.29,
+      Ballaststoffe: 4.4,
     },
     benefits: [
-      "Stärkt das Immunsystem mit Vitamin C",
-      "Fördert die Knochengesundheit mit Vitamin K",
-      "Hilft bei der Verdauung durch Ballaststoffe",
+      "Stärkt das Immunsystem: Rosenkohl ist reich an Vitamin C, das das Immunsystem stärkt und Infektionen vorbeugt.",
+      "Fördert die Verdauung: Der hohe Ballaststoffgehalt von Rosenkohl unterstützt eine gesunde Verdauung und hilft bei der Regulierung des Stuhlgangs.",
+      "Unterstützt die Knochengesundheit: Rosenkohl enthält Vitamin K, das für die Knochengesundheit und -stärkung wichtig ist.",
+      "Hilft bei der Entgiftung: Rosenkohl enthält Antioxidantien und schwefelhaltige Verbindungen, die den Körper bei der Entgiftung unterstützen.",
+      "Fördert die Herzgesundheit: Der hohe Gehalt an Kalium hilft, den Blutdruck zu regulieren und das Herz zu schützen.",
+      "Reduziert Entzündungen: Die entzündungshemmenden Eigenschaften von Rosenkohl können helfen, chronische Entzündungen im Körper zu verringern.",
     ],
     regionAvailability: ["Deutschland", "Niederlande", "Polen", "Frankreich"],
     storageTips: "Im Kühlschrank aufbewahren, möglichst frisch verzehren.",
-    recipes: ["Rosenkohl aus dem Ofen", "Rosenkohl mit Speck"],
+    recipes: [
+      "Rosenkohl aus dem Ofen",
+      "Rosenkohl mit Speck",
+      "Rosenkohl in Butter geschwenkt",
+      "Rosenkohl mit Maronen",
+      "Rosenkohl mit Zitronen-Dressing",
+      "Rosenkohl und Kartoffeln aus dem Ofen",
+      "Rosenkohl mit Parmesan überbacken",
+    ],
   },
   {
     id: "veg040",
@@ -1095,53 +1165,92 @@ export const vegetablesDE: Vegetable[] = [
     image: images.spargel,
     season: ["April", "May", "June"],
     vitamins: [
-      { name: "Vitamin K", amount: "50.0 µg", percentage: "42%" },
-      { name: "Vitamin C", amount: "9.0 mg", percentage: "10%" },
+      { name: "Folat (Folsäure)", amount: "79 µg", percentage: "19.75%" }, // NRV for Folate: 400 µg
+      { name: "Vitamin B2", amount: "0.13 mg", percentage: "9.29%" }, // NRV for Vitamin B2: 1.4 mg
+      { name: "Vitamin B1", amount: "0.12 mg", percentage: "10.91%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin C", amount: "14.9 mg", percentage: "18.625%" }, // NRV for Vitamin C: 80 mg
+      { name: "Beta-Carotin", amount: "148 µg", percentage: "24.67%" }, // NRV for Vitamin A (as Beta-Carotene): 600 µg
+      { name: "Kalium", amount: "220 mg", percentage: "6.29%" }, // NRV for Potassium: 3,500 mg
+      { name: "Magnesium", amount: "12 mg", percentage: "3.2%" }, // NRV for Magnesium: 375 mg
+      { name: "Phosphor", amount: "49 mg", percentage: "7%" }, // NRV for Phosphorus: 700 mg
+      { name: "Zink", amount: "0.5 mg", percentage: "5%" }, // NRV for Zinc: 10 mg
     ],
     nutrients: {
-      Ballaststoffe: 2.1,
+      Brennwert: "27 kcal",
       Eiweiß: 2.2,
-      Kohlenhydrate: 3.7,
-      Zucker: 1.0,
       Fett: 0.2,
+      Kohlenhydrate: 3.3,
+      Ballaststoffe: 1.7,
     },
     benefits: [
-      "Hilft bei der Knochengesundheit durch Vitamin K",
-      "Fördert das Immunsystem mit Vitamin C",
-      "Hat entzündungshemmende Eigenschaften",
+      "Fördert die Verdauung: Spargel ist reich an Ballaststoffen, die die Verdauung unterstützen und Verstopfung vorbeugen.",
+      "Stärkt das Immunsystem: Der hohe Vitamin C-Gehalt von Spargel trägt zur Stärkung des Immunsystems bei und hilft bei der Bekämpfung von Infektionen.",
+      "Unterstützt die Knochengesundheit: Spargel enthält Vitamin K, das eine wichtige Rolle bei der Knochengesundheit und der Blutgerinnung spielt.",
+      "Hilft bei der Entgiftung: Spargel hat harntreibende Eigenschaften, die die Ausscheidung von Giftstoffen und überschüssigem Wasser aus dem Körper fördern.",
+      "Fördert die Hautgesundheit: Die Antioxidantien in Spargel schützen die Haut vor schädlichen freien Radikalen und unterstützen ein gesundes Hautbild.",
+      "Hält den Blutzucker im Gleichgewicht: Spargel hat einen niedrigen glykämischen Index und hilft, den Blutzuckerspiegel stabil zu halten.",
     ],
     regionAvailability: ["Deutschland", "Niederlande", "Italien", "USA"],
     storageTips: "Frisch im Kühlschrank aufbewahren und zügig verzehren.",
-    recipes: ["Spargelsuppe", "Grillierter Spargel"],
+    recipes: [
+      "Spargel mit Sauce Hollandaise",
+      "Spargel mit Schinken",
+      "Grüner Spargel aus dem Ofen",
+      "Spargelcremesuppe",
+      "Spargel mit Butter und Parmesan",
+      "Spargelrisotto",
+      "Spargel mit Zitronen-Dressing",
+    ],
   },
   {
     id: "veg044",
-    name: "Stangensellerie",
+    name: "Staudensellerie",
     emoji: "🌿",
     backgroundColor: "#9cc37d",
-    info: "Stangensellerie ist ein knackiges Gemüse mit einem frischen, leicht bitteren Geschmack. Er wird häufig in Salaten, Suppen oder als Snack verwendet.",
+    info: "Stangensellerie oder Staudensellerie ist ein knackiges Gemüse mit einem frischen, leicht bitteren Geschmack. Er wird häufig in Salaten, Suppen oder als Snack verwendet.",
     image: images.staudensellerie,
     season: ["March", "April", "May", "June", "July"],
     vitamins: [
-      { name: "Vitamin K", amount: "30.0 µg", percentage: "25%" },
-      { name: "Vitamin A", amount: "500 IU", percentage: "10%" },
+      { name: "Vitamin E", amount: "0.2 mg", percentage: "1.33%" }, // NRV for Vitamin E: 15 mg
+      { name: "Vitamin A", amount: "118 µg", percentage: "13.17%" }, // NRV for Vitamin A: 900 µg
+      { name: "Vitamin B1", amount: "0.05 mg", percentage: "4.55%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin B2", amount: "0.08 mg", percentage: "5.71%" }, // NRV for Vitamin B2: 1.4 mg
+      { name: "Niacin", amount: "0.6 mg", percentage: "3%" }, // NRV for Niacin: 20 mg
+      { name: "Vitamin B6", amount: "0.09 mg", percentage: "6.43%" }, // NRV for Vitamin B6: 1.4 mg
+      { name: "Vitamin C", amount: "7 mg", percentage: "8.75%" }, // NRV for Vitamin C: 80 mg
+      { name: "Pantothensäure", amount: "430 µg", percentage: "8.6%" }, // NRV for Pantothenic Acid: 5 mg
+      { name: "Kalium", amount: "344 mg", percentage: "9.83%" }, // NRV for Potassium: 3,500 mg
+      { name: "Kalzium", amount: "80 mg", percentage: "8%" }, // NRV for Calcium: 1,000 mg
+      { name: "Magnesium", amount: "12 mg", percentage: "3.2%" }, // NRV for Magnesium: 375 mg
+      { name: "Eisen", amount: "0.2 mg", percentage: "1.43%" }, // NRV for Iron: 14 mg
     ],
     nutrients: {
-      Ballaststoffe: 1.6,
-      Eiweiß: 0.7,
-      Kohlenhydrate: 3.0,
-      Zucker: 1.0,
-      Fett: 0.1,
+      Brennwert: "15 kcal",
+      Fett: 0.2,
+      Protein: 1.2,
+      Kohlenhydrate: 2.2,
+      Ballaststoffe: 2.6,
     },
     benefits: [
-      "Fördert eine gesunde Verdauung durch Ballaststoffe",
-      "Unterstützt die Knochengesundheit mit Vitamin K",
-      "Hilft bei der Hydratation durch hohen Wassergehalt",
+      "Fördert die Verdauung: Stangensellerie enthält Ballaststoffe, die die Verdauung unterstützen und die Darmgesundheit fördern.",
+      "Hilft bei der Entgiftung: Durch seine harntreibenden Eigenschaften fördert Stangensellerie die Ausscheidung von Toxinen aus dem Körper.",
+      "Unterstützt die Herzgesundheit: Stangensellerie ist reich an Kalium, das den Blutdruck reguliert und das Herz schützt.",
+      "Fördert die Hautgesundheit: Die Antioxidantien in Stangensellerie helfen, die Haut vor schädlichen freien Radikalen zu schützen und das Hautbild zu verbessern.",
+      "Stärkt das Immunsystem: Der hohe Gehalt an Vitamin C unterstützt das Immunsystem und hilft, Infektionen abzuwehren.",
+      "Hilft bei der Gewichtsreduktion: Stangensellerie ist kalorienarm und wasserreich, was ihn zu einem idealen Snack für eine kalorienbewusste Ernährung macht.",
     ],
     regionAvailability: ["Deutschland", "Niederlande", "Frankreich"],
     storageTips:
       "Im Kühlschrank aufbewahren, in einem feuchten Tuch eingeschlagen.",
-    recipes: ["Selleriesuppe", "Selleriestangen mit Dip"],
+    recipes: [
+      "Staudensellerie mit Erdnussbutter",
+      "Staudensellerie-Salat mit Apfel und Walnüssen",
+      "Staudensellerie in Zitronen-Dressing",
+      "Staudensellerie mit Hummus",
+      "Gebratener Staudensellerie mit Knoblauch",
+      "Staudensellerie-Suppe",
+      "Staudensellerie mit Ziegenkäse und Walnüssen",
+    ],
   },
   {
     id: "veg045",
@@ -1152,24 +1261,46 @@ export const vegetablesDE: Vegetable[] = [
     image: images.weissKohl,
     season: ["November", "December", "January", "February"],
     vitamins: [
-      { name: "Vitamin C", amount: "36.6 mg", percentage: "40%" },
-      { name: "Folat", amount: "53.0 µg", percentage: "13%" },
+      { name: "Eisen", amount: "0.5 mg", percentage: "3.57%" }, // NRV for Iron: 14 mg
+      { name: "Vitamin A", amount: "7.5 µg", percentage: "0.83%" }, // NRV for Vitamin A: 900 µg
+      { name: "Vitamin B1", amount: "0.05 mg", percentage: "4.55%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin B2", amount: "0.07 mg", percentage: "5%" }, // NRV for Vitamin B2: 1.4 mg
+      { name: "Niacin", amount: "0.5 mg", percentage: "2.5%" }, // NRV for Niacin: 20 mg
+      { name: "Kalium", amount: "236 mg", percentage: "6.74%" }, // NRV for Potassium: 3,500 mg
+      { name: "Vitamin B6", amount: "0.2 mg", percentage: "14.29%" }, // NRV for Vitamin B6: 1.4 mg
+      { name: "Kalzium", amount: "64 mg", percentage: "6.4%" }, // NRV for Calcium: 1,000 mg
+      { name: "Vitamin C", amount: "50 mg", percentage: "62.5%" }, // NRV for Vitamin C: 80 mg
+      { name: "Magnesium", amount: "12 mg", percentage: "3.2%" }, // NRV for Magnesium: 375 mg
+      { name: "Vitamin E", amount: "2.5 mg", percentage: "16.67%" }, // NRV for Vitamin E: 15 mg
+      { name: "Folsäure", amount: "90 µg", percentage: "22.5%" }, // NRV for Folate: 400 µg
     ],
     nutrients: {
+      Brennwert: "25 kcal",
+      Fett: 0.4,
+      Protein: 3.0,
+      Kohlenhydrate: 2.4,
       Ballaststoffe: 2.5,
-      Eiweiß: 1.3,
-      Kohlenhydrate: 6.0,
-      Zucker: 3.0,
-      Fett: 0.2,
     },
     benefits: [
-      "Stärkt das Immunsystem durch Vitamin C",
-      "Fördert die Verdauung durch Ballaststoffe",
-      "Hilft bei der Gewichtsregulation",
+      "Fördert die Verdauung: Weißkohl enthält Ballaststoffe, die die Verdauung fördern und Verstopfung vorbeugen.",
+      "Stärkt das Immunsystem: Der hohe Gehalt an Vitamin C in Weißkohl unterstützt das Immunsystem und schützt vor Erkältungen.",
+      "Unterstützt die Knochengesundheit: Weißkohl enthält Vitamin K, das für die Knochengesundheit und die Blutgerinnung wichtig ist.",
+      "Reduziert Entzündungen: Die Antioxidantien im Weißkohl wirken entzündungshemmend und können chronische Entzündungen lindern.",
+      "Fördert die Hautgesundheit: Weißkohl enthält Vitamin A und C, die die Haut regenerieren und vor freien Radikalen schützen.",
+      "Hilft bei der Gewichtsreduktion: Weißkohl ist kalorienarm und ballaststoffreich, was das Sättigungsgefühl fördert und bei der Gewichtsabnahme hilft.",
     ],
+
     regionAvailability: ["Deutschland", "Polen", "Frankreich", "USA"],
     storageTips: "Kühl und trocken lagern.",
-    recipes: ["Krautsalat", "Weißkohlrouladen"],
+    recipes: [
+      "Weißkohlrouladen",
+      "Weißkohl mit Speck",
+      "Krautsalat",
+      "Weißkohl-Eintopf",
+      "Gebratener Weißkohl mit Kümmel",
+      "Weißkohl mit Äpfeln",
+      "Weißkohl in Senfsoße",
+    ],
   },
   {
     id: "veg046",
@@ -1180,25 +1311,44 @@ export const vegetablesDE: Vegetable[] = [
     image: images.gruenkohl,
     season: ["October", "November", "December", "January", "February"],
     vitamins: [
-      { name: "Vitamin K", amount: "500.0 µg", percentage: "417%" },
-      { name: "Vitamin A", amount: "7000 IU", percentage: "140%" },
+      { name: "Folat (Folsäure)", amount: "187 µg", percentage: "46.75%" }, // NRV for Folate: 400 µg
+      { name: "Vitamin B1", amount: "0.1 mg", percentage: "9.09%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin B2", amount: "0.25 mg", percentage: "17.86%" }, // NRV for Vitamin B2: 1.4 mg
+      { name: "Vitamin B6", amount: "0.25 mg", percentage: "17.86%" }, // NRV for Vitamin B6: 1.4 mg
+      { name: "Vitamin C", amount: "105 mg", percentage: "131.25%" }, // NRV for Vitamin C: 80 mg
+      { name: "Vitamin K", amount: "817 µg", percentage: "682.5%" }, // NRV for Vitamin K: 120 µg
+      { name: "Beta-Carotin", amount: "5169 µg", percentage: "861.5%" }, // NRV for Vitamin A (as Beta-Carotene): 600 µg
+      { name: "Kalium", amount: "451 mg", percentage: "12.89%" }, // NRV for Potassium: 3,500 mg
+      { name: "Kalzium", amount: "212 mg", percentage: "21.2%" }, // NRV for Calcium: 1,000 mg
+      { name: "Eisen", amount: "1.9 mg", percentage: "13.57%" }, // NRV for Iron: 14 mg
+      { name: "Phosphor", amount: "87 mg", percentage: "12.43%" }, // NRV for Phosphorus: 700 mg
     ],
     nutrients: {
-      Ballaststoffe: 4.0,
-      Eiweiß: 2.9,
-      Kohlenhydrate: 10.0,
-      Zucker: 2.0,
+      Brennwert: "45 kcal",
+      Eiweiß: 4.3,
       Fett: 0.9,
+      Kohlenhydrate: 2.54,
+      Ballaststoffe: 4.2,
     },
     benefits: [
       "Stärkt die Knochen durch Vitamin K",
       "Unterstützt die Immunfunktion mit Vitamin A",
       "Reich an Antioxidantien, die den Körper schützen",
+      "Unterstützt die Herzgesundheit: Grünkohl enthält Kalium, das hilft, den Blutdruck zu regulieren und das Herz zu schützen.",
+      "Unterstützt die Verdauung: Grünkohl ist ballaststoffreich, was die Verdauung anregt und die Darmgesundheit fördert.",
     ],
     regionAvailability: ["Deutschland", "Niederlande", "USA", "Kanada"],
     storageTips:
       "Kühl und trocken lagern, im Kühlschrank bleibt er länger frisch.",
-    recipes: ["Grünkohlchips", "Grünkohlsuppe"],
+    recipes: [
+      "Grünkohl mit Pinkel",
+      "Grünkohl-Suppe",
+      "Grünkohl-Chips",
+      "Grünkohl mit Kartoffeln",
+      "Grünkohl-Salat mit Walnüssen",
+      "Grünkohl-Pesto",
+      "Grünkohl in Rahm",
+    ],
   },
 
   {
@@ -1210,24 +1360,44 @@ export const vegetablesDE: Vegetable[] = [
     image: images.radieschen,
     season: ["March", "April", "May", "June", "July"],
     vitamins: [
-      { name: "Vitamin C", amount: "14.0 mg", percentage: "16%" },
-      { name: "Folat", amount: "25.0 µg", percentage: "6%" },
+      { name: "Eisen", amount: "0.4 mg", percentage: "2.86%" }, // NRV for Iron: 14 mg
+      { name: "Vitamin A", amount: "3.8 µg", percentage: "0.42%" }, // NRV for Vitamin A: 900 µg
+      { name: "Vitamin B1", amount: "0.04 mg", percentage: "3.64%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin B2", amount: "0.04 mg", percentage: "2.86%" }, // NRV for Vitamin B2: 1.4 mg
+      { name: "Niacin", amount: "0.2 mg", percentage: "1%" }, // NRV for Niacin: 20 mg
+      { name: "Kalium", amount: "255 mg", percentage: "7.29%" }, // NRV for Potassium: 3,500 mg
+      { name: "Vitamin B6", amount: "0.06 mg", percentage: "4.29%" }, // NRV for Vitamin B6: 1.4 mg
+      { name: "Kalzium", amount: "26 mg", percentage: "2.6%" }, // NRV for Calcium: 1,000 mg
+      { name: "Vitamin C", amount: "27 mg", percentage: "33.75%" }, // NRV for Vitamin C: 80 mg
+      { name: "Magnesium", amount: "8 mg", percentage: "2.13%" }, // NRV for Magnesium: 375 mg
+      { name: "Folsäure", amount: "24 µg", percentage: "6%" }, // NRV for Folate: 400 µg
     ],
     nutrients: {
-      Ballaststoffe: 1.6,
-      Eiweiß: 0.8,
-      Kohlenhydrate: 3.4,
-      Zucker: 1.5,
+      Brennwert: "14 kcal",
       Fett: 0.1,
+      Protein: 1.1,
+      Kohlenhydrate: 2.1,
+      Ballaststoffe: 1.6,
     },
     benefits: [
-      "Fördert die Verdauung durch Ballaststoffe",
-      "Unterstützt das Immunsystem durch Vitamin C",
-      "Hat entzündungshemmende Eigenschaften",
+      "Unterstützen das Immunsystem: Radieschen sind reich an Vitamin C, das die Immunabwehr stärkt und vor Infektionen schützt.",
+      "Fördern die Verdauung: Der hohe Ballaststoffgehalt von Radieschen unterstützt eine gesunde Verdauung und reguliert den Stuhlgang.",
+      "Unterstützen die Blutzuckerregulation: Radieschen enthalten Senfölglycoside, die die Glukosetoleranz verbessern und den Blutzuckerspiegel stabilisieren können.",
+      "Fördern die Hautgesundheit: Die Antioxidantien in Radieschen schützen die Haut vor freien Radikalen und unterstützen ein gesundes Hautbild.",
+      "Unterstützen die Herzgesundheit: Der Kaliumgehalt in Radieschen hilft, den Blutdruck zu regulieren und das Herz zu schützen.",
+      "Fördern die Gewichtsreduktion: Radieschen sind kalorienarm und ballaststoffreich, was zu einem Sättigungsgefühl beiträgt und die Gewichtsabnahme unterstützt.",
     ],
     regionAvailability: ["Deutschland", "Frankreich", "Spanien", "USA"],
     storageTips: "Kühl und trocken lagern, möglichst bald verbrauchen.",
-    recipes: ["Radieschensalat", "Radieschen als Snack"],
+    recipes: [
+      "Radieschensalat mit Joghurt-Dressing",
+      "Radieschen mit Frischkäse",
+      "Radieschen-Pickles",
+      "Radieschen auf Brot mit Butter",
+      "Radieschen-Apfel-Salat",
+      "Geröstete Radieschen",
+      "Radieschensuppe",
+    ],
   },
   {
     id: "veg049",
@@ -1238,24 +1408,45 @@ export const vegetablesDE: Vegetable[] = [
     image: images.blumenkohl,
     season: ["June", "July", "August", "September", "October"],
     vitamins: [
-      { name: "Vitamin C", amount: "48.0 mg", percentage: "53%" },
-      { name: "Vitamin K", amount: "15.5 µg", percentage: "13%" },
+      { name: "Folat (Folsäure)", amount: "52 µg", percentage: "13%" }, // NRV for Folate: 400 µg
+      { name: "Vitamin B3", amount: "1167 µg", percentage: "5.83%" }, // NRV for Niacin: 20 mg (20,000 µg)
+      { name: "Vitamin C", amount: "64 mg", percentage: "80%" }, // NRV for Vitamin C: 80 mg
+      { name: "Vitamin K", amount: "31 µg", percentage: "25.83%" }, // NRV for Vitamin K: 120 µg
+      { name: "Biotin (Vitamin B7)", amount: "2 µg", percentage: "6.67%" }, // NRV for Biotin: 30 µg
+      { name: "Beta-Carotin", amount: "10 µg", percentage: "1.67%" }, // NRV for Vitamin A (as Beta-Carotene): 600 µg
+      { name: "Natrium", amount: "13 mg", percentage: "0.87%" }, // NRV for Sodium: 1,500 mg
+      { name: "Kalium", amount: "282 mg", percentage: "8.06%" }, // NRV for Potassium: 3,500 mg
+      { name: "Magnesium", amount: "15 mg", percentage: "4%" }, // NRV for Magnesium: 375 mg
+      { name: "Kalzium", amount: "22 mg", percentage: "2.2%" }, // NRV for Calcium: 1,000 mg
+      { name: "Eisen", amount: "0.51 mg", percentage: "3.64%" }, // NRV for Iron: 14 mg
+      { name: "Zink", amount: "0.29 mg", percentage: "2.64%" }, // NRV for Zinc: 11 mg
     ],
     nutrients: {
-      Ballaststoffe: 2.0,
-      Eiweiß: 1.9,
-      Kohlenhydrate: 5.0,
-      Zucker: 1.9,
-      Fett: 0.3,
+      Brennwert: "28 kcal",
+      Eiweiß: 2.46,
+      Fett: 0.28,
+      Kohlenhydrate: 2.34,
+      Ballaststoffe: 2.9,
     },
     benefits: [
-      "Reich an Antioxidantien, die den Körper schützen",
-      "Fördert eine gesunde Verdauung durch Ballaststoffe",
-      "Unterstützt das Immunsystem durch Vitamin C",
+      "Fördert die Verdauung: Blumenkohl ist reich an Ballaststoffen, die die Verdauung unterstützen und Verstopfung vorbeugen.",
+      "Unterstützt das Immunsystem: Der hohe Gehalt an Vitamin C stärkt das Immunsystem und schützt vor Infektionen.",
+      "Fördert die Knochengesundheit: Blumenkohl enthält Vitamin K und Kalzium, die für starke Knochen wichtig sind.",
+      "Unterstützt die Herzgesundheit: Der Kaliumgehalt hilft, den Blutdruck zu regulieren und das Herz zu schützen.",
+      "Fördert die Hautgesundheit: Die Antioxidantien im Blumenkohl schützen die Haut vor freien Radikalen und unterstützen ein gesundes Hautbild.",
+      "Unterstützt die Blutzuckerregulation: Blumenkohl hat einen niedrigen glykämischen Index und hilft, den Blutzuckerspiegel stabil zu halten.",
     ],
     regionAvailability: ["Deutschland", "Niederlande", "Polen", "Frankreich"],
     storageTips: "Im Kühlschrank aufbewahren, möglichst frisch verzehren.",
-    recipes: ["Blumenkohlsuppe", "Blumenkohlreis", "Blumenkohlauflauf"],
+    recipes: [
+      "Blumenkohl aus dem Ofen",
+      "Blumenkohl-Curry",
+      "Blumenkohl-Suppe",
+      "Blumenkohl mit Käse überbacken",
+      "Blumenkohlpüree",
+      "Blumenkohlsteaks vom Grill",
+      "Blumenkohl-Salat mit Senf-Dressing",
+    ],
   },
   // Zwiebeln (Onions)
   {
@@ -1311,25 +1502,50 @@ export const vegetablesDE: Vegetable[] = [
     image: images.knoblauch,
     season: ["May", "June", "July", "August"],
     vitamins: [
-      { name: "Vitamin C", amount: "8.6 mg", percentage: "10%" },
-      { name: "Vitamin B6", amount: "0.1 mg", percentage: "5%" },
+      { name: "Folat (Folsäure)", amount: "20 µg", percentage: "5%" }, // NRV for Folate: 400 µg
+      { name: "Vitamin B1", amount: "0.2 mg", percentage: "18.18%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin B2", amount: "0.08 mg", percentage: "5.71%" }, // NRV for Vitamin B2: 1.4 mg
+      {
+        name: "Pantothensäure (Vitamin B5)",
+        amount: "0.15 mg",
+        percentage: "3%",
+      }, // NRV for Vitamin B5: 5 mg
+      { name: "Vitamin B6", amount: "0.38 mg", percentage: "27.14%" }, // NRV for Vitamin B6: 1.4 mg
+      { name: "Vitamin C", amount: "14 mg", percentage: "17.5%" }, // NRV for Vitamin C: 80 mg
+      { name: "Kalium", amount: "530 mg", percentage: "15.14%" }, // NRV for Potassium: 3,500 mg
+      { name: "Magnesium", amount: "35 mg", percentage: "9.33%" }, // NRV for Magnesium: 375 mg
+      { name: "Kalzium", amount: "38 mg", percentage: "3.8%" }, // NRV for Calcium: 1,000 mg
+      { name: "Eisen", amount: "1.4 mg", percentage: "10%" }, // NRV for Iron: 14 mg
+      { name: "Kupfer", amount: "149 µg", percentage: "14.9%" }, // NRV for Copper: 1,000 µg
+      { name: "Mangan", amount: "460 µg", percentage: "23%" }, // NRV for Manganese: 2,000 µg
     ],
     nutrients: {
-      Ballaststoffe: 1.0,
-      Eiweiß: 0.9,
-      Kohlenhydrate: 4.5,
-      Zucker: 1.0,
-      Fett: 0.0,
+      Brennwert: "145 kcal",
+      Eiweiß: 6.05,
+      Fett: 0.12,
+      Kohlenhydrate: 28.41,
+      Ballaststoffe: 1.8,
     },
     benefits: [
-      "Stärkt das Immunsystem durch Antioxidantien",
-      "Kann den Blutdruck senken",
-      "Fördert die Verdauung und hilft bei Entzündungen",
+      "Unterstützt das Immunsystem: Knoblauch enthält Allicin, das antibakterielle und antivirale Eigenschaften hat und das Immunsystem stärkt.",
+      "Fördert die Herzgesundheit: Der hohe Gehalt an Schwefelverbindungen im Knoblauch kann helfen, den Cholesterinspiegel zu senken und die Blutfettwerte zu verbessern.",
+      "Unterstützt die Verdauung: Knoblauch wirkt als Präbiotikum und fördert das Wachstum gesunder Darmbakterien, was die Verdauung unterstützt.",
+      "Reduziert Entzündungen: Die entzündungshemmenden Eigenschaften von Knoblauch können helfen, chronische Entzündungen im Körper zu verringern.",
+      "Fördert die Hautgesundheit: Die Antioxidantien im Knoblauch schützen die Haut vor freien Radikalen und unterstützen ein gesundes Hautbild.",
+      "Unterstützt die Blutzuckerregulation: Knoblauch kann helfen, den Blutzuckerspiegel zu stabilisieren und die Insulinempfindlichkeit zu verbessern.",
     ],
     regionAvailability: ["Deutschland", "Spanien", "Frankreich", "Italien"],
     storageTips:
       "An einem kühlen, trockenen Ort aufbewahren, vor direkter Sonneneinstrahlung schützen.",
-    recipes: ["Knoblauchbrot", "Knoblauchbutter", "Knoblauchhähnchen"],
+    recipes: [
+      "Knoblauchbutter",
+      "Knoblauchbrot",
+      "Knoblauch in Olivenöl geröstet",
+      "Knoblauchcremesuppe",
+      "Knoblauchmarinade für Fleisch",
+      "Knoblauch-Chili-Öl",
+      "Knoblauch mit Zitronenbutter",
+    ],
   },
   {
     id: "veg052",
@@ -1349,30 +1565,44 @@ export const vegetablesDE: Vegetable[] = [
       "August",
     ],
     vitamins: [
-      { name: "Vitamin C", amount: "12 mg", percentage: "15%" },
-      { name: "Vitamin A", amount: "98 µg", percentage: "12%" },
+      { name: "Eisen", amount: "1 mg", percentage: "7.14%" }, // NRV for Iron: 14 mg
+      { name: "Vitamin A", amount: "11 µg", percentage: "1.22%" }, // NRV for Vitamin A: 900 µg
+      { name: "Vitamin B1", amount: "0.09 mg", percentage: "8.18%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin B2", amount: "0.07 mg", percentage: "5%" }, // NRV for Vitamin B2: 1.4 mg
+      { name: "Niacin", amount: "0.5 mg", percentage: "2.5%" }, // NRV for Niacin: 20 mg
+      { name: "Kalium", amount: "267 mg", percentage: "7.63%" }, // NRV for Potassium: 3,500 mg
+      { name: "Vitamin B6", amount: "0.26 mg", percentage: "18.57%" }, // NRV for Vitamin B6: 1.4 mg
+      { name: "Kalzium", amount: "63 mg", percentage: "6.3%" }, // NRV for Calcium: 1,000 mg
+      { name: "Vitamin C", amount: "26 mg", percentage: "32.5%" }, // NRV for Vitamin C: 80 mg
+      { name: "Magnesium", amount: "18 mg", percentage: "4.8%" }, // NRV for Magnesium: 375 mg
+      { name: "Vitamin E", amount: "0.5 mg", percentage: "4.17%" }, // NRV for Vitamin E: 12 mg
     ],
     nutrients: {
-      Ballaststoffe: 1.5,
-      Eiweiß: 1.0,
-      Kohlenhydrate: 7.0,
-      Zucker: 3.0,
-      Fett: 0.1,
+      Brennwert: "25 kcal",
+      Fett: 0.3,
+      Protein: 2.2,
+      Kohlenhydrate: 3.3,
+      Ballaststoffe: 2.3,
     },
     benefits: [
-      "Reich an Antioxidantien, die das Immunsystem unterstützen",
-      "Fördert die Verdauung und hilft bei der Regulierung des Blutzuckerspiegels",
-      "Kann das Risiko für Herzkrankheiten senken",
-      "Hat entzündungshemmende Eigenschaften",
+      "Fördert die Verdauung: Lauch enthält Ballaststoffe wie Inulin, die das Wachstum gesunder Darmbakterien unterstützen und die Verdauung fördern.",
+      "Unterstützt das Immunsystem: Der hohe Gehalt an Vitamin C stärkt das Immunsystem und schützt vor Infektionen.",
+      "Unterstützt die Herzgesundheit: Lauch enthält Kalium, das hilft, den Blutdruck zu regulieren und das Herz zu schützen.",
+      "Hat entzündungshemmende Eigenschaften: Die schwefelhaltigen ätherischen Öle im Lauch wirken entzündungshemmend und können bei der Linderung von Entzündungen helfen.",
+      "Fördert die Knochengesundheit: Lauch enthält Vitamin K, das für die Knochengesundheit und die Blutgerinnung wichtig ist.",
+      "Unterstützt die Blutzuckerregulation: Lauch hat einen niedrigen glykämischen Index und kann helfen, den Blutzuckerspiegel stabil zu halten.",
     ],
     regionAvailability: ["Deutschland", "Frankreich", "Niederlande", "Polen"],
     storageTips:
       "An einem kühlen, trockenen Ort aufbewahren und vor direkter Sonneneinstrahlung schützen.",
     recipes: [
-      "Lauchcremesuppe",
+      "Lauchgemüse in Sahnesoße",
       "Lauchquiche",
-      "Lauchgemüse mit Kartoffeln",
-      "Lauch in Rahmsoße",
+      "Lauchsuppe",
+      "Gebratener Lauch mit Speck",
+      "Lauch-Pasteten",
+      "Lauchsalat mit Vinaigrette",
+      "Lauch mit Kartoffeln",
     ],
   },
   {
@@ -1384,30 +1614,45 @@ export const vegetablesDE: Vegetable[] = [
     image: images.pasttinake,
     season: ["October", "November", "December", "January", "February", "March"],
     vitamins: [
-      { name: "Vitamin C", amount: "17 mg", percentage: "20%" },
-      { name: "Vitamin A", amount: "20 µg", percentage: "10%" },
+      { name: "Folsäure", amount: "59 µg", percentage: "14.75%" }, // NRV for Folate: 400 µg
+      { name: "Vitamin A", amount: "3.3 µg", percentage: "0.37%" }, // NRV for Vitamin A: 900 µg
+      { name: "Vitamin B1", amount: "0.08 mg", percentage: "7.27%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin B2", amount: "0.13 mg", percentage: "9.29%" }, // NRV for Vitamin B2: 1.4 mg
+      { name: "Niacin", amount: "0.9 mg", percentage: "4.5%" }, // NRV for Niacin: 20 mg
+      { name: "Kalium", amount: "523 mg", percentage: "14.94%" }, // NRV for Potassium: 3,500 mg
+      { name: "Vitamin B6", amount: "0.1 mg", percentage: "7.14%" }, // NRV for Vitamin B6: 1.4 mg
+      { name: "Kalzium", amount: "51 mg", percentage: "5.1%" }, // NRV for Calcium: 1,000 mg
+      { name: "Vitamin C", amount: "18 mg", percentage: "22.5%" }, // NRV for Vitamin C: 80 mg
+      { name: "Magnesium", amount: "26 mg", percentage: "6.93%" }, // NRV for Magnesium: 375 mg
+      { name: "Vitamin E", amount: "1.0 mg", percentage: "8.33%" }, // NRV for Vitamin E: 12 mg
+      { name: "Eisen", amount: "0.6 mg", percentage: "4.29%" }, // NRV for Iron: 14 mg
     ],
     nutrients: {
-      Ballaststoffe: 4.0,
-      Eiweiß: 1.2,
-      Kohlenhydrate: 17.0,
-      Zucker: 7.0,
-      Fett: 0.1,
+      Brennwert: "59 kcal",
+      Fett: 0.4,
+      Protein: 1.3,
+      Kohlenhydrate: 12.1,
+      Ballaststoffe: 2.1,
     },
     benefits: [
-      "Stärkt das Immunsystem durch Vitamin C",
-      "Reich an Ballaststoffen, die die Verdauung fördern",
-      "Hilft bei der Blutzuckerkontrolle",
-      "Enthält Antioxidantien, die das Risiko von chronischen Krankheiten verringern",
+      "Fördert die Verdauung: Pastinaken sind reich an Ballaststoffen, insbesondere Inulin, das das Wachstum gesunder Darmbakterien unterstützt und die Verdauung fördert. ",
+      "Unterstützt das Immunsystem: Der hohe Gehalt an Vitamin C stärkt das Immunsystem und schützt vor Infektionen. ",
+      "Unterstützt die Herzgesundheit: Pastinaken enthalten Kalium, das hilft, den Blutdruck zu regulieren und das Herz zu schützen. ",
+      "Fördert die Knochengesundheit: Der Kalziumgehalt in Pastinaken trägt zur Stärkung der Knochen bei.",
+      "Unterstützt die Blutzuckerregulation: Pastinaken haben einen niedrigen glykämischen Index und können helfen, den Blutzuckerspiegel stabil zu halten.",
+      "Fördert die Hautgesundheit: Die Antioxidantien in Pastinaken schützen die Haut vor freien Radikalen und unterstützen ein gesundes Hautbild. ",
     ],
     regionAvailability: ["Deutschland", "Frankreich", "Niederlande", "Polen"],
     storageTips:
       "An einem kühlen, trockenen Ort in einem gut belüfteten Behälter aufbewahren.",
     recipes: [
-      "Pastinakensuppe",
-      "Geröstete Pastinaken mit Honig",
       "Pastinakenpüree",
-      "Pastinakensalat",
+      "Gebratene Pastinaken",
+      "Pastinaken-Suppe",
+      "Pastinaken mit Honig und Thymian",
+      "Pastinakenchips",
+      "Pastinakenrisotto",
+      "Pastinaken-Gemüsepfanne",
     ],
   },
   {
@@ -1419,29 +1664,40 @@ export const vegetablesDE: Vegetable[] = [
     image: images.lauchzwiebel,
     season: ["April", "May", "June", "July", "August"],
     vitamins: [
-      { name: "Vitamin C", amount: "10 mg", percentage: "12%" },
-      { name: "Vitamin K", amount: "47 µg", percentage: "40%" },
+      { name: "Kalium", amount: "230 mg", percentage: "6.57%" }, // NRV for Potassium: 3,500 mg
+      { name: "Calcium", amount: "140 mg", percentage: "14%" }, // NRV for Calcium: 1,000 mg
+      { name: "Phosphor", amount: "24 mg", percentage: "3.43%" }, // NRV for Phosphorus: 700 mg
+      { name: "Magnesium", amount: "11 mg", percentage: "2.93%" }, // NRV for Magnesium: 375 mg
+      { name: "Vitamin A", amount: "0.2 mg", percentage: "22.22%" }, // NRV for Vitamin A: 900 µg
+      { name: "Vitamin B1", amount: "0.13 mg", percentage: "11.82%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin B6", amount: "0.2 mg", percentage: "14.29%" }, // NRV for Vitamin B6: 1.4 mg
+      { name: "Vitamin C", amount: "25 mg", percentage: "31.25%" }, // NRV for Vitamin C: 80 mg
+      { name: "Vitamin E", amount: "0.25 mg", percentage: "2.08%" }, // NRV for Vitamin E: 12 mg
     ],
     nutrients: {
-      Ballaststoffe: 2.0,
-      Eiweiß: 1.5,
-      Kohlenhydrate: 6.0,
-      Zucker: 3.0,
-      Fett: 0.2,
+      Eiweiß: 0.9,
+      Fett: 0.3,
+      Kohlenhydrate: 8.5,
+      Ballaststoffe: 2.8,
     },
     benefits: [
-      "Fördert die Gesundheit des Verdauungssystems",
-      "Reich an Vitamin K, das wichtig für die Knochengesundheit ist",
-      "Hat entzündungshemmende Eigenschaften",
-      "Unterstützt die Blutzirkulation und stärkt das Immunsystem",
+      "Unterstützen das Immunsystem: Lauchzwiebeln sind reich an Vitamin C, das die Immunabwehr stärkt und vor Infektionen schützt. ",
+      "Fördern die Verdauung: Der hohe Gehalt an Ballaststoffen unterstützt eine gesunde Verdauung und reguliert den Stuhlgang.",
+      "Unterstützen die Herzgesundheit: Lauchzwiebeln enthalten Kalium, das hilft, den Blutdruck zu regulieren und das Herz zu schützen.",
+      "Fördern die Knochengesundheit: Der Kalziumgehalt in Lauchzwiebeln trägt zur Stärkung der Knochen bei. ",
+      "Unterstützen die Blutzuckerregulation: Lauchzwiebeln haben einen niedrigen glykämischen Index und können helfen, den Blutzuckerspiegel stabil zu halten. ",
+      "Fördern die Hautgesundheit: Die Antioxidantien in Lauchzwiebeln schützen die Haut vor freien Radikalen und unterstützen ein gesundes Hautbild.",
     ],
     regionAvailability: ["Deutschland", "Frankreich", "Spanien", "Italien"],
     storageTips: "Im Kühlschrank in einem feuchten Tuch aufbewahren.",
     recipes: [
-      "Frühlingszwiebel-Dip",
-      "Frühlingszwiebel-Omelett",
-      "Frühlingszwiebel-Salat",
-      "Pfannengerührte Frühlingszwiebeln mit Reis",
+      "Lauchzwiebel-Salat",
+      "Lauchzwiebel-Dip",
+      "Gebratene Lauchzwiebel mit Sesam",
+      "Lauchzwiebel in Teriyaki-Sauce",
+      "Lauchzwiebel-Pfannkuchen",
+      "Lauchzwiebel-Suppe",
+      "Lauchzwiebel auf gegrilltem Brot",
     ],
   },
   {
@@ -1466,30 +1722,44 @@ export const vegetablesDE: Vegetable[] = [
       "December",
     ],
     vitamins: [
-      { name: "Vitamin C", amount: "20 mg", percentage: "25%" },
-      { name: "Vitamin K", amount: "30 µg", percentage: "25%" },
+      { name: "Eisen", amount: "2.9 mg", percentage: "20.71%" }, // NRV for Iron: 14 mg
+      { name: "Vitamin A", amount: "365 µg", percentage: "40.56%" }, // NRV for Vitamin A: 900 µg
+      { name: "Vitamin B1", amount: "0.15 mg", percentage: "13.64%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin B2", amount: "0.19 mg", percentage: "13.57%" }, // NRV for Vitamin B2: 1.4 mg
+      { name: "Niacin", amount: "1.8 mg", percentage: "9%" }, // NRV for Niacin: 20 mg
+      { name: "Kalium", amount: "550 mg", percentage: "15.71%" }, // NRV for Potassium: 3,500 mg
+      { name: "Vitamin B6", amount: "0.3 mg", percentage: "21.43%" }, // NRV for Vitamin B6: 1.4 mg
+      { name: "Kalzium", amount: "214 mg", percentage: "21.4%" }, // NRV for Calcium: 1,000 mg
+      { name: "Vitamin C", amount: "59 mg", percentage: "73.75%" }, // NRV for Vitamin C: 80 mg
+      { name: "Magnesium", amount: "40 mg", percentage: "10.67%" }, // NRV for Magnesium: 375 mg
+      { name: "Vitamin E", amount: "0.7 mg", percentage: "5.83%" }, // NRV for Vitamin E: 12 mg
     ],
     nutrients: {
-      Ballaststoffe: 1.2,
-      Eiweiß: 2.0,
-      Kohlenhydrate: 4.0,
-      Zucker: 1.0,
-      Fett: 0.1,
+      Brennwert: "33 kcal",
+      Fett: 0.7,
+      Protein: 4.2,
+      Kohlenhydrate: 2.5,
+      Ballaststoffe: 3.5,
     },
     benefits: [
-      "Reich an Vitamin C für ein starkes Immunsystem",
-      "Fördert die Wundheilung und die Hautgesundheit",
-      "Hilft, den Blutdruck zu senken",
-      "Verbessert die Verdauung und hilft bei Entzündungen",
+      "Unterstützt das Immunsystem: Kresse ist reich an Vitamin C, das die Immunabwehr stärkt und vor Infektionen schützt.",
+      "Fördert die Verdauung: Der hohe Gehalt an Ballaststoffen unterstützt eine gesunde Verdauung und reguliert den Stuhlgang.",
+      "Unterstützt die Knochengesundheit: Kresse enthält Kalzium, das für starke Knochen wichtig ist.",
+      "Fördert die Hautgesundheit: Die Antioxidantien in Kresse schützen die Haut vor freien Radikalen und unterstützen ein gesundes Hautbild. ",
+      "Unterstützt die Blutzuckerregulation: Kresse hat einen niedrigen glykämischen Index und kann helfen, den Blutzuckerspiegel stabil zu halten. ",
+      "Fördert die Herzgesundheit: Der hohe Gehalt an Kalium hilft, den Blutdruck zu regulieren und das Herz zu schützen.",
     ],
     regionAvailability: ["Deutschland", "Frankreich", "Schweiz"],
     storageTips:
       "Kresse sollte in einem feuchten Tuch im Kühlschrank aufbewahrt werden.",
     recipes: [
-      "Kresse-Salat",
-      "Kresse auf Brot",
-      "Kresse-Smoothie",
-      "Kresse als Garnitur für Suppen und Eintöpfe",
+      "Kressesalat mit Radieschen",
+      "Kresse auf Brot mit Quark",
+      "Kresse-Suppe",
+      "Kresse-Butter",
+      "Kresse-Dip",
+      "Kresse-Pesto",
+      "Kresse auf Eierspeise",
     ],
   },
   {
@@ -1501,21 +1771,41 @@ export const vegetablesDE: Vegetable[] = [
     image: images.chili,
     season: ["May", "June", "July", "August"],
     vitamins: [
-      { name: "Vitamin C", amount: "100 mg", percentage: "120%" },
-      { name: "Vitamin A", amount: "225 µg", percentage: "28%" },
+      { name: "Vitamin A", amount: "68.4 µg", percentage: "7.6%" }, // NRV for Vitamin A: 900 µg
+      { name: "Betacarotin", amount: "0.4 mg", percentage: "NA" }, // NRV for Beta-Carotene: NA
+      { name: "Vitamin B1", amount: "12 µg", percentage: "1.09%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin B2", amount: "15 µg", percentage: "1.07%" }, // NRV for Vitamin B2: 1.4 mg
+      { name: "Vitamin B3", amount: "0.2 mg", percentage: "1%" }, // NRV for Vitamin B3 (Niacin): 20 mg
+      { name: "Vitamin B5", amount: "6 µg", percentage: "N/A" }, // NRV for Vitamin B5: NA
+      { name: "Vitamin B6", amount: "28 µg", percentage: "2%" }, // NRV for Vitamin B6: 1.4 mg
+      { name: "Vitamin B7", amount: "0.3 µg", percentage: "NA" }, // NRV for Vitamin B7: NA
+      { name: "Vitamin B9", amount: "5.2 µg", percentage: "1.3%" }, // NRV for Vitamin B9 (Folate): 400 µg
+      { name: "Vitamin C", amount: "22.5 mg", percentage: "28.13%" }, // NRV for Vitamin C: 80 mg
+      { name: "Vitamin E", amount: "290 µg", percentage: "2.42%" }, // NRV for Vitamin E: 12 mg
+      { name: "Vitamin K", amount: "0.5 µg", percentage: "N/A" }, // NRV for Vitamin K: NA
+      { name: "Calcium", amount: "1.6 mg", percentage: "0.16%" }, // NRV for Calcium: 1,000 mg
+      { name: "Magnesium", amount: "2.1 mg", percentage: "0.56%" }, // NRV for Magnesium: 375 mg
+      { name: "Kalium", amount: "44 mg", percentage: "1.26%" }, // NRV for Potassium: 3,500 mg
+      { name: "Natrium", amount: "1.2 mg", percentage: "N/A" }, // NRV for Sodium: NA
+      { name: "Phosphor", amount: "3.9 mg", percentage: "N/A" }, // NRV for Phosphorus: NA
+      { name: "Schwefel", amount: "1.5 mg", percentage: "N/A" }, // NRV for Sulfur: NA
+      { name: "Chlorid", amount: "2 mg", percentage: "N/A" }, // NRV for Chloride: NA
+      { name: "Eisen", amount: "100 µg", percentage: "0.71%" }, // NRV for Iron: 14 mg
     ],
     nutrients: {
-      Ballaststoffe: 2.0,
-      Eiweiß: 1.5,
-      Kohlenhydrate: 7.0,
-      Zucker: 4.0,
-      Fett: 0.2,
+      Brennwert: "2.8 kcal",
+      Fett: 0.03,
+      Eiweiß: 0.18,
+      Kohlenhydrate: 0.42,
+      Ballaststoffe: 0.36,
     },
     benefits: [
-      "Steigert den Stoffwechsel und unterstützt die Fettverbrennung",
-      "Reich an Antioxidantien, die das Immunsystem stärken",
-      "Fördert die Durchblutung und lindert Schmerzen",
-      "Kann die Verdauung anregen und den Appetit ankurbeln",
+      "Regt den Stoffwechsel an: Capsaicin, der scharfe Inhaltsstoff in Chilis, kann den Stoffwechsel ankurbeln und die Fettverbrennung fördern.",
+      "Fördert die Herzgesundheit: Chilis enthalten Antioxidantien wie Vitamin C und Beta-Carotin, die helfen können, den Cholesterinspiegel zu senken und das Risiko von Herzkrankheiten zu reduzieren.",
+      "Lindert Schmerzen: Capsaicin hat schmerzlindernde Eigenschaften und wird in Schmerzcremes verwendet, um Muskel- und Gelenkschmerzen zu behandeln.",
+      "Verbessert die Verdauung: Chilis können die Produktion von Verdauungssäften anregen und so die Verdauung fördern. ",
+      "Stärkt das Immunsystem: Der hohe Vitamin-C-Gehalt in Chilis unterstützt das Immunsystem und hilft, Infektionen abzuwehren.",
+      "Fördert die Blutzuckerregulation: Chilis können helfen, den Blutzuckerspiegel zu stabilisieren und die Insulinsensitivität zu verbessern.",
     ],
     regionAvailability: ["Deutschland", "Mexiko", "Indien", "Thailand"],
     storageTips: "Im Kühlschrank aufbewahren oder in getrockneter Form lagern.",
@@ -1535,29 +1825,41 @@ export const vegetablesDE: Vegetable[] = [
     image: images.topinambur,
     season: ["October", "November", "December", "January", "February"],
     vitamins: [
-      { name: "Vitamin C", amount: "11 mg", percentage: "13%" },
-      { name: "Vitamin B1", amount: "0.2 mg", percentage: "14%" },
+      { name: "Magnesium", amount: "20 mg", percentage: "5.33%" }, // NRV for Magnesium: 375 mg
+      { name: "Eisen", amount: "3.7 mg", percentage: "26.43%" }, // NRV for Iron: 14 mg
+      { name: "Vitamin A", amount: "2 µg", percentage: "0.22%" }, // NRV for Vitamin A: 900 µg
+      { name: "Vitamin B1", amount: "0.2 mg", percentage: "18.18%" }, // NRV for Vitamin B1: 1.1 mg
+      { name: "Vitamin B2", amount: "0.06 mg", percentage: "4.29%" }, // NRV for Vitamin B2: 1.4 mg
+      { name: "Kalium", amount: "480 mg", percentage: "13.71%" }, // NRV for Potassium: 3,500 mg
+      { name: "Niacin", amount: "1.3 mg", percentage: "6.5%" }, // NRV for Vitamin B3 (Niacin): 20 mg
+      { name: "Kalzium", amount: "10 mg", percentage: "1%" }, // NRV for Calcium: 1,000 mg
+      { name: "Vitamin C", amount: "4 mg", percentage: "5%" }, // NRV for Vitamin C: 80 mg
     ],
     nutrients: {
-      Ballaststoffe: 1.8,
-      Eiweiß: 2.0,
-      Kohlenhydrate: 17.0,
-      Zucker: 5.0,
-      Fett: 0.1,
+      Brennwert: "30 kcal",
+      Fett: 0.4,
+      Protein: 2.4,
+      Kohlenhydrate: 4.0,
+      Ballaststoffe: 12.1,
     },
     benefits: [
-      "Hilft bei der Regulierung des Blutzuckerspiegels",
-      "Fördert eine gesunde Verdauung durch hohe Ballaststoffgehalte",
-      "Stärkt das Immunsystem durch Vitamin C",
-      "Kann die Knochengesundheit unterstützen",
+      "Fördert die Verdauung: Topinambur ist reich an Inulin, einem Ballaststoff, der die Verdauung unterstützt und die Darmflora fördert.",
+      "Unterstützt das Immunsystem: Der hohe Gehalt an Vitamin C stärkt das Immunsystem und schützt vor Infektionen.",
+      "Unterstützt die Blutzuckerregulation: Inulin hilft, den Blutzuckerspiegel stabil zu halten und verbessert die Insulinempfindlichkeit.",
+      "Fördert die Herzgesundheit: Topinambur enthält Kalium, das hilft, den Blutdruck zu regulieren und die Herzgesundheit zu fördern.",
+      "Fördert die Knochengesundheit: Der Kalziumgehalt in Topinambur trägt zur Stärkung der Knochen bei.",
+      "Unterstützt die Gewichtsregulation: Topinambur ist kalorienarm und reich an Ballaststoffen, die das Sättigungsgefühl fördern und die Gewichtsabnahme unterstützen.",
     ],
     regionAvailability: ["Deutschland", "Frankreich", "Italien"],
     storageTips: "Kühl und trocken in einem luftdichten Behälter aufbewahren.",
     recipes: [
-      "Topinamburpüree",
       "Topinambur-Suppe",
-      "Geröstete Topinambur",
-      "Topinambur-Salat",
+      "Gebratene Topinambur",
+      "Topinambur-Püree",
+      "Topinambur-Chips",
+      "Topinambur-Salat mit Walnüssen",
+      "Topinambur in Rahm",
+      "Topinambur-Gratin",
     ],
   },
   {
@@ -1569,21 +1871,31 @@ export const vegetablesDE: Vegetable[] = [
     image: images.erbsen,
     season: ["May", "June", "July", "August", "September"],
     vitamins: [
-      { name: "Vitamin C", amount: "60 mg", percentage: "75%" },
-      { name: "Vitamin A", amount: "38 µg", percentage: "5%" },
+      { name: "Folsäure", amount: "159 µg", percentage: "39.75%" }, // NRV for Folate (Vitamin B9): 400 µg
+      { name: "Biotin", amount: "5 µg", percentage: "10%" }, // NRV for Biotin (Vitamin B7): 50 µg
+      { name: "Vitamin C", amount: "25 mg", percentage: "31.25%" }, // NRV for Vitamin C: 80 mg
+      { name: "Beta-Carotin", amount: "422 µg", percentage: "46.89%" }, // NRV for Vitamin A: 900 µg
+      { name: "Vitamin K", amount: "36 µg", percentage: "30%" }, // NRV for Vitamin K: 120 µg
+      { name: "Kalium", amount: "252 mg", percentage: "7.2%" }, // NRV for Potassium: 3,500 mg
+      { name: "Magnesium", amount: "36 mg", percentage: "9.6%" }, // NRV for Magnesium: 375 mg
+      { name: "Kalzium", amount: "26 mg", percentage: "2.6%" }, // NRV for Calcium: 1,000 mg
+      { name: "Phosphor", amount: "118 mg", percentage: "16.86%" }, // NRV for Phosphorus: 700 mg
+      { name: "Kupfer", amount: "246 µg", percentage: "24.6%" }, // NRV for Copper: 1,000 µg
     ],
     nutrients: {
-      Ballaststoffe: 4.0,
-      Eiweiß: 5.0,
-      Kohlenhydrate: 14.0,
-      Zucker: 6.0,
-      Fett: 0.2,
+      Brennwert: "91 kcal",
+      Eiweiß: 6.55,
+      Fett: 0.48,
+      Kohlenhydrate: 12.3,
+      Ballaststoffe: 4.2,
     },
     benefits: [
-      "Reich an Vitamin C, das das Immunsystem stärkt",
-      "Fördert die Verdauung und verbessert die Blutzuckerwerte",
-      "Hilft, den Cholesterinspiegel zu senken",
-      "Hat antioxidative Eigenschaften, die vor Zellschäden schützen",
+      "Fördern die Verdauung: Erbsen sind reich an Ballaststoffen, die die Verdauung unterstützen und die Darmgesundheit fördern. :contentReference[oaicite:0]{index=0}",
+      "Unterstützen das Immunsystem: Der hohe Gehalt an Vitamin C stärkt das Immunsystem und schützt vor Infektionen. :contentReference[oaicite:1]{index=1}",
+      "Fördern die Herzgesundheit: Erbsen enthalten Kalium, das hilft, den Blutdruck zu regulieren und das Herz zu schützen. :contentReference[oaicite:2]{index=2}",
+      "Unterstützen die Knochengesundheit: Der Kalziumgehalt in Erbsen trägt zur Stärkung der Knochen bei. :contentReference[oaicite:3]{index=3}",
+      "Fördern die Blutzuckerregulation: Erbsen haben einen niedrigen glykämischen Index und können helfen, den Blutzuckerspiegel stabil zu halten. :contentReference[oaicite:4]{index=4}",
+      "Unterstützen die Hautgesundheit: Die Antioxidantien in Erbsen schützen die Haut vor freien Radikalen und unterstützen ein gesundes Hautbild. :contentReference[oaicite:5]{index=5}",
     ],
     regionAvailability: [
       "Deutschland",
@@ -1593,7 +1905,15 @@ export const vegetablesDE: Vegetable[] = [
     ],
     storageTips:
       "Frische Erbsen sollten im Kühlschrank aufbewahrt werden. Gefrorene Erbsen sind länger haltbar.",
-    recipes: ["Erbsensuppe", "Erbsenpüree", "Erbsenrisotto", "Erbsen-Salat"],
+    recipes: [
+      "Erbsensuppe",
+      "Erbsenpüree",
+      "Erbsen mit Schinken",
+      "Erbsenrisotto",
+      "Erbsensalat mit Feta",
+      "Gebratene Erbsen mit Knoblauch",
+      "Erbsen-Karotten-Gemüse",
+    ],
   },
   {
     id: "veg060",
@@ -1604,21 +1924,49 @@ export const vegetablesDE: Vegetable[] = [
     image: images.spitzkohl,
     season: ["April", "May", "June", "July", "August", "September"],
     vitamins: [
-      { name: "Vitamin C", amount: "56 mg", percentage: "70%" },
-      { name: "Vitamin K", amount: "81 µg", percentage: "68%" },
+      {
+        name: "Vitamin A (Retinoläquivalent)",
+        amount: "25 µg",
+        percentage: "2.78%",
+      }, // NRV for Vitamin A: 900 µg
+      { name: "Vitamin B1 (Thiamin)", amount: "50 µg", percentage: "4.55%" }, // NRV for Vitamin B1: 1,100 µg
+      { name: "Vitamin B2 (Riboflavin)", amount: "50 µg", percentage: "3.85%" }, // NRV for Vitamin B2: 1,300 µg
+      { name: "Niacin (Vitamin B3)", amount: "300 µg", percentage: "1.88%" }, // NRV for Niacin (Vitamin B3): 16,000 µg
+      {
+        name: "Vitamin B5 (Pantothensäure)",
+        amount: "150 µg",
+        percentage: "3%",
+      }, // NRV for Vitamin B5: 5,000 µg
+      {
+        name: "Vitamin B6 (Pyridoxin)",
+        amount: "150 µg",
+        percentage: "10.71%",
+      }, // NRV for Vitamin B6: 1,400 µg
+      { name: "Folsäure (Vitamin B9)", amount: "73 µg", percentage: "18.25%" }, // NRV for Folate (Vitamin B9): 400 µg
+      { name: "Vitamin C", amount: "60,000 µg", percentage: "75%" }, // NRV for Vitamin C: 80 mg
+      {
+        name: "Vitamin E (Alpha-Tocopherol)",
+        amount: "150 µg",
+        percentage: "125%",
+      }, // NRV for Vitamin E: 120 mg
+      { name: "Calcium", amount: "50 mg", percentage: "5%" }, // NRV for Calcium: 1,000 mg
+      { name: "Kalium", amount: "249 mg", percentage: "7.11%" }, // NRV for Potassium: 3,500 mg
+      { name: "Magnesium", amount: "9 mg", percentage: "2.4%" }, // NRV for Magnesium: 375 mg
+      { name: "Phosphor", amount: "30 mg", percentage: "4.29%" }, // NRV for Phosphorus: 700 mg
     ],
     nutrients: {
-      Ballaststoffe: 3.2,
-      Eiweiß: 1.9,
-      Kohlenhydrate: 7.1,
-      Zucker: 3.6,
-      Fett: 0.3,
+      Brennwert: "23 kcal",
+      Kohlenhydrate: 3.0,
+      Eiweiß: 2.1,
+      Ballaststoffe: 2.5,
     },
     benefits: [
-      "Reich an Vitamin C, das das Immunsystem unterstützt",
-      "Fördert eine gesunde Verdauung",
-      "Hat entzündungshemmende Eigenschaften",
-      "Hilft, das Risiko für Herzkrankheiten zu senken",
+      "Unterstützt das Immunsystem: Spitzkohl ist reich an Vitamin C, das die Immunabwehr stärkt und vor Infektionen schützt.",
+      "Fördert die Verdauung: Der hohe Gehalt an Ballaststoffen unterstützt eine gesunde Verdauung und reguliert den Stuhlgang.",
+      "Unterstützt die Knochengesundheit: Spitzkohl enthält Kalzium, das für starke Knochen wichtig ist.",
+      "Fördert die Hautgesundheit: Die Antioxidantien in Spitzkohl schützen die Haut vor freien Radikalen und unterstützen ein gesundes Hautbild.",
+      "Unterstützt die Blutzuckerregulation: Spitzkohl hat einen niedrigen glykämischen Index und kann helfen, den Blutzuckerspiegel stabil zu halten.",
+      "Fördert die Herzgesundheit: Der hohe Gehalt an Kalium hilft, den Blutdruck zu regulieren und das Herz zu schützen.",
     ],
     regionAvailability: ["Deutschland", "Österreich", "Niederlande", "Schweiz"],
     storageTips:
@@ -1639,21 +1987,45 @@ export const vegetablesDE: Vegetable[] = [
     image: images.wirsing,
     season: ["October", "November", "December", "January", "February"],
     vitamins: [
-      { name: "Vitamin C", amount: "60 mg", percentage: "75%" },
-      { name: "Vitamin K", amount: "100 µg", percentage: "83%" },
+      { name: "Vitamin B1 (Thiamin)", amount: "59 µg", percentage: "5.36%" }, // NRV for Vitamin B1: 1,100 µg
+      { name: "Vitamin B2 (Riboflavin)", amount: "64 µg", percentage: "4.92%" }, // NRV for Vitamin B2: 1,300 µg
+      { name: "Niacin (Vitamin B3)", amount: "331 µg", percentage: "2.06%" }, // NRV for Niacin (Vitamin B3): 16,000 µg
+      {
+        name: "Vitamin B5 (Pantothensäure)",
+        amount: "210 µg",
+        percentage: "4.2%",
+      }, // NRV for Vitamin B5: 5,000 µg
+      {
+        name: "Vitamin B6 (Pyridoxin)",
+        amount: "156 µg",
+        percentage: "11.14%",
+      }, // NRV for Vitamin B6: 1,400 µg
+      { name: "Folsäure (Vitamin B9)", amount: "29 µg", percentage: "7.25%" }, // NRV for Folate (Vitamin B9): 400 µg
+      { name: "Vitamin C", amount: "49,400 µg", percentage: "61.75%" }, // NRV for Vitamin C: 80 mg
+      {
+        name: "Vitamin E (Alpha-Tocopherol)",
+        amount: "2,500 µg",
+        percentage: "208.33%",
+      }, // NRV for Vitamin E: 120 mg
+      { name: "Calcium", amount: "64 mg", percentage: "6.4%" }, // NRV for Calcium: 1,000 mg
+      { name: "Kalium", amount: "236 mg", percentage: "6.74%" }, // NRV for Potassium: 3,500 mg
+      { name: "Magnesium", amount: "12 mg", percentage: "3.2%" }, // NRV for Magnesium: 375 mg
+      { name: "Phosphor", amount: "56 mg", percentage: "8%" }, // NRV for Phosphorus: 700 mg
     ],
     nutrients: {
-      Ballaststoffe: 3.0,
-      Eiweiß: 2.5,
-      Kohlenhydrate: 8.0,
-      Zucker: 3.0,
-      Fett: 0.5,
+      Brennwert: "31 kcal",
+      Kohlenhydrate: 2.9,
+      Ballaststoffe: 2.6,
+      Eiweiß: 2.8,
+      Fett: 0.3,
     },
     benefits: [
-      "Fördert die Verdauung durch Ballaststoffe",
-      "Stärkt das Immunsystem durch Vitamin C",
-      "Hilft bei der Regulierung des Blutdrucks",
-      "Reich an Vitamin K, das die Knochengesundheit unterstützt",
+      "Unterstützt das Immunsystem: Der hohe Vitamin-C-Gehalt stärkt das Immunsystem und schützt vor Infektionen.",
+      "Fördert die Verdauung: Der hohe Ballaststoffgehalt unterstützt eine gesunde Verdauung und reguliert den Stuhlgang.",
+      "Unterstützt die Knochengesundheit: Der Kalziumgehalt trägt zur Stärkung der Knochen bei.",
+      "Fördert die Hautgesundheit: Die Antioxidantien schützen die Haut vor freien Radikalen und unterstützen ein gesundes Hautbild.",
+      "Unterstützt die Blutzuckerregulation: Der niedrige glykämische Index hilft, den Blutzuckerspiegel stabil zu halten.",
+      "Fördert die Herzgesundheit: Der hohe Kaliumgehalt hilft, den Blutdruck zu regulieren und das Herz zu schützen.",
     ],
     regionAvailability: ["Deutschland", "Frankreich", "Polen"],
     storageTips:
