@@ -2038,7 +2038,7 @@ export const vegetablesDE: Vegetable[] = [
     ],
   },
   {
-    id: "veg0266",
+    id: "veg066",
     name: "Champignons",
     emoji: "🍄‍🟫",
     backgroundColor: "#f0f0e0",
@@ -2103,7 +2103,7 @@ export const vegetablesDE: Vegetable[] = [
     ],
   },
   {
-    id: "veg026",
+    id: "veg067",
     name: "Rucola",
     emoji: "🥬",
     backgroundColor: "#d0e8c7",
@@ -2192,5 +2192,149 @@ export const vegetablesDE: Vegetable[] = [
     storageTips:
       "Im Kühlschrank aufbewahren und innerhalb weniger Tage verbrauchen.",
     recipes: ["Rucola-Salat mit Parmesan", "Pasta mit Rucola und Tomaten"],
+  },
+  {
+    id: "veg068",
+    name: "Gurke",
+    emoji: "🥒",
+    backgroundColor: "#b0e0a8",
+    info: "Gurken – auch als Salatgurken bekannt – gehören zu den beliebtesten Gemüsesorten der Welt. Sie bestehen zu über 95 % aus Wasser, sind erfrischend und kalorienarm. Ihre kühlende Wirkung macht sie zu einem idealen Sommergemüse. Was Gurken so besonders macht und wie Sie sie am besten lagern und verwenden, erfahren Sie bei uns.",
+    image: images.gurke,
+    season: ["June", "July", "August", "September"],
+    vitamins: [
+      {
+        name: "Vitamin A (Retinoläquivalent)",
+        amount: "105 µg",
+        percentage: "13%",
+      }, // NRV: 800 µg
+      { name: "Vitamin B1 (Thiamin)", amount: "30 µg", percentage: "2.7%" }, // NRV: 1.1 mg
+      { name: "Vitamin B2 (Riboflavin)", amount: "26 µg", percentage: "1.9%" }, // NRV: 1.4 mg
+      { name: "Niacin (Vitamin B3)", amount: "210 µg", percentage: "1.3%" }, // NRV: 16 mg
+      {
+        name: "Vitamin B5 (Pantothensäure)",
+        amount: "259 µg",
+        percentage: "5.2%",
+      }, // NRV: 5 mg
+      { name: "Vitamin B6 (Pyridoxin)", amount: "40 µg", percentage: "2.9%" }, // NRV: 1.4 mg
+      { name: "Biotin (Vitamin B7)", amount: "1 µg", percentage: "2%" }, // NRV: 50 µg
+      { name: "Folsäure (Vitamin B9)", amount: "7 µg", percentage: "3.5%" }, // NRV: 200 µg
+      { name: "Vitamin C", amount: "2500 µg", percentage: "3.1%" }, // NRV: 80 mg
+      {
+        name: "Vitamin E (Alpha-Tocopherol)",
+        amount: "110 µg",
+        percentage: "0.9%",
+      }, // NRV: 120 mg
+    ],
+    nutrients: {
+      Brennwert: "15 kcal",
+      Kohlenhydrate: 2.0,
+      Ballaststoffe: 0.5,
+      Eiweiß: 0.6,
+      Fett: 0.1,
+    },
+    benefits: [
+      "Fördert die Hydration",
+      "Gut für die Haut",
+      "Hilft bei der Verdauung",
+      "Unterstützt den Gewichtsverlust",
+    ],
+    regionAvailability: ["Europa", "Asien", "Nordamerika"],
+    storageTips:
+      "Am besten bei Raumtemperatur aufbewahren und nicht im Kühlschrank lagern, da Gurken kälteempfindlich sind.",
+    recipes: ["Gurkensalat mit Dill", "Gefüllte Gurken mit Frischkäse"],
+  },
+  {
+    id: "veg069",
+    name: "Kartoffeln",
+    emoji: "🥔",
+    backgroundColor: "#e2c49f",
+    info: "Kartoffeln – ein Grundnahrungsmittel mit einer langen Geschichte. Ursprünglich aus Südamerika stammend, sind sie heute weltweit beliebt und vielseitig einsetzbar. Sie sind reich an Kohlenhydraten, enthalten aber auch wertvolle Vitamine und Mineralstoffe. Was Sie über den Anbau, die Lagerung und die Zubereitung wissen sollten, erfahren Sie bei uns.",
+    image: images.kartoffeln,
+    season: ["September", "October", "November"],
+    vitamins: [
+      { name: "Vitamin B1 (Thiamin)", amount: "100 µg", percentage: "9.1%" }, // NRV: 1.1 mg
+      { name: "Vitamin B2 (Riboflavin)", amount: "40 µg", percentage: "2.9%" }, // NRV: 1.4 mg
+      { name: "Niacin (Vitamin B3)", amount: "2000 µg", percentage: "12.5%" }, // NRV: 16 mg
+      {
+        name: "Vitamin B5 (Pantothensäure)",
+        amount: "300 µg",
+        percentage: "6%",
+      }, // NRV: 5 mg
+      { name: "Vitamin B6 (Pyridoxin)", amount: "300 µg", percentage: "21%" }, // NRV: 1.4 mg
+      { name: "Biotin (Vitamin B7)", amount: "3 µg", percentage: "6%" }, // NRV: 50 µg
+      { name: "Folsäure (Vitamin B9)", amount: "15 µg", percentage: "7.5%" }, // NRV: 200 µg
+      { name: "Vitamin C", amount: "20000 µg", percentage: "25%" }, // NRV: 80 mg
+      {
+        name: "Vitamin E (Alpha-Tocopherol)",
+        amount: "100 µg",
+        percentage: "0.8%",
+      }, // NRV: 120 mg
+    ],
+    nutrients: {
+      Brennwert: "77 kcal",
+      Kohlenhydrate: 17.0,
+      Ballaststoffe: 2.2,
+      Eiweiß: 2.0,
+      Fett: 0.1,
+    },
+    benefits: [
+      "Energiequelle dank komplexer Kohlenhydrate",
+      "Reich an Kalium – gut für das Herz",
+      "Fördert die Verdauung durch Ballaststoffe",
+      "Unterstützt das Immunsystem durch Vitamin C",
+    ],
+    regionAvailability: ["Europa", "Asien", "Nordamerika"],
+    storageTips:
+      "An einem kühlen, dunklen und trockenen Ort lagern. Direkte Sonneneinstrahlung vermeiden, um das Austreiben und die Bildung von Solanin zu verhindern.",
+    recipes: ["Kartoffelpüree", "Ofenkartoffeln", "Kartoffelsuppe"],
+  },
+  {
+    id: "veg070",
+    name: "Eisbergsalat",
+    emoji: "🥗",
+    backgroundColor: "#a9ccab",
+    info: "Eisbergsalat ist kalorienarm und eine erfrischende Zutat für Salate. Mit seinem hohen Wassergehalt hilft er, den Flüssigkeitshaushalt zu unterstützen. Trotz seines milden Geschmacks enthält er wertvolle Vitamine und Mineralstoffe wie Kalium, Folsäure und Vitamin A.",
+    image: images.eisbergsalat,
+    season: ["May", "June", "July", "August"],
+    vitamins: [
+      {
+        name: "Vitamin A",
+        amount: "73 µg",
+        percentage: "9.1%",
+      },
+      { name: "Vitamin B1 (Thiamin)", amount: "0.11 mg", percentage: "9%" },
+      {
+        name: "Vitamin B2 (Riboflavin)",
+        amount: "0.01 mg",
+        percentage: "0.7%",
+      },
+      { name: "Niacin (Vitamin B3)", amount: "0.03 mg", percentage: "0.2%" },
+      {
+        name: "Vitamin B6",
+        amount: "0.03 mg",
+        percentage: "2.1%",
+      },
+      { name: "Vitamin C", amount: "15 mg", percentage: "18.8%" },
+      { name: "Folsäure (Vitamin B9)", amount: "53 µg", percentage: "26.5%" },
+    ],
+    nutrients: {
+      Brennwert: "13 kcal",
+      Kohlenhydrate: "1.9 g",
+      Ballaststoffe: "0.6 g",
+      Eiweiß: "0.7 g",
+      Fett: "0.3 g",
+      Kalium: "160 mg",
+      Kalzium: "19 mg",
+      Magnesium: "5 mg",
+      Eisen: "0.4 mg",
+    },
+    benefits: [
+      "Fördert die Verdauung durch Ballaststoffe",
+      "Unterstützt die Hautgesundheit dank Vitamin C",
+      "Trägt zur normalen Funktion des Nervensystems bei",
+    ],
+    regionAvailability: ["Europa", "Nordamerika"],
+    storageTips: "Im Kühlschrank aufbewahren, um die Frische zu erhalten.",
+    recipes: ["Eisbergsalat mit Tomaten und Gurken", "Wraps mit Eisbergsalat"],
   },
 ];

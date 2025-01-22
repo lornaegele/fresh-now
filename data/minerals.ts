@@ -5,295 +5,118 @@ export const minerals: VitaminInfo[] = [
     content:
       "Calcium ist ein Mineral, das für die Gesundheit von Knochen und Zähnen unerlässlich ist. Es unterstützt auch die Muskel- und Nervenfunktion und spielt eine Rolle bei der Blutgerinnung.",
   },
-
   {
     id: "002",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "003",
-    name: "Magnesium",
+    name: "Chlorid",
     content:
-      "Magnesium ist ein Mineral, das für die Muskelkontraktion, die Nervenübertragung und die Energieproduktion wichtig ist. Es unterstützt die normale Funktion des Herz-Kreislaufsystems.",
+      "Chlorid reguliert den Wasser- und den Säure-Basen-Haushalt und beeinflusst zusammen mit Natrium den Blutdruck. Wir nehmen Chlorid vorrangig über Speise- oder Meersalz (Natriumchlorid) auf. Hauptquelle für Chlorid sind daher vor allem verarbeitete Lebensmittel, denen bei der Verarbeitung bzw. Herstellung Salz beigefügt wird.",
   },
-
   {
     id: "004",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "005",
     name: "Kalium",
     content:
-      "Kalium hilft, den Flüssigkeitshaushalt im Körper zu regulieren, unterstützt die Muskel- und Nervenfunktion und ist entscheidend für die Aufrechterhaltung eines normalen Blutdrucks.",
+      "Kalium spielt bei der Regulierung des Wasserhaushaltes und des Blutdrucks eine große Rolle. Zudem ist es wichtig für die Funktion des Herzens. Gute Kaliumquellen sind Bananen, Trockenobst, Karotten, Kohlrabi, Hülsenfrüchte und Getreidesorten wie Dinkel, Roggen und Buchweizen.",
   },
-
   {
     id: "006",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "007",
-    name: "Eisen",
+    name: "Magnesium",
     content:
-      "Eisen ist für die Bildung von roten Blutkörperchen notwendig und trägt dazu bei, Sauerstoff im Körper zu transportieren. Es unterstützt auch das Immunsystem und den Energiestoffwechsel.",
+      "Magnesium ist wichtig für die Muskelkontraktion, für die Kommunikation zwischen Nerven- und Muskelzellen sowie für die Herztätigkeit. Und auch am Aufbau von Knochen und Zähnen ist der Mineralstoff beteiligt. Magnesium ist überwiegend in pflanzlichen Lebensmitteln enthalten, etwa in Nüssen, Bananen, Haferflocken und anderen Getreiden wie Weizen, Dinkel, Gerste, Roggen oder Buchweizen.",
   },
-
   {
     id: "008",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "009",
-    name: "Zink",
+    name: "Natrium",
     content:
-      "Zink ist ein Mineral, das das Immunsystem stärkt, die Wundheilung fördert und eine Rolle bei der DNA-Synthese und Zellteilung spielt. Es ist auch wichtig für den Geschmack- und Geruchssinn.",
+      "Natrium ist an der Regulierung des Wasser- und Säure-Basen-Haushalts sowie des Blutdrucks beteiligt. Es kommt natürlicherweise oder durch Zusatz von Salz (Natriumchlorid) in fast allen Lebensmitteln vor. Einen hohen Natriumgehalt haben vor allem verarbeitete Lebensmittel wie Brot, Käse und Wurstwaren, denen bei der Verarbeitung oder Herstellung Salz beigefügt wird. In Deutschland wird mehr Salz gegessen, als gesund ist.",
   },
-
   {
     id: "010",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "011",
-    name: "Kupfer",
+    name: "Phosphor",
     content:
-      "Kupfer ist ein essentielles Mineral, das die Bildung von roten Blutkörperchen unterstützt, an der Energieproduktion beteiligt ist und die Gesundheit des Nervensystems fördert.",
+      "Phosphor trägt zur Energiegewinnung und dem Erhalt von Knochen und Zähnen bei. Es wird über  die Nahrung in Form von Phosphat aufgenommen und ist praktisch in allen Lebensmitteln enthalten. Es kommt vor allem in eiweißreichen Lebensmitteln wie Milch und Milchprodukten, Fleisch, Fisch und Hülsenfrüchten vor.",
   },
-
   {
     id: "012",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "013",
-    name: "Jod",
+    name: "Eisen",
     content:
-      "Jod ist ein Mineral, das für die Produktion von Schilddrüsenhormonen erforderlich ist, die den Stoffwechsel und das Wachstum regulieren. Es unterstützt auch die Gehirnentwicklung während der Schwangerschaft.",
+      "Eisen ist ein Bestandteil des roten Blutfarbstoffes und maßgeblich an der Sauerstoffversorgung des Körpers beteiligt. Es findet sich vor allem in Fleisch, aber auch einige Obst- und Gemüsesorten sowie Hülsenfrüchte und Getreide sind gute Eisen-Lieferanten. Die Aufnahme von Eisen aus tierischen Produkten ist für den Körper einfacher als aus pflanzlichen. Bei einer vegetarischen Ernährung sollten Sie auf eine ausreichende Eisenzufuhr achten. Zu eisenhaltigen Speisen sollten Sie gleichzeitig Vitamin C-reiche Lebensmittel essen, da Vitamin C die Eisenaufnahme erhöht. Essen Sie zum Beispiel eine Orange oder Kiwi als Nachtisch.",
   },
-
   {
     id: "014",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "015",
-    name: "Selen",
+    name: "Fluorid",
     content:
-      "Selen ist ein Antioxidans, das hilft, die Zellen vor Schäden durch freie Radikale zu schützen. Es unterstützt das Immunsystem und trägt zur normalen Funktion der Schilddrüse bei.",
+      "Fluorid ist für die Gesundheit von Knochen und Zähnen sowie die Wundheilung mitverantwortlich. Sie nehmen es über fluoridhaltige Zahnpasta sowie über Mineralwasser und Tee auf. Eine weitere Quelle kann fluoridiertes Speisesalz sein.",
   },
-
   {
     id: "016",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "017",
-    name: "Mangan",
+    name: "Jod",
     content:
-      "Mangan ist wichtig für den Knochenaufbau und die Produktion von Bindegewebe. Es spielt auch eine Rolle im Energiestoffwechsel und hilft, das Immunsystem zu stärken.",
+      "Jod trägt zu einer optimalen Funktion der Schilddrüse und somit zu einem ausgeglichenen Hormonhaushalt bei. Um die Jodversorgung in Deutschland zu verbessern, wurden beispielsweise Futtermittel mit Jod angereichert. So enthalten Milch, Eier und Fleisch heute mehr Jod als früher. Allerdings ist laut dem Bundesinstitut für Risikobewertung (BfR) die Jodversorgung seit 2020 wieder rückläufig. Insgesamt tragen der Verzehr von Seefisch, Milch und Milchprodukten sowie die Verwendung von jodiertem Speisesalz zu einer optimalen Jodversorgung bei.",
   },
-
   {
     id: "018",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "019",
-    name: "Chrom",
+    name: "Selen",
     content:
-      "Chrom ist ein Mineral, das bei der Regulierung des Blutzuckerspiegels hilft, indem es die Wirkung von Insulin unterstützt. Es spielt eine Rolle im Kohlenhydrat-, Fett- und Proteinstoffwechsel.",
+      "Selen ist an verschiedenen Stoffwechselprozessen beteiligt. Es bindet freie Radikale, ist Bestandteil von Proteinen und wird für die Produktion der Schilddrüsenhormone benötigt. Selen ist in höheren Mengen in tierischen Lebensmitteln zu finden, etwa in Fleisch, Wurst, Eiern und Fisch. Gute pflanzliche Quellen sind Paranüsse, Spargel, Pilze, Hülsenfrüchte sowie Kohlgemüse und Zwiebeln.",
   },
-
   {
     id: "020",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "021",
-    name: "Fluorid",
+    name: "Zink",
     content:
-      "Fluorid stärkt die Zähne und schützt vor Karies, indem es den Zahnschmelz härtet. Es ist auch wichtig für die Knochengesundheit.",
+      "Zink stärkt das Immunsystem und ist wichtig für das Wachstum der Zellen sowie die Wundheilung. Gute tierische Zinklieferanten sind Rind- und Schweinefleisch, Käse, Milch und Eier. Pflanzliche Zinklieferanten sind Nüsse und Getreide wie Weizen- oder Roggenkeimlinge.",
   },
-
   {
     id: "022",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "023",
-    name: "Silizium",
-    content:
-      "Silizium unterstützt die Gesundheit von Haut, Haaren und Nägeln und ist wichtig für die Bildung von Bindegewebe. Es trägt zur Stabilität von Knochen und Blutgefäßen bei.",
-  },
-
-  {
-    id: "024",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "025",
-    name: "Schwefel",
-    content:
-      "Schwefel ist ein Mineral, das eine wichtige Rolle im Aufbau von Aminosäuren und Proteinen spielt. Es ist auch für die Entgiftung des Körpers und die Gesundheit von Haut und Haaren wichtig.",
-  },
-
-  {
-    id: "026",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "027",
-    name: "Vanadium",
-    content:
-      "Vanadium ist ein Mineral, das eine Rolle im Energiestoffwechsel und in der Aufrechterhaltung des Blutzuckerspiegels spielt. Es trägt auch zur Verbesserung der Knochenstruktur bei.",
-  },
-
-  {
-    id: "028",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "029",
-    name: "Nickel",
-    content:
-      "Nickel ist ein Mineral, das eine Rolle im Eisenstoffwechsel und in der Bildung von Hämoglobin spielt. Es unterstützt auch die Funktion des Immunsystems.",
-  },
-
-  {
-    id: "030",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "031",
-    name: "Cobalt",
-    content:
-      "Cobalt ist ein Mineral, das für die Bildung von Vitamin B12 notwendig ist. Es unterstützt die Blutbildung und die normale Funktion des Nervensystems.",
-  },
-
-  {
-    id: "032",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "033",
-    name: "Lithium",
-    content:
-      "Lithium ist ein Mineral, das in kleinen Mengen für die Gesundheit des Nervensystems notwendig ist. Es wird oft mit der Stabilisierung der Stimmung und der Unterstützung der Gehirnfunktion in Verbindung gebracht.",
-  },
-
-  {
-    id: "034",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "035",
-    name: "Boron",
-    content:
-      "Boron ist ein Mineral, das die Knochengesundheit unterstützt und die Aufnahme von Vitaminen und Mineralstoffe wie Kalzium, Magnesium und Vitamin D fördert.",
-  },
-
-  {
-    id: "036",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "037",
-    name: "Molybdän",
-    content:
-      "Molybdän ist ein Mineral, das eine Rolle im Enzymstoffwechsel spielt und hilft, Schwefelverbindungen im Körper abzubauen.",
-  },
-
-  {
-    id: "038",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "039",
-    name: "Iod",
-    content:
-      "Iod ist für die Bildung von Schilddrüsenhormonen verantwortlich und spielt eine wesentliche Rolle im Energiestoffwechsel sowie in der körperlichen und geistigen Entwicklung.",
-  },
-
-  {
-    id: "040",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "041",
-    name: "Calciumfluorid",
-    content:
-      "Calciumfluorid trägt zur Bildung von Knochen und Zähnen bei. Es hilft, den Zahnschmelz zu stärken und schützt vor Karies.",
-  },
-
-  {
-    id: "042",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "043",
-    name: "Phosphor",
-    content:
-      "Phosphor ist ein Mineral, das für die Bildung von Knochen und Zähnen sowie für die Energieproduktion in den Zellen unerlässlich ist. Es hilft, das Wachstum und die Reparatur von Geweben zu fördern.",
-  },
-
-  {
-    id: "044",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "045",
-    name: "Jod",
-    content:
-      "Jod ist ein essentielles Mineral, das die Schilddrüse unterstützt und dabei hilft, den Stoffwechsel und das Wachstum des Körpers zu regulieren.",
-  },
-
-  {
-    id: "046",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },

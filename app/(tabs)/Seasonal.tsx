@@ -6,6 +6,8 @@ import {
   FlatList,
   ScrollView,
   TextInput,
+  Alert,
+  Linking,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -103,6 +105,25 @@ const Seasonal = () => {
     setSearchText(input);
   };
 
+  const confirmAndOpenLink = () => {
+    Alert.alert(
+      "App verlassen?",
+      "Möchten Sie wirklich die App verlassen und den Link im Browser öffnen?",
+      [
+        { text: "Abbrechen", style: "cancel" },
+        { text: "Ja", onPress: () => openLink() },
+      ]
+    );
+  };
+
+  const openLink = () => {
+    const source =
+      "https://www.verbraucherzentrale.de/wissen/lebensmittel/gesund-ernaehren/vitamine-und-mineralstoffe-von-az-5949";
+    Linking.openURL(source).catch((err) =>
+      console.error("Failed to open URL:", err)
+    );
+  };
+
   const renderHeader = useMemo(() => {
     return (
       <View className="px-4 flex flex-col gap-2">
@@ -135,13 +156,21 @@ const Seasonal = () => {
             </TouchableOpacity>
           ))}
         </ScrollView>
+        {(selectedFilter === "Vitamin Übersicht" ||
+          selectedFilter === "Mineralstoffe Übersicht") && (
+          <TouchableOpacity onPress={confirmAndOpenLink} className="pb-2 pl-2">
+            <Text className="text-blue-500 underline ">
+              Quelle: Verbraucherzentrale
+            </Text>
+          </TouchableOpacity>
+        )}
 
         {/* Search input field for "Gemüse" and "Obst" */}
         {(selectedFilter === "Gemüse" || selectedFilter === "Obst") && (
           <View className="mb-4">
             <TextInput
-              className=" bg-white shadow shadow-zinc-200 rounded-2xl p-4 pl-10 relative"
-              placeholder=" Search..."
+              className=" bg-white shadow shadow-zinc-200 rounded-2xl py-4 p-5 pl-10 relative"
+              placeholder=" Suchen..."
               placeholderTextColor="#9e9d9d" // Set placeholder color here (can be any valid color string)
               value={searchText}
               onChangeText={onInput}

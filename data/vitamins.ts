@@ -3,297 +3,142 @@ export const vitamins: VitaminInfo[] = [
     id: "001",
     name: "Vitamin A",
     content:
-      "Vitamin A ist wichtig für das Sehen, das Immunsystem und die Hautgesundheit. Es fördert das Wachstum von Zellen und ist entscheidend für das Sehvermögen bei schwachem Licht.",
+      "Vitamin A, auch Retinol genannt, ist wichtig für die Funktion und den Schutz von Haut, Augen und Schleimhäuten. Vitamin A kommt eigentlich nur in tierischen Lebensmitteln vor, aber Betacarotin aus gelbem und orangefarbenem Gemüse wandelt der Körper in Vitamin A um – Fett fördert die Aufnahme.",
   },
-
   {
     id: "002",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "003",
-    name: "Vitamin C",
+    name: "Vitamin D",
     content:
-      "Vitamin C unterstützt das Immunsystem, fördert die Wundheilung und wirkt als Antioxidans. Es hilft, freie Radikale zu bekämpfen und schützt vor Zellschäden.",
+      "Vitamin D regelt den Calcium- und Phosphathaushalt, ist wichtig für gesunde Knochen und Zähne und kann durch Sonnenlicht sowie bestimmte Lebensmittel aufgenommen werden.",
   },
-
   {
     id: "004",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "005",
-    name: "Vitamin D",
+    name: "Vitamin E",
     content:
-      "Vitamin D spielt eine entscheidende Rolle für die Knochengesundheit, indem es die Aufnahme von Calcium fördert. Es ist auch wichtig für das Immunsystem und die Muskelfunktion.",
+      "Vitamin E wirkt als Antioxidans, stärkt das Immunsystem und schützt die Zellen vor oxidativem Stress. Es kommt in pflanzlichen Ölen, Nüssen und Vollkornprodukten vor.",
   },
-
   {
     id: "006",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "007",
-    name: "Vitamin E",
+    name: "Vitamin K",
     content:
-      "Vitamin E wirkt als Antioxidans und schützt die Zellen vor Schäden durch freie Radikale. Es fördert die Hautgesundheit und stärkt das Immunsystem.",
+      "Vitamin K ist entscheidend für die Blutgerinnung und fördert die Knochengesundheit. Es kommt in grünem Blattgemüse und Hülsenfrüchten vor.",
   },
-
   {
     id: "008",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "009",
-    name: "Vitamin K",
+    name: "Vitamin B1 (Thiamin)",
     content:
-      "Vitamin K ist für die Blutgerinnung und die Knochengesundheit unerlässlich. Es unterstützt die Regulierung von Calcium im Körper und hilft, Knochenbrüche zu vermeiden.",
+      "Vitamin B1 ist essenziell für den Energiestoffwechsel und die Funktion des Nervensystems. Gute Quellen sind Vollkornprodukte, Hülsenfrüchte und Schweinefleisch.",
   },
-
   {
     id: "010",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "011",
-    name: "Vitamin B1 (Thiamin)",
+    name: "Vitamin B2 (Riboflavin)",
     content:
-      "Vitamin B1 ist wichtig für die Energieproduktion und die Funktion des Nervensystems. Es unterstützt den Stoffwechsel und die Gesundheit des Herz-Kreislaufsystems.",
+      "Vitamin B2 unterstützt die Gesundheit von Haut, Augen und Nägeln und ist in Milchprodukten, Innereien und Getreidekeimen enthalten.",
   },
-
   {
     id: "012",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "013",
-    name: "Vitamin B2 (Riboflavin)",
+    name: "Vitamin B6",
     content:
-      "Vitamin B2 spielt eine Rolle im Energiestoffwechsel und unterstützt das Wachstum und die Entwicklung des Körpers. Es hilft auch, Haut und Augen gesund zu halten.",
+      "Vitamin B6 ist wichtig für den Stoffwechsel, die Hormonproduktion und die Nervenfunktion. Es kommt in Fleisch, Fisch, Nüssen und Vollkornprodukten vor.",
   },
-
   {
     id: "014",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "015",
-    name: "Vitamin B3 (Niacin)",
+    name: "Vitamin B12",
     content:
-      "Vitamin B3 ist wichtig für die Hautgesundheit, den Energiestoffwechsel und die Nervenfunktion. Es trägt auch zur Senkung des Cholesterinspiegels bei.",
+      "Vitamin B12 ist wichtig für die Blutbildung und die Funktion des Nervensystems. Es findet sich vor allem in tierischen Lebensmitteln wie Fleisch, Fisch und Milchprodukten.",
   },
-
   {
     id: "016",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "017",
-    name: "Vitamin B5 (Pantothensäure)",
+    name: "Biotin",
     content:
-      "Vitamin B5 ist für die Energieproduktion und den Stoffwechsel von Fetten, Proteinen und Kohlenhydraten notwendig. Es hilft bei der Wundheilung und fördert die Hautgesundheit.",
+      "Biotin unterstützt den Stoffwechsel und das Zellwachstum und fördert gesunde Haare und Nägel. Gute Quellen sind Eier, Innereien und Haferflocken.",
   },
-
   {
     id: "018",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "019",
-    name: "Vitamin B6 (Pyridoxin)",
+    name: "Folat",
     content:
-      "Vitamin B6 unterstützt den Stoffwechsel von Proteinen und Fetten und ist wichtig für die Funktion des Nervensystems. Es hilft, die Stimmung zu stabilisieren und das Immunsystem zu stärken.",
+      "Folat ist wichtig für Zellwachstum und Stoffwechselprozesse. Es kommt in grünem Gemüse, Hülsenfrüchten und Vollkornprodukten vor.",
   },
-
   {
     id: "020",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "021",
-    name: "Vitamin B7 (Biotin)",
+    name: "Vitamin C",
     content:
-      "Vitamin B7 unterstützt die Gesundheit von Haut, Haaren und Nägeln. Es spielt auch eine Rolle im Kohlenhydrat-, Fett- und Eiweißstoffwechsel.",
+      "Vitamin C stärkt das Immunsystem, unterstützt die Wundheilung und ist in Obst und Gemüse wie Paprika, Zitrusfrüchten und Kartoffeln enthalten.",
   },
-
   {
     id: "022",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "023",
-    name: "Vitamin B9 (Folsäure)",
+    name: "Niacin",
     content:
-      "Vitamin B9 ist wichtig für die Zellteilung und die Bildung von roten Blutkörperchen. Es ist besonders wichtig während der Schwangerschaft für die gesunde Entwicklung des Fötus.",
+      "Niacin unterstützt den Energiestoffwechsel und ist in Fleisch, Fisch, Erdnüssen und Pilzen zu finden.",
   },
-
   {
     id: "024",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },
-
   {
     id: "025",
-    name: "Vitamin B12 (Cobalamin)",
+    name: "Pantothensäure (Vitamin B5)",
     content:
-      "Vitamin B12 ist für die Bildung roter Blutkörperchen und die Funktion des Nervensystems notwendig. Es spielt eine wichtige Rolle im Zellstoffwechsel und der DNA-Synthese.",
+      "Pantothensäure ist wichtig für den Abbau von Nährstoffen und den Energiestoffwechsel. Sie ist in fast allen Lebensmitteln enthalten.",
   },
-
   {
     id: "026",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "027",
-    name: "Vitamin C1 (Ascorbinsäure)",
-    content:
-      "Vitamin C1, oder Ascorbinsäure, ist eine Form von Vitamin C, das für die Gesundheit der Haut, Zähne und das Immunsystem essentiell ist. Es unterstützt auch die Aufnahme von Eisen aus pflanzlichen Quellen.",
-  },
-
-  {
-    id: "028",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "029",
-    name: "Vitamin P (Bioflavonoide)",
-    content:
-      "Vitamin P ist eine Gruppe von Flavonoiden, die die Wirkung von Vitamin C verstärken, Entzündungen verringern und die Gesundheit der Blutgefäße fördern. Es trägt zur Verbesserung der Blutzirkulation bei.",
-  },
-
-  {
-    id: "030",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "031",
-    name: "Vitamin U",
-    content:
-      "Vitamin U, auch als Methylmethionin bekannt, wird oft mit der Unterstützung der Magen- und Darmgesundheit in Verbindung gebracht. Es wird angenommen, dass es bei der Heilung von Geschwüren hilft und den Magen schützt.",
-  },
-
-  {
-    id: "032",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "033",
-    name: "Vitamin F (Essentielle Fettsäuren)",
-    content:
-      "Vitamin F ist eine Gruppe von essentiellen Fettsäuren, die für die Zellstruktur und die Hautgesundheit notwendig sind. Sie tragen dazu bei, das Immunsystem zu stärken und Entzündungen zu reduzieren.",
-  },
-
-  {
-    id: "034",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "035",
-    name: "Vitamin H (Biotin)",
-    content:
-      "Vitamin H, oder Biotin, ist für den Stoffwechsel von Fetten, Kohlenhydraten und Eiweißen von Bedeutung. Es unterstützt die Gesundheit von Haaren, Haut und Nägeln und spielt eine Rolle im Energiestoffwechsel.",
-  },
-
-  {
-    id: "036",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "037",
-    name: "Vitamin L1 (Lipoinsäure)",
-    content:
-      "Vitamin L1, oder Lipoinsäure, wirkt als Antioxidans und spielt eine Rolle im Zellstoffwechsel, indem es hilft, Energie aus Nahrungsmitteln zu gewinnen. Es unterstützt auch die Regeneration der Leber.",
-  },
-
-  {
-    id: "038",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "039",
-    name: "Vitamin L2 (Lipoinsäure)",
-    content:
-      "Vitamin L2 ist eine weitere Form von Lipoinsäure, die als Antioxidans wirkt und die Energieproduktion in den Zellen fördert. Es spielt auch eine Rolle bei der Entgiftung des Körpers.",
-  },
-
-  {
-    id: "040",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "041",
-    name: "Vitamin T",
-    content:
-      "Vitamin T fördert die Gesundheit des Kreislaufsystems und kann die Blutgerinnung positiv beeinflussen. Es unterstützt auch die Aufrechterhaltung der Blutzuckerwerte.",
-  },
-
-  {
-    id: "042",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "043",
-    name: "Vitamin W",
-    content:
-      "Vitamin W umfasst eine Gruppe von Verbindungen, die am Stoffwechsel und der Energieproduktion beteiligt sind. Es wird auch mit einer besseren Haut- und Haarstruktur in Verbindung gebracht.",
-  },
-
-  {
-    id: "044",
-    name: "Dummy-Eintrag",
-    content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
-  },
-
-  {
-    id: "045",
-    name: "Vitamin M (Folsäure)",
-    content:
-      "Vitamin M ist ein Synonym für Folsäure, die eine entscheidende Rolle bei der Zellteilung und der Bildung von roten Blutkörperchen spielt. Es ist besonders wichtig in der Schwangerschaft und für die Prävention von Geburtsfehlern.",
-  },
-
-  {
-    id: "046",
     name: "Dummy-Eintrag",
     content: "Dies ist ein Platzhaltertext für einen Dummy-Eintrag.",
   },

@@ -151,7 +151,9 @@ const VegetableDetails = ({ route }: { route: VegetableDetailsRouteProp }) => {
             <View>
               <Text className="text-gray-500 px-2 text-sm">
                 Disclaimer: Keine Verantwortung für die Richtigkeit der Angaben
-                wird übernommen.
+                wird übernommen.{"\n"}
+                Quellen: www.geo.de | de.wikipedia.org | www.gesundheit.gv.at |
+                www.aok.de
               </Text>
               <Text className="text-gray-500 px-2 text-sm">
                 *Nährstoffe, Vitamine und Mineralstoffe pro 100 g sind im
